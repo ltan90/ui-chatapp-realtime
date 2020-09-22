@@ -312,10 +312,7 @@
                             <div class="card__body__frm">
                                 <form action="" method="POST" class="frm frm--checkout submit-js" name="frm_step3" data-edit="step3" data-active="step4">
                                     <!--frm__shipping--active-->
-                                    <div class="frm__shipping shipping-js" 
-                                    data-shipping-name="Priority Mail International"
-                                    data-shipping-text="USPS"
-                                    data-shipping-price="86.89">
+                                    <div class="frm__shipping shipping-js" data-shipping-method="Priority Mail International,USPS,86.89">
                                         <div class="frm__shipping__left">
                                             <span class="frm__shipping__with">Shipping WITH</span>
                                             <div class="frm__shipping__info">
@@ -327,10 +324,7 @@
                                             $86.89
                                         </div>
                                     </div>
-                                    <div class="frm__shipping shipping-js"
-                                    data-shipping-name="Priority Mail Express International"
-                                    data-shipping-text="USPS"
-                                    data-shipping-price="107.49">
+                                    <div class="frm__shipping shipping-js" data-shipping-method="Priority Mail Express International,USPS,107.49">
                                         <div class="frm__shipping__left">
                                             <span class="frm__shipping__with">Shipping WITH</span>
                                             <div class="frm__shipping__info">
@@ -342,10 +336,7 @@
                                             $107.49
                                         </div>
                                     </div>
-                                    <div class="frm__shipping shipping-js"
-                                    data-shipping-name="International Economy"
-                                    data-shipping-text="FEDEX"
-                                    data-shipping-price="91.54">
+                                    <div class="frm__shipping shipping-js" data-shipping-method="International Economy,FEDEX,91.54">
                                         <div class="frm__shipping__left">
                                             <span class="frm__shipping__with">Shipping WITH</span>
                                             <div class="frm__shipping__info">
@@ -357,10 +348,7 @@
                                             $91.54
                                         </div>
                                     </div>
-                                    <div class="frm__shipping shipping-js"
-                                    data-shipping-name="International Priority"
-                                    data-shipping-text="FEDEX"
-                                    data-shipping-price="97.34">
+                                    <div class="frm__shipping shipping-js" data-shipping-method="International Priority,FEDEX,97.34">
                                         <div class="frm__shipping__left">
                                             <span class="frm__shipping__with">Shipping WITH</span>
                                             <div class="frm__shipping__info">
@@ -1153,15 +1141,14 @@
                 this.classList.add("frm__shipping--active");
                 let hiddenSubTotal = document.getElementById('hidden-subtotal').value;
                 document.getElementById("type-shipping-js").nextElementSibling.classList.remove('frm__error--block');
-                let shippingName = this.getAttribute('data-shipping-name');
-                let shippingText = this.getAttribute('data-shipping-text');
-                let shippingPrice = this.getAttribute('data-shipping-price');
-                let typeShipping = [shippingName, shippingText, parseFloat(shippingPrice)];                
-                document.getElementById('subtotal-cart-js').innerText = Number(parseFloat(hiddenSubTotal) + parseFloat(shippingPrice)).toFixed(2);
-                document.getElementById('total-place-js').innerText = Number(parseFloat(hiddenSubTotal) + parseFloat(shippingPrice)).toFixed(2);
-                document.querySelector('.shipping-name-js').innerHTML = shippingText + '-' + shippingName;
-                document.querySelector('.shipping-order-js').innerHTML = '$' + shippingPrice;
-                document.getElementById("type-shipping-js").setAttribute('value', typeShipping);
+                let shippingMethod = this.getAttribute('data-shipping-method');
+                let strShippingMethod = shippingMethod.split(",");                         
+                document.getElementById('subtotal-cart-js').innerText = Number(parseFloat(hiddenSubTotal) + parseFloat(strShippingMethod[2])).toFixed(2);
+                document.getElementById('total-place-js').innerText = Number(parseFloat(hiddenSubTotal) + parseFloat(strShippingMethod[2])).toFixed(2);
+                document.querySelector('.shipping-name-js').innerHTML = strShippingMethod[1] +'-'+ strShippingMethod[0];
+                document.querySelector('.shipping-order-js').innerHTML = '$' + strShippingMethod[2];
+                document.getElementById("type-shipping-js").setAttribute('value', shippingMethod);
+                localStorage.setItem('shipping-method', shippingMethod);
             }
         }      
         /*Back enter email*/
