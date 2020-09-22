@@ -1191,7 +1191,7 @@
         <script src="../assets/js/main.js"></script>
         <script src="../assets/js/cart.js"></script>
         <script src="../assets/js/cart-page.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
         <script>
             //Toggle ChatApp icon
             let toggleChatApp = document.querySelectorAll('.chatapp-close-js');
@@ -1201,7 +1201,7 @@
                     document.querySelector('.panel').classList.toggle('panel-active');
                 });
             }
-			const socket = io('https://drbergchat.azurewebsites.net/');
+			const socket = io();
 			//if(document.querySelector('.random-room')) document.querySelector('.random-room').value = Math.floor((Math.random() * 1000000000) + 1);
 			document.querySelector('.chatapp-login-js').addEventListener('submit', function(e){
 				e.preventDefault();
