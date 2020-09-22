@@ -1036,7 +1036,7 @@
                 });
             }
         }
-        fetch('../json/countries.json')
+        fetch('./../json/countries.json')
         .then(response => response.json())
         .then(data => {  
             let html = '<li class="active">All countries</li>';        
@@ -1047,7 +1047,7 @@
             getHometown();
         });
         function fetchRegion(region){
-            fetch('../json/regions-'+region+'.json')
+            fetch('./../json/regions-'+region+'.json')
             .then(response => response.json())
             .then(data => {    
                 let html = '';        
