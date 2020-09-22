@@ -1201,7 +1201,7 @@
                     document.querySelector('.panel').classList.toggle('panel-active');
                 });
             }
-			const socket = io('https://drbergchat.azurewebsites.net/');
+			const socket = io('http://localhost:5000/');
 			//if(document.querySelector('.random-room')) document.querySelector('.random-room').value = Math.floor((Math.random() * 1000000000) + 1);
 			document.querySelector('.chatapp-login-js').addEventListener('submit', function(e){
 				e.preventDefault();
