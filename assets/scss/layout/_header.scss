@@ -1,0 +1,260 @@
+.header{
+  @include boxShadow(0 8px 10px 0px rgba(0, 0, 0, 0.1));
+  padding-left: 0;
+  padding-right: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #fff;
+  &__promotion{
+    padding: 10px;
+    margin-bottom: 10px;
+    color: $white;
+    &__view{
+      color: $text-view-promo;
+      text-decoration: underline;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+  &__top{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;    
+    position: relative;
+    .dropdown__cart{
+      position: absolute;
+      width: 300px;
+      right: 10px;
+      max-width: 100%;
+      background-color: #fff;
+      top: 5px;
+      border-color: #bbb;      
+      @include boxShadow(0 3px 3px rgba(0,0,0,.15));
+      z-index: 101;
+      display: none;
+      @media (max-width: 768px){
+        right: 0;
+      }
+      .order__info{
+        padding: 15px;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        margin-bottom: 0;
+        &__title{
+          margin-bottom: 15px;
+          .info__label{
+            font: 700 12px/18px "Roboto";
+            color: #333;
+          }
+        }
+        &--total{
+          background-color: #ececec;
+          color: $blue-bold;
+          font: 700 12px/14px "Roboto";
+          .info__label{
+            font: 700 12px/14px "Roboto";
+            &__text{
+              font-family: "Roboto";
+            }
+          }
+        }
+      }
+      .view__empty{
+        display: none;
+        background-color: #ececec;
+        .order__info__title{
+          margin-bottom: 0;
+          position: relative;
+          .info__label{
+            text-transform: none;
+            font: 900 14px/20px "Roboto";
+            padding-top: 30px;
+            padding-bottom: 20px;
+          }
+          .icon__close{
+            position: absolute;
+            top: 5px;
+            margin-right: 10px;
+            right: 0;
+          }
+        }
+      }
+      .view__cart{
+        .hr{
+          display: none;
+        }
+        .overscroll{
+          max-height: 243px;
+          &::-webkit-scrollbar {
+            width: 3px;
+          }
+        }
+        @media (max-width: 767px){
+          .hr{
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            &:last-child{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .dropdown__help{
+      position: absolute;
+      width: 300px;
+      background-color: #fff;
+      top: -25px;
+      z-index: 102;
+      display: none;
+      right: 0;     
+      @include boxShadow(0 2px 5px rgba(0, 0, 0, 0.26));
+      .help__block{
+        padding: 16px 33px 16px 18px;
+      }
+      .help__link{
+        font: 12px/24px 'Roboto';
+        color: #3076A5;
+        display: block;
+        margin-top: 10px;
+      }
+      .help__contact{
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(0, 145, 168, 0.1);
+        padding: 10px 18px;
+        .help__item{
+          @include col(50%);
+        }
+        .help__item:first-child{
+          border-right: 1px dashed #707070;
+          margin-right: 18px;
+          @include col(41%);
+        }
+        .help__link{
+          line-height: 14px;
+        }
+      }
+      .help__title{
+        font: 700 12px/18px 'Roboto';
+        color: $blue-bold;
+        text-transform: uppercase;
+        &--head{
+          color: #333333;
+          padding: 17px 17px 2px;
+          @include textDisplay(flex, center, space-between);
+        }
+      }
+      .help__block{
+        .help__link{
+          line-height: 14px;
+        }
+      }
+      .help__hours{
+        .help__item{
+          font: 12px/24px 'Roboto';
+          color: #5E5E5E;
+        }
+      }
+      @media (max-width: 690px){
+        width: 250px;
+      }
+      @media (max-width: 460px){
+        display: none !important;
+      }
+    }
+  }
+  &__logo{
+    margin-right: 40px;
+    img{
+      max-width: 128px;
+      height: 48px;
+    }
+    @media (max-width: 1050px){
+      margin-right: 10px;
+      img{
+        max-width: 103px;
+      }
+    }
+  }
+  &--checkout{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 80px;
+    box-shadow: none;
+    position: relative;
+    .header__link{
+      display: inline-flex;
+    }
+  }
+  &--chatapp{
+    box-shadow: 0 8px 10px 0px rgba($black, 0.1);
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  &__left{
+    display: flex;
+  }
+  &__center{
+    width: 477px;
+    max-width: 100%;
+    z-index: 101;
+    position: relative;
+    &__text{
+      @include textDisplay(flex, center, space-between);
+      padding-right: 7px;
+      color: #999999;
+      cursor: pointer;
+      &:hover{
+        background-color: rgba(0, 145, 168, 0.1);
+      }
+    }
+    &__autocomplete{
+      list-style: none;
+      padding-left: 0;
+      background-color: #fff;
+      border-radius: 3px;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.08);
+      margin-top: 5px;
+      position: absolute;
+      left: 0;
+      right: 0;      
+      a{
+        display: block;
+        padding: 5px 10px;
+        font: 14px/25px "Roboto";
+        color: #333333;
+        &:before{
+          content: url($pathImage + 'icon_search.svg');
+          opacity: 0.2;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  &__right{
+    margin-left: auto;
+  }
+  @media (max-width: 899px){
+    &__top{
+      flex-wrap: wrap;     
+    } 
+    &__center{
+      display: none;
+      width: 100%;
+      order: 3;
+      margin-top: 17px;
+    }
+  }
+  @media (max-width: 350px){
+    .container-fluid{
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+}

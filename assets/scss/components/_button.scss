@@ -1,0 +1,255 @@
+.btn{
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 0;
+  color: $white;
+  border-radius: 3px;
+  @include animation(transition, ease-in 200ms);
+  &:hover{
+    background-color: $bg-btn-checkout;
+    @include animation(transition, ease-out 200ms);
+  }
+  &--blue{
+    @include font(16px/16px 'Roboto', $blue-bold);
+    border: 2px solid $blue-bold;
+    padding: 14px 10px;
+    &:hover{
+      background-color: $blue-bold;
+      color: $white;
+    }
+  }
+  &--blue:disabled{
+    opacity: 0.5;
+    &:hover{
+      background-color: transparent;    
+      color: $blue-bold;  
+    }
+  }
+  &--add{
+    @include font(700 16px/16px 'Roboto', $orange);
+    border: 2px solid $orange;
+    padding: 15px;
+    text-align: center;
+    &:hover{
+      background-color: $orange;
+      color: $white;
+    }
+  }
+  &--checkout{
+    padding-top: 17px;
+    padding-bottom: 17px;
+    background-color: $bg-btn;    
+    @include font(700 16px/18px "Roboto");
+    &:hover{
+      background-color: $bg-btn-checkout-hover;
+    }
+    &--chatapp{
+      padding-top: 16px;
+      padding-bottom: 16px;
+      @include font(700 14px/17px "Roboto");
+    }
+  }
+  &--checkout[disabled]{
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+  }
+  &--login{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: "Roboto";
+    font-weight: 700;
+  }
+  &--facebook{
+    @include font(700 16px/18px "Roboto");
+    padding: 15px 15px 16px 76px;
+    background-color: rgba(60, 87, 152, 0.9);    
+    position: relative;
+    text-align: center;
+    &:before{
+      content: '';
+      background: url($pathImage + "icon_facebook.svg") no-repeat 0;
+      width: 53px;
+      height: 48px;
+      left: 0;
+      top: 0;
+      position: absolute;
+    }
+    &:hover{
+      background-color: rgba(60, 87, 152, 0.8);
+      color: $white;
+    }
+  }
+  &--orange{
+    @include font(700 18px/22px "Roboto");
+    background-color: $bg-btn-coupon;
+    border: 2px solid $bg-btn-coupon;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    cursor: pointer;
+    &:hover{
+      background-color: transparent;
+      color: $text-checkout;
+    }
+  }
+  &--paypal{
+    height: calc(45px);
+    padding-top: 0;
+    padding-bottom: 0;
+    &:hover{
+      background-color: #ffc439;
+      box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.05);
+    }
+  }
+  &--orange[disabled]{
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+  }
+  &--checkout--chatapp[disabled]{
+    opacity: 1;
+    background-color: $gray-semi-medium;
+    border-color: $gray-semi-medium;
+  }
+  &--danger{
+    background-color: $orange;
+    display: inline-block;
+    width: auto;
+    padding: 3px 7px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-transform: none;
+  }
+  &--primary{
+    background-color: $blue-bold;
+    display: inline-block;
+    width: auto;
+    padding: 3px 7px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-transform: none;
+  }
+  &--newsletter{
+    padding: 10px 15px;
+    max-width: 160px;
+    background-color: $blue-bold;
+    color: $white;
+    margin: 0 auto;
+    font-family: Roboto;
+    font-weight: normal;
+    border-radius: 0;
+    .fa-envelope{
+      margin-right: 15px;
+    }
+    &:hover{
+      background-color: $blue-bold;
+    }
+    &:focus{
+      box-shadow: 0 0 3px 1px #00699d;
+    }
+    @media (max-width: 478px){
+      max-width: 100%;
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+  }
+  &--search{
+    background-color: transparent;
+    border: 0;
+    @include pos(absolute,50%,10px,'','','');
+    transform: translateY(-50%);
+  }
+  &__quantity{
+    height: 30px;
+    width: 30px;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 30px;
+    background-color: $blue-light;
+    border: 0;
+    color: $white;
+  }
+  &--green{
+    @include font(700 12px/13px 'Roboto', $white);
+    background-color: $blue-light;
+    padding: 13px;
+    text-align: center;
+    margin-top: 20px;
+    &:hover{
+      background-color: $blue-light;
+      color: $white;
+    }
+    &--warning{
+      background-color: $color-warning;
+      margin-top: 5px !important;
+      &:hover{
+        background-color: $color-warning;
+        color: $white;
+      }
+    }
+  }
+  &--grey{
+    @include font(700 12px/13px 'Roboto', $white);
+    background-color: $gray-semi-medium;
+    padding: 13px;
+    text-align: center;
+    margin-top: 20px;
+    &:hover{
+      background-color: $gray-semi-medium;
+      color: $white;
+    }
+  }
+  &--detail{
+    display: inline-block;
+    width: 240px;
+    max-width: 100%;
+  }
+  &__towishlist{
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    &::before{
+      content: url($pathImage + "icon_wishlist.svg");
+    }
+    &:hover::before{
+      content: url($pathImage + "icon_wishlist_full.svg");
+    }
+  }
+  &__login{
+    @include font(14px "Roboto", $white);
+    background-color: $gray-semi-medium;
+    border: 0;
+    padding: 7px 15px;
+    width: 100%;
+    @include animation(transition, all ease-in 300ms);
+    &:hover{
+      background-color: $blue-light-semi-medium;
+    }
+  }
+  &__chatapp{
+    background-color: transparent;
+    border: 0;
+  }
+  &__send{
+    background-color: $blue-light;
+    @include font(12px/16px "Roboto", $white);
+    border-radius: 20px;
+    border: 0;
+    padding: 4px 9px;
+    margin-right: 5px;
+    white-space: nowrap;
+  }
+  @media (max-width: 478px){
+    &--facebook{
+      font-size: 14px;
+      padding-left: 66px;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.item{
+    @include property(display, -ms-flexbox); 
+    @include property(display, flex);  
+    @include property(flex-wrap, nowrap); 
+    @include property(-ms-flex-wrap, nowrap);
+    @include borderRadius(3px);  
+    &:hover{
+        @include boxShadow(0px 2px 5px rgba(0, 0, 0, 0.16078431));
+    }
+    &__avatar{
+        @include col(89px);     
+        @include property(overflow, hidden);
+        max-height: 90px;      
+        &__img{
+            @include animation(transform, translate(-50px, -68px));
+        }
+    }
+    &__info{
+        @include space(padding, all, 12px 15px 12px 24px);
+        &__title{
+            @include font(700 14px/19px "Roboto", $text-title-h3);
+            @include space(margin, bottom, 5px);
+            text-transform: uppercase;
+        }
+        &__summary{
+            @include font(12px/16px "Roboto", $text-summary);
+        }
+    }
+    @media (max-width: 1023px){
+        border: 1px solid #ccc;
+        @include space(margin, bottom, 12px);
+    }
+    @media (max-width: 900px){
+        &__avatar{
+            max-height: 91px;   
+        }
+    }
+    @media (max-width: 748px){
+        flex-wrap: wrap;
+        @include boxShadow(0px 2px 5px rgba(0, 0, 0, 0.16078431));
+        border: none;
+        min-height: 90%;
+        flex-direction: column;
+        &__avatar{
+            @include col(118px);
+            max-height: 77px;
+            &__img{
+                @include animation(transform, translate(-18px, -54px));
+                width: 170px;
+            }
+        }
+        &__info{
+            @include space(padding, all, 10px 10px 0);
+            &__title{
+                @include font(700 11px/15px "Roboto", $text-title);
+            }
+            &__summary{
+                display: none;
+            }
+        }
+    }
+}

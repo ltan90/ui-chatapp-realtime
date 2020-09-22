@@ -1,0 +1,64 @@
+.container{
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+  &-fluid{
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  &--fixed{
+    max-width: 1280px;
+  }
+  &--popup{
+    max-width: 960px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    &-chatapp{
+      max-width: 780px;
+    }
+  }
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  &--fixed{
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+  }
+  &--item{
+    margin-right: -6px;
+    margin-left: -6px;
+    @media (max-width: 748px){
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      overflow-x: auto;
+    }
+  }
+  &--spotlight{
+    margin-right: 0;
+    margin-left: 0;
+  }
+  &--stories{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

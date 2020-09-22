@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'luma-icons';
+  font-display:auto;
+  src: local('Luma-Icons'), url($pathFont + 'Luma-Icons.woff2') format('woff2'),
+  url($pathFont + 'Luma-Icons.woff') format('woff');
+}

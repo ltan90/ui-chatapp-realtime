@@ -1,0 +1,384 @@
+.order{
+  &__info{
+    padding: 20px;
+    border: 1px solid $color-white-light-semi-bold;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    .info__label{
+      margin-bottom: 0;
+      font: 14px/28px 'Roboto';
+      color: $blue-bold;
+    }
+    &__text{
+      font: 14px/28px 'Roboto';
+      color: $blue-bold;
+      margin-bottom: 2px;
+    }
+    &__title{
+      font-weight: normal;
+      text-transform: uppercase;
+      align-items: center;
+      margin-bottom: 25px;
+      &--cart{
+        @include font(700 14px/20px "Roboto", $blue-bold);
+      }
+      .info__modify{
+        @include font(11px/22px "Roboto", $blue-bold);
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    &--flex{
+      @include textDisplay(flex,'center',space-between);
+    }
+    &__cart{
+      margin-top: 39px;
+      margin-bottom: 32px;
+      .order__coupon__title{
+        text-transform: uppercase;
+        font-size: 12px;
+        color: #333;
+      }
+    }
+    &__shipping{
+      .info__free{
+        color: $green;
+        font-weight: 700;
+      }
+    }
+    &__subtotal{
+      &--cart{
+        margin-bottom: 25px;
+        .subtotal--text{          
+          @include font(600 14px/24px "Roboto", $blue-bold);
+        }
+      }
+      &--hr{
+        padding-top: 15px;
+        border-top: 1px solid $gray-light;
+      }  
+    }
+    &__payment{
+      .info__label{
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: $blue-bold;
+      }
+      .frm__checkbox__checkmark{
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        top: 50%;
+        @include animation(transform, translateY(-50%));
+        &:after{
+          left: 50%;
+          top: 50%;
+          border-radius: 50%;
+          transform: translate(-50%,-50%);
+          width: 10px;
+          height: 10px;
+          background-color: $blue-bold;
+        }
+      }
+      .payment{
+        &__none{
+          display: none;
+        }
+        &--active{
+          display: block;
+          margin-top: 20px;
+        }
+      }
+      .paypal{
+        .btn--paypal{
+          margin-bottom: 14px;
+        }
+        .paypal__icon{
+          height: 21px;
+        }
+        .paypal__card{
+          display: flex;
+          justify-content: center;
+          margin-bottom: 14px;
+          img{
+            margin-right: 4px;
+            margin-left: 4px;
+            cursor: pointer;
+          }
+        }
+        .paypal__text{
+          text-align: center;
+          font-size: 11px;
+          color: #7b8388;
+        }
+      }
+      .card{
+        margin-bottom: 20px;
+      }
+      .amazon{
+        width: 245px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        &__none{
+          display: none;
+        }
+        &__customer{
+          font: 14px/20px "Roboto";
+          color: #333;
+          position: absolute;
+          top: 48px;
+          right: -10px;
+          background-color: #f4f4f4;
+          width: 270px;
+          border: 1px solid #999999;
+          border-radius: 1px;
+          padding: 12px;
+          &:before{
+            content: '';
+            border: 1px solid #666;
+            border-right-color: transparent;
+            position: absolute;
+            top: -8px;
+            right: 15px;
+            border-top-color: transparent;
+            width: 15px;
+            height: 15px;
+            transform: rotate(133deg);
+            background-color: #f4f4f4;
+          }
+        }
+        &__help{
+          margin-left: 15px;
+          cursor: pointer;
+          &:hover{
+            img{
+              filter: invert(0) sepia(0) saturate(0%) hue-rotate(346deg) brightness(0) contrast(1);
+            }
+            .amazon__customer{
+              display: block;
+            }
+          }
+        }
+        
+      }
+    }
+    &__discount{
+      display: none;
+      .info__price{
+        margin-left: 5px;
+      }
+    }
+    .discount--active{
+      display: flex;
+    }
+    .info__discount{
+      @include font(700 14px/16px "Roboto", $blue-light);
+      letter-spacing: 0.25px;
+      padding: 2.5px 5px 2.5px 20px;
+      border: 1px solid $blue-light;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      margin-left: 5px;
+      cursor: pointer;
+      &__svg{
+        margin-left: 10px;
+      }
+    }
+  }
+  &__coupon{
+    padding: 20px 18px;
+    border: 1px solid $color-white-light-semi-bold;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    &--checkout{
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
+      padding-top: 18px;
+      padding-bottom: 18px;
+      margin-bottom: 14px;
+    }
+    &__title{
+      margin-bottom: 0;
+      font-weight: 700;
+      cursor: pointer;
+      position: relative;
+      &--checkout{
+        &:after{
+          @include animation(transform, rotate(180deg));
+        }
+      }
+      &--cart{
+        &:after{
+          position: absolute;
+          right: 0;
+          top: 5px;
+          content: '\e622';
+          @include font(12px/12px "luma-icons", #33538f);
+        }
+      }
+    }
+  }
+  &__help{
+    @include font(14px/16px "Roboto", $blue-bold);
+    margin-bottom: 20px;
+    &--checkout{
+      @include font(700 15px/22px "Roboto", $gray-medium-bold);
+      text-align: center;
+      .help__phone{
+        color: $gray-medium-bold;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &__sign{
+    font-size: 14px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: $blue-bold;
+    &__link{
+      color: $blue-light;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  .items{
+    display: none;
+  }
+  .active{
+    display: block;
+  }
+  &--checkout{
+    .order__info{
+      border-radius: 5px;
+    }
+    .order__info__text{
+      @include font(14px/18px "Roboto", $black);
+    }
+    .info__label{
+      @include font(14px/18px "Roboto", $black);
+      &__box{
+        display: flex;
+        flex-direction: column;
+      }
+      &__shipping{
+        @include font(14px/18px "Roboto", $color-gray-light);
+      }
+    }
+    .order__info__title{
+      .info__label{
+        font-size: 16px;
+        color: $gray-medium;
+      }
+    }
+    .order__info__subtotal{
+      .info__label{
+        @include font(700 19px/24px "Roboto", $gray-medium);
+      }
+      .info__price{
+        @include font(700 16px/18px "Roboto", $blue-bold);
+      }
+    }
+    .overscroll{
+      max-height: 415px;
+    }
+  }
+  @media (max-width: 1024px){
+    display: flex;
+    flex-direction: column;
+    &__info{
+      order: 3;
+      border-radius: 0;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+      &__title{
+        margin-bottom: 16px;
+      }
+    }
+    &__help{
+      margin-top: 20px;
+      color: $gray-medium;
+    }
+    &--checkout{
+      margin-top: 40px;
+      .order__info{
+        order: 0;
+        padding: 20px;
+        border: 1px solid $color-white-light-semi-bold;
+        margin-bottom: 20px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
+        border-radius: 3px;
+      }
+      .order__help{
+        text-align: center;
+        color: $gray-medium-bold;
+      }
+    }
+    &__sign{
+      margin-top: 0;
+      margin-bottom: 45px;
+    }
+  }
+}
+.coupon{
+  display: none;
+  margin-top: 20px;
+  &__offer{
+    &__valid{
+      @include font(700 12px/16px "Roboto", $gray-semi-medium);
+      padding: 23px 30px;
+      margin-bottom: 20px;
+      background: $gray-light-semi 0% 0% no-repeat padding-box;;
+    }
+    &__name{
+      margin-bottom: 20px;
+      @include font(16px/24px "Roboto", $black);
+    }
+    &__link{
+      text-align: center;
+      display: block;
+      color: $blue-light;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    .frm__checkbox{
+      margin-bottom: 20px;
+      @include font(700 14px/16px "Roboto", $blue-bold);
+    }
+    &__public{
+      @include font(700 9px/9px "Roboto", $gray-bold-black);
+      background: $gray-light-semi 0% 0% no-repeat padding-box;
+      border-bottom-left-radius: 6px;
+      text-transform: uppercase;
+      padding: 5px 10px 3px;
+      margin-left: 10px;
+      display: inline-block;
+    }
+    &--applied{
+      color: $white;
+      background: $blue-light 0% 0% no-repeat padding-box;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      @media (min-with: 1025px) and (max-width: 1050px){
+        margin-left: 0;
+        margin-top: 5px;
+      }
+    }
+  }
+  &__discount{
+    display: none;
+    .frm__control{
+      @include font(12px/14px "Roboto", $gray-medium);
+    }
+  }
+}

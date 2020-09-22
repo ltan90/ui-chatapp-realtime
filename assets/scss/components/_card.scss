@@ -1,0 +1,228 @@
+.card--checkout.active{
+  border-color: $blue-bold;
+  box-shadow: inset 0px 0px 0px 1px $blue-bold;
+  &:last-child{
+    border-bottom-color: $blue-bold;
+  }
+  .card-active{
+    display: block;
+  }
+}
+.card{
+  &--checkout{
+    border: 1px solid #C5C5C5;
+    padding: 23px 23px 20px;
+    border-bottom: 0;
+    .card__body__info,
+    .card__edit{
+      display: none;
+    }
+    &:first-child{
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    &:last-child{
+      border-bottom: 1px solid #C5C5C5;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    .card__back{
+      cursor: pointer;
+      display: none;
+      .frm__back{
+        .a{
+          fill: $blue-light;
+        }
+      }
+    }
+  }
+  &__title{
+    margin-bottom: 0;
+    @include font(700 19px/24px "Roboto", $blue-bold);
+    &__number{
+      border: 1px solid $blue-bold;
+      font-size: 15px;
+      margin-right: 13px;
+      height: 30px;
+      min-width: 30px;
+      font-weight: 400;
+      @include textDisplay(flex,center,center);
+      @include borderRadius(50%);
+    }
+  }
+  &__head{
+    @include textDisplay(flex,center,space-between);
+    &--back{
+      @include textDisplay(flex,center,space-between);
+      .card__back{
+        display: inline;
+      }
+    }
+    &--chatapp{
+      padding-left: 27px;
+    }
+  }
+  &__body{
+    padding: 40px 44px 32px;
+    &__title{
+      text-transform: uppercase;
+      @include font(700 14px/16px "Roboto", $blue-bold);
+    }
+    &--title{
+      @include font(700 12px/18px "Roboto");
+      &-use{
+        font-size: 13px;
+        text-transform: none;
+        margin-bottom: 25px;
+      }
+    }
+    &__text{
+      color: $text-card-body;
+      font-size: 14px;
+      .text__price{
+        margin-right: 30px;
+      }
+    }
+    &__info{
+      .card__body__title{
+        margin-bottom: 0;
+      }
+    }
+    &__none{
+      display: none;
+    }
+    &--login{
+      .frm__welcome{
+        @include font(300 36px/36px "Roboto", $blue-bold);
+        text-transform: uppercase;
+        margin-bottom: 19px;
+      }
+      .frm__group__email{
+        margin-top: 22px;
+        font: 14px/16px "Roboto";
+        color: rgba($black, 0.8);
+      }
+    }
+    &--chatapp{
+      padding: 18px 27px 27px;
+    }
+  }
+  &--edit{
+    .card__head{
+      @include textDisplay(flex,center,space-between);
+    }
+    .collapse--edit{
+      display: block;
+      padding-top: 23px;
+      padding-bottom: 3px;
+    }
+    .card__title__number{
+      border: 0;
+      background: url($pathImage + "icon_check_step.svg") no-repeat 0 0;
+      color: transparent;
+    }
+    .card__body__info,
+    .card__edit{
+      display: block;
+    }
+    .card__body__frm{
+      display: none;
+    }
+    .card__edit__text{
+      color: $blue-bold;
+      font-size: 11px;
+      text-transform: uppercase;
+      cursor: pointer;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    .status-success{
+      display: block;
+    }
+  }  
+  &__box{
+    padding: 19px 16px;
+    border: 1px solid $gray-light;
+    border-radius: 3px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    &__header{
+      position: relative;
+    }
+    &__body{
+      flex: 1 1 auto;
+    }
+    &__view{
+      @include font(700 14px/19px "Roboto", $blue-light);
+      text-decoration: underline;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    &--spotlight{
+      border: 2px solid $color-white-bold;
+      transition: all .3s;
+      border-radius: 10px;
+      &:hover{
+        border-color: rgba($blue-light-semi-bold, .3);
+      }
+    }
+  }
+  @media (max-width: 1024px){
+    &__title{
+      font-size: 14px;
+    }
+    &__body{
+      &__info{
+        .card__body__title{
+          font-size: 13px;
+          color: #000;
+        }
+      }
+      &--mobile{
+        padding: 20px 0 0;
+      }
+    }
+  }
+  @media (max-width: 767px){
+    &--checkout{
+      padding: 15px;
+    }
+    &__body{
+      padding: 40px 0 0;
+    }
+    &__box{
+      &--spotlight{
+        margin-bottom: 20px;
+      }
+    }
+  }
+  @media (max-width: 575px){
+    &__title{
+      font-size: 14px;
+    }
+  }
+}
+.card-status-pending{
+  .card__title__number{
+    background: url($pathImage + "icon_payment_pending.svg") no-repeat 0 0;
+    background-position: 0;
+  }
+  .status-pending{
+    color: $color-warning;
+    display: block;
+  }
+}
+.card-status-unpayment{
+  .card__title__number{
+    background: url($pathImage + "icon_payment_unpayment.svg") no-repeat 0 0;
+    background-position: 0;
+  }
+  .status-unpayment{
+    color: $color-red-error-danger-payment;
+    display: block;
+  }
+}

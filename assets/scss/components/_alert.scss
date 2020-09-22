@@ -1,0 +1,131 @@
+.alert{
+  border: 1px solid $green;
+  padding: 13px 45px;
+  position: relative;
+  background-color: $color-green-info;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  @include font(700 14px/16px 'Roboto', $green);
+  @include animation(transition, background-color ease-in-out 0.2s);
+  &:hover{
+    background-color: transparent;
+    cursor: pointer;
+    @include animation(transition, ease-in-out 0.2s);
+  }
+  &::before{
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 15px;
+    bottom: 0;
+    background-image: url($pathImage + "icon_message_info_active.svg");
+    width: 24px;
+    height: 24px;
+  }
+  &__close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    bottom: 0;
+    background-image: url($pathImage + "icon_close_info_active.svg");
+    width: 24px;
+    height: 24px;
+  }
+  &--cart{
+    &::before, &__close{
+      top: 50%;
+      @include animation(transform, translateY(-50%));
+    }
+  }
+  &--coupon{
+    padding-left: 15px;
+    .alert__check{
+      margin-right: 10px;
+    }
+    &::before{
+      content: none;
+    }
+    &--checkout{
+      position: relative;
+      color: $color-green;
+      background-color: $color-white-light-sm;
+      padding-left: 45px;
+      &:before{
+        content: '\e60e';
+        @include font(24px/24px "luma-icons", $color-green);
+        position: absolute;
+        left: 0;
+        top: 9px;
+        width: 45px;
+        text-align: center;
+        background-image: none;
+      }
+      &:hover{
+        background-color: $color-white-light-sm;
+        color: $color-green;
+      }
+    }
+  }
+  &--danger{
+    padding-left: 15px;
+    position: relative;
+    color: $color-red-error-danger;
+    background-color: $color-orange;
+    border-color: $color-red-error-danger;
+    .alert__check{
+      margin-right: 10px;
+    }
+    &::before{
+      content: none;
+    }
+    .alert__close{
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &--checkout{
+      position: relative;
+      color: $color-red-error;
+      background-color: $color-white-light-semi-1;
+      padding-left: 45px;
+      &::before{
+        content: '\e61f';
+        @include font(24px/24px "luma-icons", $color-red-error);
+        position: absolute;
+        left: 0;
+        top: 9px;
+        background-image: none;
+        width: 45px;     
+        text-align: center;   
+      }
+      &:hover{
+        background-color: $color-white-light-semi-1;
+        color: $color-red-error;
+      }
+    }
+    &--chatapp{
+      padding-left: 70px;
+      text-align: justify;
+      border-color: $color-red-error-danger;
+      &::before{
+        left: 30px;
+      }
+    }
+  }
+  &__newsletter{
+    background-color: $color-white-light-sm;
+    padding: 12px 20px 12px 45px;
+    position: relative;
+    @include font(13px/19px "Roboto", $color-green);
+    &:before{
+      content: '\e60e';
+      @include font(24px/24px "luma-icons", $color-green);
+      position: absolute;
+      top: 9px;
+      left: 0;
+      width: 45px;
+      text-align: center;
+    }
+  }
+}

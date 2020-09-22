@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>My cart</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./../assets/images/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap"></noscript>
+    <link rel="stylesheet" type="text/css"  media="all" href="./../assets/css/style.min.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="header__promotion promotion__bg text-center" style="display: none;">
+            <b>24h Flash sale:</b>
+            <span class="header__promotion__price">$8 off selected products.</span>
+            <span class="header__promotion__view">
+                View more
+            </span>
+        </div>
+        <section class="container-fluid">
+            <div class="header__top">
+                <div class="header__left">
+                    <span class="nav__toggle nav-mobile-js"></span>
+                    <a href="/index.html" class="header__logo">
+                        <img src="./../assets/images/logo.svg" alt="">
+                    </a>
+                </div>
+                <div id="search-mobile-js" class="header__center">
+                    <form id="search-js" action="../pages/carts.html" method="GET" class="frm frm__search">
+                        <input id="search-auto-js" class="form__control--search" type="text" name="search" autocomplete="off" placeholder="Search DrBerg for health products" />
+                        <div class="input__group d-flex">
+                            <button type="submit" class="btn--search">
+                                <img src="./../assets/images/icon_search.svg" alt="search">
+                            </button>
+                        </div>
+                    </form>
+                    <ul id="search-autocomplete-js" class="header__center__autocomplete" style="display: none;">
+                        <li class="header__center__text"><a class="add-key-js" data-key="shop" href="#">Shop</a><span>7</span></li>
+                        <li class="header__center__text"><a class="add-key-js" data-key="shopping list" href="#">shopping list</a><span>40</span></li>
+                        <li class="header__center__text"><a class="add-key-js" data-key="shop.drberg.com" href="#">shop.drberg.com</a><span>3</span></li>
+                        <li class="header__center__text"><a class="add-key-js" data-key="shop with july code" href="#">shop with july code</a><span>25</span></li>
+                        <li class="header__center__text"><a class="add-key-js" data-key="shop with july discount code" href="#">shop with july discount code</a><span>15</span></li>
+                        <li class="header__center__text"><a class="add-key-js" data-key="shopping cart list" href="#">shopping cart list</a><span>43</span></li>
+                        <li class="header__center__text"><a class="add-key-js" data-key="Shop all products" href="#">Shop all products</a><span>20</span></li>
+                        <li class="header__center__text"><a class="add-key-js" data-key="Shopping method" href="#">Shopping method</a><span>24</span></li>
+                    </ul>
+                </div>
+                <div class="header__right">
+                    <ul class="nav__utilities unstyled-list">
+                        <li>
+                            <a id="show-search-js" class="nav__utilities__link nav__utilities__search" data-search="search-mobile-js">
+                                <span class="nav__utilities__icon">
+                                    <svg class="search__open" xmlns="http://www.w3.org/2000/svg" width="16.914" height="15.914" viewBox="0 0 16.914 15.914"><defs><style>.a666,.b666,.c666,.e666{fill:none;}.a666,.b666,.c666{stroke:#013253;}.a666,.c666{stroke-linecap:round;}.a666,.b666{stroke-width:2px;}.d666{stroke:none;}</style></defs><g transform="translate(-212 -33)"><g transform="translate(-4581 16983)"><line class="a666" x1="4" y1="4" transform="translate(4804.5 -16939.5)"></line><g class="b666" transform="translate(4793 -16950)"><circle class="d666" cx="6.5" cy="6.5" r="6.5"></circle><circle class="e666" cx="6.5" cy="6.5" r="5.5"></circle></g></g><line class="c666" x2="4" transform="translate(216.5 39.5)"></line></g></svg>
+                                    <svg class="search__close" xmlns="http://www.w3.org/2000/svg" width="16.914" height="15.914" viewBox="0 0 16.914 15.914"><defs><style>.a777,.b777,.c777,.e777{fill:none;}.a777,.b777,.c777{stroke:#013253;}.a777,.c777{stroke-linecap:round;}.a777,.b777{stroke-width:2px;}.d777{stroke:none;}</style></defs><g transform="translate(-212 -33)"><g transform="translate(-4581 16983)"><line class="a777" x1="4" y1="4" transform="translate(4804.5 -16939.5)"></line><g class="b777" transform="translate(4793 -16950)"><circle class="d777" cx="6.5" cy="6.5" r="6.5"></circle><circle class="e777" cx="6.5" cy="6.5" r="5.5"></circle></g></g><line class="c777" y2="4" transform="translate(218.5 37.5)"></line><line class="c777" x2="4" transform="translate(216.5 39.5)"></line></g></svg>
+                                </span>
+                                <span class="nav__utilities__none">Search</span>
+                            </a>
+                        </li>
+                        <li class="nav__utilities__item">
+                            <a class="nav__utilities__link nav__utilities__help view-help-js" href="#">
+                                <span class="nav__utilities__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><defs><style>.a1{fill:none;}.b{fill:#013253;}.c{fill:#fff;font-size:12px;font-family:Roboto-Bold, Roboto;font-weight:700;}</style></defs><path class="a1" d="M0,0H24V24H0Z"></path><circle class="b" cx="8" cy="8" r="8" transform="translate(4 4)"></circle><text class="c" transform="translate(9 16)"><tspan x="0" y="0">?</tspan></text></svg>
+                                </span>
+                                <span class="nav__utilities__none">Help</span>
+                            </a>
+                            <div class="dropdown__help stop-body-js">
+                                <h4 class="help__title help__title--head">
+                                    <span class="info__label">Help</span>
+                                    <span class="icon__close close-view-js" data-close="dropdown__help"></span>
+                                </h4>
+                                <div class="help__contact">
+                                    <div class="help__item">
+                                        <div class="help__title">
+                                            Call us
+                                        </div>
+                                        <a href="tel:703-354-7336" class="help__link">703-354-7336</a>
+                                    </div>
+                                    <div class="help__item">
+                                        <div class="help__title">
+                                            E-mail us
+                                        </div>
+                                        <a href="mailto:orders@drberg.com" class="help__link">orders@drberg.com</a>                                            
+                                    </div>
+                                </div>
+                                <div class="help__block help__support">
+                                    <div class="help__title">
+                                        Support help
+                                    </div>
+                                    <div class="help__item">
+                                        <a href="#" class="help__link">Visit Support Portal</a>
+                                        <a href="#" class="help__link">Submit a support request</a>
+                                    </div>
+                                </div>
+                                <div class="help__block help__hours">
+                                    <div class="help__title">
+                                        Hours of Operation:
+                                    </div>
+                                    <div class="help__item">
+                                        Monday – Friday: 8:30am – 5:30pm Eastern Time + Closed weekends and major holidays
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="nav__utilities__link nav__utilities__favorites" href="#">
+                                <span class="nav__utilities__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16"><defs><style>.a{fill:#013253;fill-rule:evenodd;}</style></defs><path class="a" d="M12,8A4.932,4.932,0,0,0,7.5,5,4.413,4.413,0,0,0,3,9.5c0,3.529,3.793,6.258,9,11.5,5.207-5.242,9-7.971,9-11.5A4.413,4.413,0,0,0,16.5,5,4.93,4.93,0,0,0,12,8Z" transform="translate(-3 -5)"></path></svg>
+                                </span>
+                                <span class="cart__quantity cart--favorites">1</span>
+                                <span class="nav__utilities__none">Favorites</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav__utilities__link nav__utilities__account" href="#">
+                                <span class="nav__utilities__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><defs><style>.a{fill:#013253;}</style></defs><path class="a" d="M12,12A4,4,0,1,0,8,8,4,4,0,0,0,12,12Zm0,2c-2.67,0-8,1.34-8,4v2H20V18C20,15.34,14.67,14,12,14Z" transform="translate(-4 -4)"></path></svg>
+                                </span>
+                                <span class="nav__utilities__none nav__utilities__none--sm">My Account</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav__utilities__link nav__utilities__cart view-cart-js" href="#">
+                                <span class="nav__utilities__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><defs><style>.a{fill:#013253;}.b{fill:none;}</style></defs><path class="a" d="M7,18a2,2,0,1,0,2,2A2,2,0,0,0,7,18ZM1,2V4H3l3.6,7.59L5.25,14.04A1.933,1.933,0,0,0,5,15a2.006,2.006,0,0,0,2,2H19V15H7.42a.248.248,0,0,1-.25-.25l.03-.12L8.1,13h7.45a1.991,1.991,0,0,0,1.75-1.03l3.58-6.49A.977.977,0,0,0,21,5a1,1,0,0,0-1-1H5.21L4.27,2H1ZM17,18a2,2,0,1,0,2,2A2,2,0,0,0,17,18Z"></path><path class="b" d="M0,0H24V24H0Z"></path></svg>
+                                </span>
+                                <span class="total-count-js"></span>
+                                <span class="nav__utilities__none nav__utilities__none--sm">My Cart</span>
+                            </a>
+                            <div class="dropdown__cart stop-body-js">
+                                <div class="view__empty order__info">
+                                    <h4 class="order__info__title order__info--flex">
+                                        <label class="info__label">You have no items in your shopping cart.</label>
+                                        <span class="icon__close close-view-js" data-close="dropdown__cart"></span>
+                                    </h4>
+                                </div>
+                                <div class="view__cart">
+                                    <div class="order__info">
+                                        <h4 class="order__info__title order__info--flex">
+                                            <label class="info__label">Your cart</label>
+                                            <span class="icon__close close-view-js" data-close="dropdown__cart"></span>
+                                        </h4>
+                                        <div id="product-js" class="products show-quantity-js overscroll" style="display: block;"></div>
+                                    </div>
+                                    <div class="order__info order__info--total">
+                                        <p class="order__info__subtotal order__info--flex">
+                                            <label class="info__label total-view-js"></label>
+                                            <span class="info__price">$<span id="subtotal-cart-js"></span></span>
+                                        </p>
+                                        <a href="../pages/carts.html" class="btn btn--green btn-view-cart-js">View cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <nav id="nav-js" class="nav nav-js">
+                <ul class="nav__navbar unstyled-list">
+                    <li class="nav__item nav__item__all stop-body-js">
+                        <a href="#" class="nav__link">
+                            <span class="nav__toggle"></span>
+                            Shop
+                        </a>
+                        <div class="close__menu d-none">
+                            <span class="close__menu__home nav-mobile-js"></span>
+                            <span id="nav-close-js" class="close__menu__back nav-close-js"></span>
+                            <span class="close__menu__close nav-mobile-js"></span>
+                        </div>
+                        <ul class="nav__dropdown nav__dropdown--categories">
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">
+                                    All products <span class="nav__link__count">(60)</span>
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">
+                                    Supplements <span class="nav__link__count">(30)</span>
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">
+                                    Powders <span class="nav__link__count">(2)</span>
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">
+                                    Bundles <span class="nav__link__count">(11)</span>
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">
+                                    Books <span class="nav__link__count">(5)</span>
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">
+                                    Digital Programs <span class="nav__link__count">(6)</span>
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="" class="nav__link">
+                                    Devices <span class="nav__link__count">(3)</span>
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">
+                                    Desserts <span class="nav__link__count">(2)</span>
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">
+                                    Summit <span class="nav__label">New</span>
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">
+                                    Immune <span class="nav__link__count">(3)</span> <span class="nav__label">Hot</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav__utilities unstyled-list nav__utilities--mobile">
+                            <li>
+                                <a class="nav__utilities__link nav__utilities__help drop-js" href="#">
+                                    <span class="nav__utilities__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><defs><style>.a1{fill:none;}.b{fill:#013253;}.c{fill:#fff;font-size:12px;font-family:Roboto-Bold, Roboto;font-weight:700;}</style></defs><path class="a1" d="M0,0H24V24H0Z"></path><circle class="b" cx="8" cy="8" r="8" transform="translate(4 4)"></circle><text class="c" transform="translate(9 16)"><tspan x="0" y="0">?</tspan></text></svg>
+                                    </span>
+                                    <span class="nav__utilities__none">Help</span>
+                                </a>
+                                <div class="drop__mobile drop__mobile--help">
+                                    <div class="help__title help__title--head">Help</div>
+                                    <div class="help__contact">
+                                        <div class="help__block">
+                                            <div class="help__title">
+                                                Call us
+                                            </div>
+                                            <a href="tel:703-354-7336" class="help__link">703-354-7336</a>
+                                        </div>
+                                        <div class="help__block">
+                                            <div class="help__title">
+                                                E-mail us
+                                            </div>
+                                            <a href="mailto:orders@drberg.com" class="help__link">orders@drberg.com</a>                                            
+                                        </div>
+                                    </div>
+                                    <div class="help__support">
+                                        <div class="help__title">
+                                            Support help
+                                        </div>
+                                        <div class="help__item">
+                                            <a href="#" class="help__link">Visit Support Portal</a>
+                                            <a href="#" class="help__link">Submit a support request</a>
+                                        </div>
+                                    </div>
+                                    <div class="help__hours">
+                                        <div class="help__title">
+                                            Hours of Operation:
+                                        </div>
+                                        <div class="help__item">
+                                            Monday – Friday: 8:30am – 5:30pm Eastern Time + Closed weekends and major holidays
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="nav__utilities__link nav__utilities__account drop-js" href="#">
+                                    <span class="nav__utilities__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><defs><style>.a{fill:#013253;}</style></defs><path class="a" d="M12,12A4,4,0,1,0,8,8,4,4,0,0,0,12,12Zm0,2c-2.67,0-8,1.34-8,4v2H20V18C20,15.34,14.67,14,12,14Z" transform="translate(-4 -4)"></path></svg>
+                                    </span>
+                                    <span class="nav__utilities__none nav__utilities__none--sm">My Account</span>
+                                </a>
+                                <div class="drop__mobile drop__mobile--account">
+                                    <a href="#" class="account__link">Sign in your account</a>
+                                    <a href="#" class="account__link">Create a new account</a>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="nav__utilities__link nav__utilities__favorites" href="#">
+                                    <span class="nav__utilities__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16"><defs><style>.a{fill:#013253;fill-rule:evenodd;}</style></defs><path class="a" d="M12,8A4.932,4.932,0,0,0,7.5,5,4.413,4.413,0,0,0,3,9.5c0,3.529,3.793,6.258,9,11.5,5.207-5.242,9-7.971,9-11.5A4.413,4.413,0,0,0,16.5,5,4.93,4.93,0,0,0,12,8Z" transform="translate(-3 -5)"></path></svg>
+                                    </span>
+                                    <span class="cart__quantity cart--favorites">1</span>
+                                    <span class="nav__utilities__none">Favorites</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav__utilities__link nav__utilities__cart" href="#">
+                                    <span class="nav__utilities__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><defs><style>.a{fill:#013253;}.b{fill:none;}</style></defs><path class="a" d="M7,18a2,2,0,1,0,2,2A2,2,0,0,0,7,18ZM1,2V4H3l3.6,7.59L5.25,14.04A1.933,1.933,0,0,0,5,15a2.006,2.006,0,0,0,2,2H19V15H7.42a.248.248,0,0,1-.25-.25l.03-.12L8.1,13h7.45a1.991,1.991,0,0,0,1.75-1.03l3.58-6.49A.977.977,0,0,0,21,5a1,1,0,0,0-1-1H5.21L4.27,2H1ZM17,18a2,2,0,1,0,2,2A2,2,0,0,0,17,18Z"></path><path class="b" d="M0,0H24V24H0Z"></path></svg>
+                                    </span>
+                                    <span class="total-count-mobile-js"></span>
+                                    <span class="nav__utilities__none nav__utilities__none--sm">My Cart</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Supplements</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Powders</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Bundles</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Books</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Digital Programs</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Devices</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Desserts</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            Summit
+                            <span class="nav__label">New</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            Immune
+                            <span class="nav__label">Hot</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+    <main class="wrapper">
+        <div class="container container--fixed">
+            <div class="alert__newsletter newsletter-success" style="display: none">
+                Thank you for your subscription.
+            </div>
+            <div class="cart__notify cart-notify-js stop-body-js">
+                <svg class="cart__notify__icon" xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38"><defs><style>.a44{fill:#013253;}.b44{fill:none;}</style></defs><path class="a44" d="M10.463,27.235a3.154,3.154,0,1,0,3.154,3.154A3.15,3.15,0,0,0,10.463,27.235ZM1,2V5.154H4.154L9.832,17.125,7.7,20.989A3.049,3.049,0,0,0,7.309,22.5a3.164,3.164,0,0,0,3.154,3.154H29.389V22.5H11.125a.39.39,0,0,1-.394-.394l.047-.189L12.2,19.349h11.75a3.139,3.139,0,0,0,2.76-1.624L32.354,7.489a1.541,1.541,0,0,0,.189-.757,1.582,1.582,0,0,0-1.577-1.577H7.64L6.157,2H1ZM26.235,27.235a3.154,3.154,0,1,0,3.154,3.154A3.15,3.15,0,0,0,26.235,27.235Z" transform="translate(0.614 1.228)"></path><path class="b44" d="M0,0H38V38H0Z"></path></svg>
+                <p class="cart__notify__content">
+                    <span class="cart__notify__title"></span>
+                    <a class="cart__notify__view" href="../pages/carts.html">View cart</a>
+                </p>
+                <svg class="cart__notify__close notify-close-js" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"><defs><style>.a11{fill:#fff;stroke:#000;opacity:0;}.b11{fill:none;stroke:#013253;stroke-linecap:round;stroke-width:2px;}</style></defs><g transform="translate(-3835 23564.5)"><rect class="a11" width="24" height="24" transform="translate(3859.5 -23540) rotate(180)"></rect><line class="b11" x2="11" transform="translate(3843.5 -23555.5) rotate(45)"></line><line class="b11" x2="11" transform="translate(3843.5 -23547.723) rotate(-45)"></line></g></svg>
+            </div>
+            <h1 class="cart__title">My Cart</h1>
+            <section class="cart__empty">
+                <p>You have no items in your shopping cart.</p>
+                <!-- <p>Click <a href="#" class="cart__empty__link">here</a> to continue shopping. </p> -->
+            </section>
+            <section class="cart">
+                <div class="row">
+                    <div class="col__12 col__lg__8--70">
+                        <div class="alert alert--cart alert-js mb-3" style="display: none;">
+                            Congratulations, your order qualified for free shipping (Us only)
+                            <span class="alert__close close-js" onclick="closeAlert(this)"></span>
+                        </div>
+                        <div class="alert alert--coupon alert-js mb-3" style="display: none;">
+                            <svg class="alert__check" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><defs><style>.a68{fill:#209c2c;}</style></defs><g transform="translate(-3.375 -3.375)"><path class="a68" d="M22.86,13.313l-1.021-1.038a.221.221,0,0,0-.162-.069h0a.212.212,0,0,0-.162.069l-7.077,7.048-2.576-2.546a.226.226,0,0,0-.325,0L10.5,17.8a.227.227,0,0,0,0,.327l3.249,3.212a1.032,1.032,0,0,0,.679.327,1.081,1.081,0,0,0,.673-.315h.006l7.756-7.708A.243.243,0,0,0,22.86,13.313Z" transform="translate(-1.301 -1.557)"></path><path class="a68" d="M15.375,4.99a10.381,10.381,0,1,1-7.344,3.04,10.316,10.316,0,0,1,7.344-3.04m0-1.615a12,12,0,1,0,12,12,12,12,0,0,0-12-12Z" transform="translate(0 0)"></path></g></svg>
+                            You used coupon code "<span class="alert-coupon-js"></span>".
+                            <span class="alert__close close-js" onclick="closeAlert(this)"></span>
+                        </div>
+                        <div class="alert alert--error alert--danger alert-js mb-3" style="display: none;">
+                            <span>
+                                <svg class="alert__check" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><defs><style>.a67{fill:#ff1c1c;}</style></defs><g transform="translate(-3.375 -3.375)"><path class="a67" d="M23.295,21.705,19.589,18l3.705-3.705a1.124,1.124,0,0,0-1.589-1.589L18,16.411l-3.705-3.705a1.124,1.124,0,0,0-1.589,1.589L16.411,18l-3.705,3.705a1.086,1.086,0,0,0,0,1.589,1.116,1.116,0,0,0,1.589,0L18,19.589l3.705,3.705a1.129,1.129,0,0,0,1.589,0A1.116,1.116,0,0,0,23.295,21.705Z" transform="translate(-2.623 -2.622)"></path><path class="a67" d="M15.375,4.99a10.381,10.381,0,1,1-7.344,3.04,10.316,10.316,0,0,1,7.344-3.04m0-1.615a12,12,0,1,0,12,12,12,12,0,0,0-12-12Z"></path></g></svg>
+                                Enter coupon code
+                            </span>
+                            <span class="alert__close" onclick="closeAlert(this)">
+                                <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"><defs><style>.a48{fill:#fff;stroke:#000;opacity:0;}.b48{fill:none;stroke:#FC642D;stroke-linecap:round;stroke-width:2px;}</style></defs><g transform="translate(-3835 23564.5)"><rect class="a48" width="24" height="24" transform="translate(3859.5 -23540) rotate(180)"></rect><line class="b48" x2="11" transform="translate(3843.5 -23555.5) rotate(45)"></line><line class="b48" x2="11" transform="translate(3843.5 -23547.723) rotate(-45)"></line></g></svg>
+                            </span>
+                        </div>
+                        <div class="alert alert--valid alert--danger alert-js mb-3" style="display: none;">
+                            <span>
+                                <svg class="alert__check" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><defs><style>.a67{fill:#ff1c1c;}</style></defs><g transform="translate(-3.375 -3.375)"><path class="a67" d="M23.295,21.705,19.589,18l3.705-3.705a1.124,1.124,0,0,0-1.589-1.589L18,16.411l-3.705-3.705a1.124,1.124,0,0,0-1.589,1.589L16.411,18l-3.705,3.705a1.086,1.086,0,0,0,0,1.589,1.116,1.116,0,0,0,1.589,0L18,19.589l3.705,3.705a1.129,1.129,0,0,0,1.589,0A1.116,1.116,0,0,0,23.295,21.705Z" transform="translate(-2.623 -2.622)"></path><path class="a67" d="M15.375,4.99a10.381,10.381,0,1,1-7.344,3.04,10.316,10.316,0,0,1,7.344-3.04m0-1.615a12,12,0,1,0,12,12,12,12,0,0,0-12-12Z"></path></g></svg>
+                                The coupon code is not valid.
+                            </span>
+                            <span class="alert__close" onclick="closeAlert(this)">
+                                <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"><defs><style>.a48{fill:#fff;stroke:#000;opacity:0;}.b48{fill:none;stroke:#FC642D;stroke-linecap:round;stroke-width:2px;}</style></defs><g transform="translate(-3835 23564.5)"><rect class="a48" width="24" height="24" transform="translate(3859.5 -23540) rotate(180)"></rect><line class="b48" x2="11" transform="translate(3843.5 -23555.5) rotate(45)"></line><line class="b48" x2="11" transform="translate(3843.5 -23547.723) rotate(-45)"></line></g></svg>
+                            </span>
+                        </div>
+                        <div class="cart__info bg-cart">
+                            <p class="cart__discount">DrBerg original products. 30 Days money back guarantee. 100% Secure checkout.</p>
+                            <div class="cart__items show-cart-js">   
+                            </div>
+                            <div class="cart__total">
+                                <div class="col__auto col__12 col__xl__5 ml-auto">
+                                    <p class="cart__total__item mb-1 order__info--flex">
+                                        <label class="info__label cart__desktop">Products:</label>
+                                        <label class="info__label cart__mobile">Products cost:</label>
+                                        <span>$<span id="product-cost-js" class="product-cost-js"></span></span>
+                                    </p>
+                                    <p class="cart__total__item mb-1 order__info__discount total-discount-mobile-js">
+                                        <label class="info__label cart__mobile">Discount:</label>
+                                        <span class="info__price d-inline-flex">
+                                            -$<span id="total-discount-mobile-js"></span>
+                                            <span class="info__discount discount-close-js">
+                                                <span class="text-coupon-mobile-js"></span>
+                                                <svg class="info__discount__svg" xmlns="http://www.w3.org/2000/svg" width="14.091" height="14" viewBox="0 0 14.091 14"><defs><style>.a345{fill:none;}.b345{fill:#0091a8;fill-rule:evenodd;}</style></defs><g transform="translate(0.091)"><rect class="a345" width="14" height="14" transform="translate(-0.091)"></rect><path class="b345" d="M151.389-13.6l-.989.989-2.511-2.511-2.511,2.511-.989-.989,2.511-2.511-2.511-2.511.989-.989,2.511,2.511,2.511-2.511.989.989-2.511,2.511Zm-3.5-9.511a7,7,0,0,0-7,7,7,7,0,0,0,7,7,7,7,0,0,0,7-7,7,7,0,0,0-7-7Z" transform="translate(-140.889 23.111)"></path></g></svg>
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <p class="cart__total__item cart__desktop mb-1 order__info--flex">
+                                        <label class="info__label">Shipping:</label>
+                                        <span>
+                                            (Estimated $11.63) 
+                                            <span class="tooltip">
+                                                <svg class="icon-hint" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><defs><style>.a55{fill:#fff;stroke:#013253;}.b55{fill:#013253;font-size:12px;font-family:Roboto-Regular, Roboto;}.c55{stroke:none;}.d{fill:none;}</style></defs><g transform="translate(-201 -707)"><g class="a55" transform="translate(201 707)"><circle class="c55" cx="9" cy="9" r="9"></circle><circle class="d55" cx="9" cy="9" r="8.5"></circle></g><text class="b55" transform="translate(207 720)"><tspan x="0" y="0">?</tspan></text></g></svg>
+                                                <span class="tooltip__price tooltip__price--shipping stop-body-js">
+                                                    Shipping cost is calculated in real time based on your location during checkout. <br/>
+                                                    For US it starts from $11.63 (Ground 1-4 Days) and $18.41 for 2 Day Air
+                                                    <svg class="tooltip__close" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"><defs><style>.a44{fill:#fff;stroke:#000;opacity:0;}.b44{fill:none;stroke:#707070;stroke-linecap:round;stroke-width:2px;}</style></defs><g transform="translate(-3835 23564.5)"><rect class="a44" width="24" height="24" transform="translate(3859.5 -23540) rotate(180)"></rect><line class="b44" x2="11" transform="translate(3843.5 -23555.5) rotate(45)"></line><line class="b44" x2="11" transform="translate(3843.5 -23547.723) rotate(-45)"></line></g></svg>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <p class="cart__total__item mb-1 order__info--flex">
+                                        <label class="info__label">Subtotal:</label>
+                                        <span class="total-js">
+                                            $<span id="subtotal-cart-js" class="subtotal-cart-js"></span>
+                                            <span class="tooltip">
+                                                <svg class="icon-hint" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><defs><style>.a55{fill:#fff;stroke:#013253;}.b55{fill:#013253;font-size:12px;font-family:Roboto-Regular, Roboto;}.c55{stroke:none;}.d{fill:none;}</style></defs><g transform="translate(-201 -707)"><g class="a55" transform="translate(201 707)"><circle class="c55" cx="9" cy="9" r="9"></circle><circle class="d55" cx="9" cy="9" r="8.5"></circle></g><text class="b55" transform="translate(207 720)"><tspan x="0" y="0">?</tspan></text></g></svg>
+                                                <span class="tooltip__price stop-body-js">
+                                                    Price including taxes (estimated shipping cost is not included)
+                                                    <svg class="tooltip__close" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"><defs><style>.a44{fill:#fff;stroke:#000;opacity:0;}.b44{fill:none;stroke:#707070;stroke-linecap:round;stroke-width:2px;}</style></defs><g transform="translate(-3835 23564.5)"><rect class="a44" width="24" height="24" transform="translate(3859.5 -23540) rotate(180)"></rect><line class="b44" x2="11" transform="translate(3843.5 -23555.5) rotate(45)"></line><line class="b44" x2="11" transform="translate(3843.5 -23547.723) rotate(-45)"></line></g></svg>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col__12 col__lg__4--30">
+                        <div class="order">
+                            <div class="order__info">
+                                <h4 class="order__info__title order__info__title--cart">
+                                    Order Summary
+                                </h4>
+                                <p class="order__info__text order__info__cost mb-2">
+                                    <label class="info__label">Product cost:</label>
+                                    <span class="info__price">$<span id="product-order-js" class="product-order-js"></span></span>
+                                </p>
+                                <p class="order__info__text order__info__discount mb-2 total-discount-js">
+                                    <label class="info__label">Discount:</label>
+                                    <span class="info__price d-inline-flex">
+                                        -$<span id="total-discount-js"></span>
+                                        <span class="info__discount discount-close-js">
+                                            <span class="text-coupon-js"></span>
+                                            <svg class="info__discount__svg" xmlns="http://www.w3.org/2000/svg" width="14.091" height="14" viewBox="0 0 14.091 14"><defs><style>.a345{fill:none;}.b345{fill:#0091a8;fill-rule:evenodd;}</style></defs><g transform="translate(0.091)"><rect class="a345" width="14" height="14" transform="translate(-0.091)"></rect><path class="b345" d="M151.389-13.6l-.989.989-2.511-2.511-2.511,2.511-.989-.989,2.511-2.511-2.511-2.511.989-.989,2.511,2.511,2.511-2.511.989.989-2.511,2.511Zm-3.5-9.511a7,7,0,0,0-7,7,7,7,0,0,0,7,7,7,7,0,0,0,7-7,7,7,0,0,0-7-7Z" transform="translate(-140.889 23.111)"></path></g></svg>
+                                        </span>
+                                    </span>
+                                </p>
+                                <p class="order__info__text order__info__shipping mb-2">
+                                    <label class="info__label">Shipping cost:</label>
+                                    <span class="info__price d-inline-flex">
+                                        (Estimated $11.63) 
+                                        <span class="tooltip">
+                                            <svg class="icon-hint" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><defs><style>.a55{fill:#fff;stroke:#013253;}.b55{fill:#013253;font-size:12px;font-family:Roboto-Regular, Roboto;}.c55{stroke:none;}.d{fill:none;}</style></defs><g transform="translate(-201 -707)"><g class="a55" transform="translate(201 707)"><circle class="c55" cx="9" cy="9" r="9"></circle><circle class="d55" cx="9" cy="9" r="8.5"></circle></g><text class="b55" transform="translate(207 720)"><tspan x="0" y="0">?</tspan></text></g></svg>
+                                            <span class="tooltip__price tooltip__price--shipping-order stop-body-js">
+                                                Shipping cost is calculated in real time based on your location during checkout. <br/>
+                                                For US it starts from $11.63 (Ground 1-4 Days) and $18.41 for 2 Day Air
+                                                <svg class="tooltip__close" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"><defs><style>.a44{fill:#fff;stroke:#000;opacity:0;}.b44{fill:none;stroke:#707070;stroke-linecap:round;stroke-width:2px;}</style></defs><g transform="translate(-3835 23564.5)"><rect class="a44" width="24" height="24" transform="translate(3859.5 -23540) rotate(180)"></rect><line class="b44" x2="11" transform="translate(3843.5 -23555.5) rotate(45)"></line><line class="b44" x2="11" transform="translate(3843.5 -23547.723) rotate(-45)"></line></g></svg>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </p>
+                                <p class="order__info__subtotal order__info__subtotal--cart">
+                                    <label class="info__label subtotal--text">Subtotal:</label>
+                                    <span class="info__price subtotal--text">
+                                        $<span id="subtotal-order-js" class="subtotal-order-js"></span>
+                                        <span class="tooltip">
+                                            <svg class="icon-hint" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><defs><style>.a55{fill:#fff;stroke:#013253;}.b55{fill:#013253;font-size:12px;font-family:Roboto-Regular, Roboto;}.c55{stroke:none;}.d{fill:none;}</style></defs><g transform="translate(-201 -707)"><g class="a55" transform="translate(201 707)"><circle class="c55" cx="9" cy="9" r="9"></circle><circle class="d55" cx="9" cy="9" r="8.5"></circle></g><text class="b55" transform="translate(207 720)"><tspan x="0" y="0">?</tspan></text></g></svg>
+                                            <span class="tooltip__price tooltip__price--order stop-body-js">
+                                                Price including taxes (estimated shipping cost is not included)
+                                                <svg class="tooltip__close" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"><defs><style>.a44{fill:#fff;stroke:#000;opacity:0;}.b44{fill:none;stroke:#707070;stroke-linecap:round;stroke-width:2px;}</style></defs><g transform="translate(-3835 23564.5)"><rect class="a44" width="24" height="24" transform="translate(3859.5 -23540) rotate(180)"></rect><line class="b44" x2="11" transform="translate(3843.5 -23555.5) rotate(45)"></line><line class="b44" x2="11" transform="translate(3843.5 -23547.723) rotate(-45)"></line></g></svg>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </p>
+                                <div class="order__info__payment">
+                                    <label class="info__label">Pay with:</label>
+                                    <label class="frm__checkbox">
+                                        <span class="info__payment">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="51" height="30" viewBox="0 0 41 24"><defs><style>.a78{fill:#fff;stroke:#e3e3e3;}.b78{fill:#1a1f71;}.c78{stroke:none;}.d{fill:none;}</style></defs><g transform="translate(-1130 -256)"><g class="a78" transform="translate(1130 256)"><rect class="c78" width="41" height="24" rx="3"></rect><rect class="d" x="0.5" y="0.5" width="40" height="23" rx="2.5"></rect></g><g transform="translate(1133.891 263.055)"><path class="b78" d="M11.746.185l-4.051,10H5.045l-1.987-8a1.1,1.1,0,0,0-.586-.871A9.8,9.8,0,0,0,0,.475L.051.185H4.306A1.178,1.178,0,0,1,5.453,1.214L6.5,6.993,9.1.185Zm10.37,6.729c0-2.639-3.516-2.8-3.491-3.958,0-.369.331-.739,1.07-.844a4.619,4.619,0,0,1,2.472.449L22.6.449A6.319,6.319,0,0,0,20.257,0c-2.472,0-4.2,1.372-4.23,3.3C16,4.75,17.275,5.542,18.218,6.017s1.3.818,1.3,1.24c0,.66-.79.976-1.5.976A4.985,4.985,0,0,1,15.441,7.6l-.459,2.19a6.882,6.882,0,0,0,2.777.528c2.624.026,4.332-1.319,4.357-3.4Zm6.523,3.272h2.319l-2.013-10h-2.14a1.139,1.139,0,0,0-1.07.739l-3.771,9.263h2.624l.51-1.5h3.21Zm-2.8-3.536L27.162,2.9l.764,3.747ZM15.314.185l-2.064,10h-2.5l2.064-10Z" transform="translate(0 0)"></path></g></g></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="30" viewBox="0 0 35 24"><defs><style>.a79{fill:#fff;stroke:#e3e3e3;}.b79{fill:#222;}.c79{fill:#ff5f00;}.d79{fill:#eb001b;}.e79{fill:#f79e1b;}.f79{stroke:none;}.g79{fill:none;}</style></defs><g transform="translate(-1175 -256)"><g class="a79" transform="translate(1175 256)"><rect class="f79" width="35" height="24" rx="3"></rect><rect class="g79" x="0.5" y="0.5" width="34" height="23" rx="2.5"></rect></g><g transform="translate(1182.545 261.281)"><g transform="translate(0 0)"><path class="b79" d="M4.206,30.954v-1.04a.63.63,0,0,0-.158-.477.546.546,0,0,0-.441-.182.626.626,0,0,0-.551.295.558.558,0,0,0-.518-.295.539.539,0,0,0-.47.243V29.29H1.76v1.664h.308V30a.405.405,0,0,1,.1-.315.35.35,0,0,1,.29-.118c.227,0,.356.156.356.433v.953h.308V30a.405.405,0,0,1,.1-.315.35.35,0,0,1,.29-.118c.227,0,.356.156.356.433v.953ZM9.26,29.307H8.693v-.5H8.385v.5H8.061V29.6h.324v.78c0,.381.13.606.518.606a.861.861,0,0,0,.421-.121l-.1-.295a.507.507,0,0,1-.292.087.219.219,0,0,1-.184-.076.254.254,0,0,1-.059-.2v-.8H9.26Zm2.883-.052a.479.479,0,0,0-.421.243V29.29h-.308v1.664h.308v-.936c0-.277.13-.451.34-.451a.889.889,0,0,1,.211.035l.1-.312A1.026,1.026,0,0,0,12.143,29.255Zm-4.357.173a1.056,1.056,0,0,0-.632-.173c-.389,0-.632.191-.632.52,0,.277.178.433.518.485l.162.017c.178.035.292.1.292.191,0,.121-.13.208-.373.208A.816.816,0,0,1,6.6,30.5l-.162.26a1.118,1.118,0,0,0,.664.208c.454,0,.7-.225.7-.537s-.194-.433-.535-.485l-.162-.017c-.146-.017-.275-.069-.275-.173s.13-.208.308-.208a1.109,1.109,0,0,1,.486.139Zm4.714.693a.85.85,0,0,0,.222.628.737.737,0,0,0,.587.238.776.776,0,0,0,.551-.191l-.162-.26a.623.623,0,0,1-.405.156.56.56,0,0,1,0-1.109.623.623,0,0,1,.405.156l.162-.26a.776.776,0,0,0-.551-.191.7.7,0,0,0-.589.211.807.807,0,0,0-.221.621Zm-2.187-.866a.775.775,0,0,0-.761.866.848.848,0,0,0,.216.623.736.736,0,0,0,.578.244.95.95,0,0,0,.632-.225l-.162-.243a.743.743,0,0,1-.454.173.466.466,0,0,1-.47-.433h1.15v-.139c0-.52-.292-.866-.729-.866Zm0,.312a.373.373,0,0,1,.286.115.429.429,0,0,1,.119.3H9.875a.427.427,0,0,1,.437-.416Zm-4.2.554V29.29H5.81V29.5a.581.581,0,0,0-.5-.243.868.868,0,0,0,0,1.733.58.58,0,0,0,.5-.243v.208h.308Zm-1.263,0a.5.5,0,0,1,.506-.485.522.522,0,0,1-.02,1.039.461.461,0,0,1-.359-.161.532.532,0,0,1-.127-.394Zm11.971-.866a.479.479,0,0,0-.421.243V29.29H16.1v1.664H16.4v-.936c0-.277.13-.451.34-.451a.89.89,0,0,1,.211.035l.1-.312a1.026,1.026,0,0,0-.227-.035Zm-1.2.866V29.29h-.308V29.5a.581.581,0,0,0-.5-.243.868.868,0,0,0,0,1.733.581.581,0,0,0,.5-.243v.208h.308Zm-1.247,0a.5.5,0,0,1,.506-.485.522.522,0,0,1-.02,1.039c-.308.017-.486-.243-.486-.554Zm4.39,0v-1.49h-.308V29.5a.581.581,0,0,0-.5-.243.868.868,0,0,0,0,1.733.581.581,0,0,0,.5-.243v.208h.308Zm-1.263,0a.5.5,0,0,1,.506-.485.522.522,0,0,1-.02,1.039.461.461,0,0,1-.359-.161A.532.532,0,0,1,17.5,30.122Z" transform="translate(-1.126 -16.119)"></path><rect class="c79" width="5.684" height="9.142" transform="translate(6.708 1.244)"></rect><path class="d79" d="M7.613,5.962A5.8,5.8,0,0,1,9.857,1.391a5.963,5.963,0,0,0-6.991-.217A5.772,5.772,0,0,0,.584,7.694a5.935,5.935,0,0,0,9.274,2.839A5.8,5.8,0,0,1,7.613,5.962Z" transform="translate(-0.316 -0.147)"></path><path class="e79" d="M31.607,5.97a5.808,5.808,0,0,1-3.318,5.223,5.965,5.965,0,0,1-6.215-.652,5.778,5.778,0,0,0,0-9.142A5.965,5.965,0,0,1,28.289.747,5.808,5.808,0,0,1,31.607,5.97Z" transform="translate(-12.517 -0.155)"></path></g></g></g></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="30" viewBox="0 0 48 30"><defs><style>.a80{fill:#fff;stroke:#e2e2e2;}.b80{fill:#016fd0;}.c80{stroke:none;}.d80{fill:none;}</style></defs><g transform="translate(-1238 -419)"><g class="a80" transform="translate(1238 419)"><rect class="c80" width="48" height="30" rx="3"></rect><rect class="d80" x="0.5" y="0.5" width="47" height="29" rx="2.5"></rect></g><g transform="translate(1101.209 75.233)"><path class="b80" d="M142.645,352.584l-1.952,4.538h1.271l.36-.909h2.094l.358.909h1.3l-1.95-4.538Zm.722,1.056.638,1.588h-1.278Z" transform="translate(0 -0.019)"></path><path class="b80" d="M283.223,357.1v-4.538l1.806.007,1.05,2.926,1.025-2.933H288.9V357.1h-1.135v-3.344l-1.2,3.344h-.995l-1.206-3.344V357.1Z" transform="translate(-137.014)"></path><path class="b80" d="M449.861,357.1v-4.538h3.7v1.015h-2.556v.776h2.5v.955h-2.5v.806h2.556v.985Z" transform="translate(-297.203)"></path><path class="b80" d="M562.5,352.584v4.538h1.135V355.51h.478l1.36,1.612h1.386l-1.493-1.672a1.382,1.382,0,0,0,1.245-1.394,1.468,1.468,0,0,0-1.586-1.472Zm1.135,1.015h1.3a.521.521,0,0,1,.537.478.513.513,0,0,1-.521.478h-1.314Z" transform="translate(-405.48 -0.019)"></path><path class="b80" d="M681.844,357.1h-1.158v-4.538h1.158Z" transform="translate(-519.095)"></path><path class="b80" d="M727.087,357.1h-.25a2,2,0,0,1-1.944-2.25,2.079,2.079,0,0,1,2.254-2.288H728.4v1.075h-1.3a1.092,1.092,0,0,0-1.059,1.224,1.111,1.111,0,0,0,1.224,1.248h.3Z" transform="translate(-561.591)"></path><path class="b80" d="M796.9,352.584l-1.952,4.538h1.271l.36-.909h2.094l.358.909h1.3l-1.95-4.538Zm.722,1.056.638,1.588h-1.278l.64-1.588Z" transform="translate(-628.938 -0.019)"></path><path class="b80" d="M937.434,357.1v-4.538h1.442l1.842,2.851v-2.851h1.135V357.1h-1.4l-1.888-2.926V357.1Z" transform="translate(-765.907)"></path><path class="b80" d="M354.2,562.314v-4.538h3.7v1.015h-2.556v.776h2.5v.955h-2.5v.806H357.9v.985Z" transform="translate(-205.242 -197.27)"></path><path class="b80" d="M822.946,562.314v-4.538h3.7v1.015h-2.556v.776h2.484v.955h-2.484v.806h2.556v.985Z" transform="translate(-655.85 -197.27)"></path><path class="b80" d="M452.508,562.314l1.8-2.241-1.845-2.3h1.429l1.1,1.42,1.1-1.42h1.373l-1.821,2.269,1.806,2.269h-1.429l-1.067-1.4-1.041,1.4Z" transform="translate(-299.706 -197.27)"></path><path class="b80" d="M584.869,557.795v4.538h1.164V560.9h1.194A1.57,1.57,0,0,0,589,559.321a1.494,1.494,0,0,0-1.629-1.526Zm1.164,1.026h1.258a.512.512,0,0,1,.56.523.524.524,0,0,1-.564.523h-1.254v-1.045Z" transform="translate(-426.986 -197.289)"></path><path class="b80" d="M704.448,557.776v4.538h1.135V560.7h.478l1.36,1.612h1.386l-1.493-1.672a1.382,1.382,0,0,0,1.245-1.394,1.468,1.468,0,0,0-1.586-1.472Zm1.135,1.015h1.3a.521.521,0,0,1,.537.478.513.513,0,0,1-.521.478h-1.314Z" transform="translate(-541.938 -197.27)"></path><path class="b80" d="M928.609,562.314v-.985h2.271c.336,0,.481-.182.481-.381s-.145-.384-.481-.384h-1.026a1.269,1.269,0,0,1-1.389-1.359c0-.728.455-1.429,1.78-1.429h2.209l-.478,1.021h-1.911c-.365,0-.478.192-.478.375a.4.4,0,0,0,.418.4h1.075a1.245,1.245,0,0,1,1.426,1.3,1.361,1.361,0,0,1-1.48,1.444Z" transform="translate(-757.285 -197.27)"></path><path class="b80" d="M1036.205,562.314v-.985h2.271c.336,0,.481-.182.481-.381s-.145-.384-.481-.384h-1.026a1.269,1.269,0,0,1-1.389-1.359c0-.728.455-1.429,1.78-1.429h2.209l-.478,1.021h-1.911c-.365,0-.478.192-.478.375a.4.4,0,0,0,.418.4h1.075a1.245,1.245,0,0,1,1.426,1.3,1.361,1.361,0,0,1-1.48,1.444Z" transform="translate(-860.717 -197.27)"></path></g></g></svg>
+                                            <svg id="google-pay" xmlns="http://www.w3.org/2000/svg" width="48" height="30" viewBox="0 0 48 30"><defs><style>.a82{fill:#fff;stroke:#e2e2e2;}.b82{fill:#5f6368;}.c82{fill:#4285f4;}.d82{fill:#34a853;}.e82{fill:#fabb05;}.f82{fill:#e94235;}.g82{stroke:none;}.h82{fill:none;}</style></defs><g transform="translate(-1347 -419)"><g class="a82" transform="translate(1347 419)"><rect class="g82" width="48" height="30" rx="3"></rect><rect class="h82" x="0.5" y="0.5" width="47" height="29" rx="2.5"></rect></g><g transform="translate(1303.71 296.227)"><g transform="translate(49.29 130.773)"><g transform="translate(0)"><g transform="translate(15.655 0.825)"><path class="b82" d="M206.036,140.227v3.6h2.22a1.755,1.755,0,0,0,1.312-.533,1.807,1.807,0,0,0-1.312-3.067h-2.22Zm0,4.866v4.175H204.71V138.96h3.517a3.178,3.178,0,0,1,2.276.893,2.974,2.974,0,0,1,0,4.362,3.173,3.173,0,0,1-2.276.878h-2.191Z" transform="translate(-204.71 -138.96)"></path><path class="b82" d="M272.749,174.1a1.057,1.057,0,0,0,.44.864,1.621,1.621,0,0,0,1.03.345,2.114,2.114,0,0,0,1.491-.619,1.937,1.937,0,0,0,.656-1.453,2.722,2.722,0,0,0-1.729-.49,2.247,2.247,0,0,0-1.347.389,1.153,1.153,0,0,0-.541.963m1.716-5.125a3.289,3.289,0,0,1,2.321.785,2.782,2.782,0,0,1,.85,2.152v4.348h-1.268v-.979h-.058a2.529,2.529,0,0,1-2.19,1.208,2.849,2.849,0,0,1-1.953-.69,2.206,2.206,0,0,1-.786-1.728,2.094,2.094,0,0,1,.828-1.741,3.5,3.5,0,0,1,2.212-.648,3.922,3.922,0,0,1,1.945.432v-.3a1.507,1.507,0,0,0-.547-1.173,1.877,1.877,0,0,0-1.283-.482,2.03,2.03,0,0,0-1.758.936l-1.168-.735a3.258,3.258,0,0,1,2.854-1.382" transform="translate(-264.665 -165.954)"></path><g transform="translate(13.186 3.254)"><path class="b82" d="M342.682,171.263l-4.425,10.163h-1.369l1.643-3.556-2.911-6.607h1.442l2.1,5.067h.028l2.046-5.067Z" transform="translate(-335.62 -171.263)"></path></g></g><path class="c82" d="M113.848,180.16a7.048,7.048,0,0,0-.1-1.2h-5.592v2.281h3.2a2.74,2.74,0,0,1-1.184,1.8v1.481h1.911a5.791,5.791,0,0,0,1.764-4.358" transform="translate(-102.225 -174.102)"></path><path class="d82" d="M60.857,205.618a5.676,5.676,0,0,0,3.93-1.431l-1.911-1.481a3.6,3.6,0,0,1-5.347-1.878H55.559v1.526a5.93,5.93,0,0,0,5.3,3.264" transform="translate(-54.928 -193.772)"></path><path class="e82" d="M51.89,166.963a3.551,3.551,0,0,1,0-2.267V163.17H49.921a5.916,5.916,0,0,0,0,5.319Z" transform="translate(-49.29 -159.907)"></path><path class="f82" d="M60.857,133.117a3.22,3.22,0,0,1,2.275.888h0l1.692-1.691a5.7,5.7,0,0,0-3.967-1.543,5.929,5.929,0,0,0-5.3,3.263l1.969,1.526a3.546,3.546,0,0,1,3.329-2.445" transform="translate(-54.928 -130.773)"></path></g></g></g></g></svg>
+                                        </span>
+                                        <input type="radio" name="pay_type" class="frm__checkbox__control" data-radio="card" checked/>
+                                        <span class="frm__checkbox__checkmark"></span>
+                                    </label>
+                                    <label class="frm__checkbox">
+                                        <span class="info__payment">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="30" viewBox="0 0 100 30"><defs><style>.a83{fill:#fff;stroke:#e2e2e2;}.b83{fill:#238ec2;}.b83,.c83,.d83{fill-rule:evenodd;}.c83{fill:#253667;}.d83{fill:#20274f;}.e83{stroke:none;}.f83{fill:none;}</style></defs><g transform="translate(-1130 -468)"><g class="a83" transform="translate(1130 468)"><rect class="e83" width="100" height="30" rx="3"></rect><rect class="f83" x="0.5" y="0.5" width="99" height="29" rx="2.5"></rect></g><g transform="translate(7 166)"><path class="b83" d="M24.608,27.728c-.208,1.382-1.254,1.382-2.264,1.382h-.575l.4-2.582a.319.319,0,0,1,.312-.272h.264c.688,0,1.337,0,1.673.4a1.309,1.309,0,0,1,.183,1.074Zm-.44-3.61h-3.81a.533.533,0,0,0-.523.453L18.3,34.447a.321.321,0,0,0,.312.371h1.956a.371.371,0,0,0,.367-.315l.435-2.8a.536.536,0,0,1,.524-.452H23.1a3.928,3.928,0,0,0,4.338-3.662,3,3,0,0,0-.487-2.485,3.529,3.529,0,0,0-2.782-.986Z" transform="translate(1168.687 286.215)"></path><path class="c83" d="M6.316,27.728C6.108,29.11,5.064,29.11,4.054,29.11H3.474l.4-2.582a.323.323,0,0,1,.316-.272h.264c.688,0,1.337,0,1.673.4a1.3,1.3,0,0,1,.184,1.074Zm-.44-3.61H2.068a.531.531,0,0,0-.523.453L0,34.446a.321.321,0,0,0,.312.371H2.139a.531.531,0,0,0,.523-.452L3.078,31.7a.531.531,0,0,1,.523-.452H4.807a3.928,3.928,0,0,0,4.338-3.662,2.992,2.992,0,0,0-.49-2.485,3.506,3.506,0,0,0-2.778-.986Z" transform="translate(1157.852 286.214)"></path><path class="c83" d="M11.9,30.164a2.041,2.041,0,0,1-2.059,1.76,1.533,1.533,0,0,1-1.226-.5,1.581,1.581,0,0,1-.288-1.3A2.048,2.048,0,0,1,10.37,28.36a1.534,1.534,0,0,1,1.218.5,1.612,1.612,0,0,1,.308,1.3Zm2.54-3.591H12.616a.317.317,0,0,0-.312.272l-.082.513-.128-.187A2.579,2.579,0,0,0,9.941,26.4a4.208,4.208,0,0,0-4.07,3.708,3.494,3.494,0,0,0,.677,2.833,2.838,2.838,0,0,0,2.3.936A3.476,3.476,0,0,0,11.37,32.82l-.08.514a.321.321,0,0,0,.312.371h1.644a.534.534,0,0,0,.523-.453l.983-6.314a.322.322,0,0,0-.315-.371Z" transform="translate(1161.291 287.322)"></path><path class="b83" d="M30.188,30.164a2.035,2.035,0,0,1-2.057,1.76,1.528,1.528,0,0,1-1.224-.5,1.574,1.574,0,0,1-.282-1.3,2.047,2.047,0,0,1,2.043-1.771,1.534,1.534,0,0,1,1.218.5,1.612,1.612,0,0,1,.308,1.3Zm2.545-3.591H30.909a.316.316,0,0,0-.312.272l-.082.513-.128-.187a2.583,2.583,0,0,0-2.154-.772,4.214,4.214,0,0,0-4.073,3.708,3.516,3.516,0,0,0,.679,2.833,2.833,2.833,0,0,0,2.3.936,3.48,3.48,0,0,0,2.525-1.055l-.082.514a.322.322,0,0,0,.315.371h1.643a.533.533,0,0,0,.523-.453l.986-6.314a.321.321,0,0,0-.312-.371Z" transform="translate(1172.414 287.322)"></path><path class="c83" d="M20.94,26.518H19.107a.524.524,0,0,0-.438.233l-2.53,3.766L15.069,26.9a.533.533,0,0,0-.51-.382h-1.8a.319.319,0,0,0-.3.423l2.02,5.991-1.9,2.708a.322.322,0,0,0,.26.508h1.835a.529.529,0,0,0,.435-.23l6.1-8.9a.32.32,0,0,0-.261-.5" transform="translate(1165.207 287.38)"></path><path class="b83" d="M31.872,24.388,30.309,34.445a.321.321,0,0,0,.312.371H32.2a.528.528,0,0,0,.52-.452l1.548-9.876a.322.322,0,0,0-.315-.371H32.184a.32.32,0,0,0-.312.272" transform="translate(1175.424 286.215)"></path></g><g transform="translate(11.674 168.886)"><path class="c83" d="M13.846,4.077a.629.629,0,0,1,.381-.463.744.744,0,0,1,.3-.061h4.295a9.806,9.806,0,0,1,1.417.093c.124.018.244.039.362.062s.23.05.34.079l.163.044a4.348,4.348,0,0,1,.594.228,2.95,2.95,0,0,0-.741-2.848c-.818-.84-2.293-1.2-4.18-1.2H11.292a.764.764,0,0,0-.775.6L8.239,13.692a.441.441,0,0,0,.464.492h3.383L13.847,4.077" transform="translate(1122.093 305.99)"></path><path class="b83" d="M20.275,4.06a3.189,3.189,0,0,0-.664-2.848c-.731-.84-2.05-1.2-3.738-1.2h-4.9a.7.7,0,0,0-.693.6L8.238,13.692a.424.424,0,0,0,.415.492H11.68l-.208,1.339a.37.37,0,0,0,.363.43h2.55a.618.618,0,0,0,.608-.523l.024-.131.482-3.08.03-.168a.616.616,0,0,1,.606-.524h.382c2.471,0,4.406-1.015,4.971-3.95a3.385,3.385,0,0,0-.511-2.969,2.4,2.4,0,0,0-.7-.546" transform="translate(1122.879 305.99)"></path><path class="d83" d="M21.692,4.06a2.948,2.948,0,0,0-.742-2.848c-.817-.84-2.291-1.2-4.179-1.2H11.292a.764.764,0,0,0-.775.6L8.239,13.692a.441.441,0,0,0,.464.492h3.383l.85-4.873-.025.151a.758.758,0,0,1,.77-.6h1.607c3.156,0,5.629-1.16,6.352-4.515.022-.1.04-.2.056-.291" transform="translate(1122.093 305.99)"></path></g></g></svg>
+                                        </span>
+                                        <input type="radio" name="pay_type" class="frm__checkbox__control" data-radio="paypal"/>
+                                        <span class="frm__checkbox__checkmark"></span>
+                                    </label>
+                                    <label class="frm__checkbox">
+                                        <span class="info__payment">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="30" viewBox="0 0 100 30"><defs><style>.a84{fill:#fff;stroke:#e2e2e2;}.b84{fill:#f8991d;}.b84,.c84{fill-rule:evenodd;}.c84{fill:#333e47;}.d84{stroke:none;}.e84{fill:none;}</style></defs><g transform="translate(-1130 -517)"><g class="a84" transform="translate(1130 517)"><rect class="d84" width="100" height="30" rx="3"></rect><rect class="e84" x="0.5" y="0.5" width="99" height="29" rx="2.5"></rect></g><g transform="translate(752 262)"><path class="b84" d="M429.507,287.161a18.567,18.567,0,0,1-10.482,3.2,18.968,18.968,0,0,1-12.8-4.884c-.265-.24-.029-.567.291-.381a25.771,25.771,0,0,0,12.811,3.4,25.482,25.482,0,0,0,9.772-2c.479-.2.881.316.412.663Z" transform="translate(-9.244 -12.652)"></path><path class="b84" d="M459.021,285.128c-.363-.464-2.4-.22-3.31-.111-.276.033-.32-.208-.07-.384,1.622-1.139,4.281-.81,4.59-.429s-.082,3.05-1.6,4.322c-.234.2-.457.091-.353-.167.342-.855,1.108-2.768.745-3.232Z" transform="translate(-37.579 -11.965)"></path><path class="c84" d="M455.8,264.928v-1.107a.273.273,0,0,1,.281-.28h4.963a.276.276,0,0,1,.286.279v.95a1.557,1.557,0,0,1-.373.7l-2.571,3.67a5.512,5.512,0,0,1,2.831.608.507.507,0,0,1,.263.432v1.182c0,.163-.179.351-.366.253a5.716,5.716,0,0,0-5.243.01c-.173.092-.353-.094-.353-.257v-1.123a1.336,1.336,0,0,1,.185-.761l2.978-4.273h-2.593a.277.277,0,0,1-.287-.279Z" transform="translate(-37.601 -0.31)"></path><path class="c84" d="M411.294,271.651h-1.51a.285.285,0,0,1-.27-.255v-7.748a.285.285,0,0,1,.291-.279h1.406a.285.285,0,0,1,.274.26v1.011h.028a2.074,2.074,0,0,1,3.946,0,2.23,2.23,0,0,1,3.833-.587,4.116,4.116,0,0,1,.381,2.43v4.89a.285.285,0,0,1-.291.279h-1.508a.282.282,0,0,1-.271-.278v-4.108a9.887,9.887,0,0,0-.042-1.451.787.787,0,0,0-.887-.669,1,1,0,0,0-.9.636,4.683,4.683,0,0,0-.141,1.484v4.108a.285.285,0,0,1-.291.279h-1.508a.283.283,0,0,1-.271-.278l0-4.108c0-.864.141-2.135-.93-2.135s-1.043,1.239-1.043,2.135v4.108a.285.285,0,0,1-.291.279Z" transform="translate(-11.2 -0.118)"></path><path class="c84" d="M474.621,264.787c-1.113,0-1.184,1.516-1.184,2.462s-.014,2.968,1.17,2.968,1.226-1.631,1.226-2.625a7.161,7.161,0,0,0-.226-2.055.945.945,0,0,0-.987-.75Zm-.013-1.582c2.24,0,3.452,1.925,3.452,4.37,0,2.364-1.339,4.24-3.452,4.24-2.2,0-3.4-1.924-3.4-4.321,0-2.414,1.212-4.289,3.4-4.289Z" transform="translate(-46.61 -0.118)"></path><path class="c84" d="M491.713,271.651h-1.5a.283.283,0,0,1-.271-.278l0-7.751a.286.286,0,0,1,.29-.253h1.4a.287.287,0,0,1,.268.217v1.185h.029a2.053,2.053,0,0,1,2.057-1.565,1.978,1.978,0,0,1,1.761.913,4.927,4.927,0,0,1,.395,2.413v4.876a.286.286,0,0,1-.289.244h-1.513a.284.284,0,0,1-.269-.244V267.2c0-.848.1-2.088-.944-2.088a.988.988,0,0,0-.874.62,3.44,3.44,0,0,0-.239,1.468v4.172a.29.29,0,0,1-.294.279Z" transform="translate(-57.356 -0.118)"></path><path class="c84" d="M442.422,271.531a.311.311,0,0,1-.356.035,3.684,3.684,0,0,1-.866-1.006,2.991,2.991,0,0,1-2.489,1.1,2.143,2.143,0,0,1-2.259-2.353,2.564,2.564,0,0,1,1.61-2.467,10.434,10.434,0,0,1,2.839-.523v-.2a1.934,1.934,0,0,0-.184-1.095,1.01,1.01,0,0,0-.847-.392,1.15,1.15,0,0,0-1.214.907.32.32,0,0,1-.262.278l-1.463-.158a.266.266,0,0,1-.226-.316c.332-1.751,1.9-2.3,3.317-2.311h.112a3.4,3.4,0,0,1,2.222.752c.735.686.663,1.6.663,2.6v2.352a2.062,2.062,0,0,0,.57,1.4.285.285,0,0,1-.005.4c-.308.258-.856.734-1.157,1l0,0Zm-1.521-3.681a2.964,2.964,0,0,1-.283,1.6,1.227,1.227,0,0,1-1.045.686c-.579,0-.918-.441-.918-1.095,0-1.286,1.153-1.52,2.246-1.52v.327Z" transform="translate(-26.66 -0.017)"></path><path class="c84" d="M395.971,271.531a.311.311,0,0,1-.357.035,3.668,3.668,0,0,1-.865-1.006,2.992,2.992,0,0,1-2.489,1.1,2.143,2.143,0,0,1-2.26-2.353,2.564,2.564,0,0,1,1.61-2.467,10.431,10.431,0,0,1,2.838-.523v-.2a1.933,1.933,0,0,0-.183-1.095,1.009,1.009,0,0,0-.847-.392,1.149,1.149,0,0,0-1.213.907.32.32,0,0,1-.262.278l-1.463-.158a.266.266,0,0,1-.225-.316c.331-1.751,1.895-2.3,3.316-2.311h.112a3.4,3.4,0,0,1,2.222.752c.734.686.664,1.6.664,2.6v2.352a2.059,2.059,0,0,0,.57,1.4.286.286,0,0,1,0,.4c-.308.258-.857.734-1.158,1l0,0Zm-1.522-3.681a2.96,2.96,0,0,1-.282,1.6,1.226,1.226,0,0,1-1.045.686c-.579,0-.918-.441-.918-1.095,0-1.286,1.153-1.52,2.245-1.52v.327Z" transform="translate(0 -0.017)"></path><path class="c84" d="M552.328,274.643v-.569c0-.162.08-.274.249-.264a3.547,3.547,0,0,0,1.078.024,1.252,1.252,0,0,0,.886-.781c.248-.566.411-1.022.515-1.321l-3.141-7.78c-.053-.132-.069-.378.2-.378h1.1a.342.342,0,0,1,.342.263l2.277,6.32,2.174-6.32a.343.343,0,0,1,.341-.263h1.035c.262,0,.247.245.2.378l-3.116,8.023c-.4,1.069-.94,2.769-2.15,3.065a3.181,3.181,0,0,1-1.82-.087.353.353,0,0,1-.157-.309Z" transform="translate(-92.91 -0.329)"></path><path class="c84" d="M540.706,271.059a.265.265,0,0,1-.264.263h-.774a.3.3,0,0,1-.3-.263l-.078-.527a4.527,4.527,0,0,1-1.267.75,3.182,3.182,0,0,1-2.85-.134,2.271,2.271,0,0,1-.985-1.963,2.408,2.408,0,0,1,.611-1.671,3.1,3.1,0,0,1,2.359-.9,7.34,7.34,0,0,1,2.062.272v-1.06c0-1.078-.454-1.545-1.651-1.545a8.012,8.012,0,0,0-2.589.441.237.237,0,0,1-.247-.258v-.6a.376.376,0,0,1,.258-.328,7.81,7.81,0,0,1,2.729-.527c1.366,0,2.988.308,2.988,2.409v5.651Zm-1.488-1.548v-1.6a8.277,8.277,0,0,0-1.713-.2,1.979,1.979,0,0,0-1.4.448,1.321,1.321,0,0,0-.326.907,1.212,1.212,0,0,0,.491,1.064,2,2,0,0,0,1.6.073,3.512,3.512,0,0,0,1.347-.691Z" transform="translate(-82.753)"></path><path class="c84" d="M517.807,264.307c1.718,0,2.186,1.351,2.186,2.9a3.479,3.479,0,0,1-.722,2.5,1.954,1.954,0,0,1-1.535.507,3.725,3.725,0,0,1-1.994-.754V265.04a3.551,3.551,0,0,1,2.066-.732Zm-2.329,10.29H514.44a.264.264,0,0,1-.263-.263V263.528a.264.264,0,0,1,.263-.263h.794a.3.3,0,0,1,.3.263l.083.566a4.079,4.079,0,0,1,2.613-1.084c2.554,0,3.395,2.1,3.395,4.293,0,2.342-1.285,4.223-3.458,4.223a3.637,3.637,0,0,1-2.428-.924v3.731a.264.264,0,0,1-.264.263Z" transform="translate(-71.269 -0.006)"></path></g></g></svg>
+                                        </span>
+                                        <input type="radio" name="pay_type" class="frm__checkbox__control" data-radio="amazon"/>
+                                        <span class="frm__checkbox__checkmark"></span>
+                                    </label>
+                                    <div class="card payment__none payment--active">
+                                        <button class="btn btn--orange mb-4 btn-checkout-js" data-src="../pages/checkout.html">Checkout</button>
+                                    </div>
+                                    <div class="paypal payment__none">
+                                        <button class="btn btn--orange btn--paypal">
+                                            <img class="paypal__icon" src="../assets/images/paypal.svg" alt="paypal">
+                                        </button>
+                                        <div class="paypal__card">
+                                            <img src="../assets/images/visa.svg" alt="visa" width="70px">
+                                            <img src="../assets/images/mastercard.svg" alt="mastercard" width="70px">
+                                            <img src="../assets/images/amex.svg" alt="amex" width="70px">
+                                            <img src="../assets/images/discover.svg" alt="discover" width="70px">
+                                        </div>
+                                        <p class="paypal__text">
+                                            Powered by <img src="../assets/images/paypal.svg" alt="paypal" height="16px">
+                                        </p>
+                                    </div>
+                                    <div class="amazon payment__none">
+                                        <img class="amazon__img" src="../assets/images/pwa.png" alt="amazon">
+                                        <span class="amazon__help">
+                                            <img src="../assets/images/information.svg" alt="help amazon" width="22px" style="filter: invert(25%) sepia(0) saturate(0%) hue-rotate(346deg) brightness(0) contrast(0);">
+                                            <span class="amazon__customer amazon__none"> 
+                                                Are you an Amazon customer? Pay now with address and payment details stored in your Amazon account.                
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order__help">
+                                30 Days money back guarantee. 100% Secure checkout.
+                            </div>
+                            <div class="order__coupon">
+                                <p class="order__coupon__title d-flex justify-content-between align-items-center" onclick="toggleCoupon('coupon-js')">
+                                    <span>Coupon code</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.859" height="8.344" viewBox="0 0 13.859 8.344"><defs><style>.a25{fill:none;stroke:#707070;stroke-linecap:round;stroke-width:2px;}</style></defs><path class="a25" d="M6.052,10.077l5.515,5.515,5.515-5.515" transform="translate(-4.638 -8.662)"></path></svg>
+                                </p>
+                                <div id="coupon-js" class="coupon">
+                                    <div id="offer-js" class="coupon__offer">
+                                        <label class="coupon__offer__name">Here's your best available offer today</label>
+                                        <label class="frm__checkbox">
+                                            LOANTEST 
+                                            <span class="coupon__offer__public">Public</span>
+                                            <span class="coupon__offer__public coupon__offer--applied apply-js" style="display: none;">Offer applied</span>
+                                            <input type="radio" name="coupon_group" class="frm__checkbox__control offer-group-js" value="LOANTEST"/>
+                                            <span class="frm__checkbox__checkmark"></span>
+                                        </label>
+                                        <button class="btn btn--blue offer-js">Apply Offer</button>
+                                        <a class="coupon__offer__link offer-link-js" href="#" data-id="offer-js">I have another coupon code</a>
+                                    </div>
+                                    <div id="discount-js" class="coupon__discount">
+                                        <div class="frm__group">
+                                            <input type="text" name="coupon_code" class="frm__control discount-group-js" placeholder="COUPON CODE"/>
+                                        </div>
+                                        <button class="btn btn--blue discount-js">Apply Discount</button>
+                                        <a class="coupon__offer__link offer-link-js" href="#" data-id="discount-js">View my discounts</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order__sign">
+                                There may be better offers. To make sure you get the best one, <a href="#" class="order__sign__link">sign in your account</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="bundle bundle__packs">
+                <h2 class="bundle__title">Bundle Packs</h2>
+                <div class="bundle__item bundle__row">
+                    <div class="bundle__col d-flex align-items-center bundle__galleries">
+                        <img src="../assets/images/electrolyte-powder-label-3d2_1_1_1.jpg" alt="electrolyte">
+                        <span class="icon-plus">+</span>
+                        <img src="../assets/images/yeast-label_3d2_2.jpg" alt="yeast">
+                        <span class="icon-plus">+</span>
+                        <img src="../assets/images/keto-essential-aminos1bf_2.jpg" alt="keto">
+                    </div>
+                    <div class="bundle__col bundle__info">
+                        <dl class="item__dl">
+                            <dt class="item__dt">Intermittent Fasting Nutrients Bundle</dt>
+                            <dd class="item__dd">
+                                <p class="mb-1"><span class="quantity">1 x</span> Electrolyte Powder Raspberry Lemon <span class="price__offer">$46.15</span> $35.74</p>
+                                <p class="mb-1"><span class="quantity">1 x</span> Nutritional Yeast Tablets <span class="price__offer">$29.95</span> $25.1</p>
+                                <p><span class="quantity">1 x</span> Keto Essential Aminos <span class="price__offer">$46.85</span> $37.95</p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="bundle__col bundle__price">
+                        <p class="mb-1">
+                            <span class="price__offer">$122.95</span> <span class="price__percent">19.65%</span>
+                        </p>
+                        <p class="price__lg mb-2">
+                            $98.79
+                        </p>
+                        <button class="btn btn--add add-cart-js" data-id="3" data-name="Intermittent Fasting Nutrients Bundle">
+                            Add this bundle to cart
+                        </button>
+                    </div>
+                </div>
+                <div class="bundle__item bundle__row">
+                    <div class="bundle__col d-flex align-items-center bundle__galleries">
+                        <img src="../assets/images/electrolyte-powder-label-3d2_1_1_1.jpg" alt="electrolyte">
+                        <span class="icon-plus">+</span>
+                        <img src="../assets/images/yeast-label_3d2_2.jpg" alt="yeast">
+                        <span class="icon-plus">+</span>
+                        <img src="../assets/images/wheat-grass-raw-label_3d2_2.jpg" alt="wheat">
+                    </div>
+                    <div class="bundle__col bundle__info">
+                        <dl class="item__dl">
+                            <dt class="item__dt">Keto Kit Bundle</dt>
+                            <dd class="item__dd">
+                                <p class="mb-1"><span class="quantity">1 x</span> Electrolyte Powder Raspberry Lemon <span class="price__offer">$46.15</span> $35.74</p>
+                                <p class="mb-1"><span class="quantity">1 x</span> Nutritional Yeast Tablets <span class="price__offer">$29.95</span> $25.1</p>
+                                <p><span class="quantity">1 x</span> Raw Wheat Grass Juice Powder <span class="price__offer">$49.95</span> $39.35</p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="bundle__col bundle__price">
+                        <p class="mb-1">
+                            <span class="price__offer">$126.05</span> <span class="price__percent">20.52%</span>
+                        </p>
+                        <p class="price__lg mb-2">
+                            $100.19
+                        </p>
+                        <button class="btn btn--add add-cart-js" data-id="4" data-name="Keto Kit Bundle">
+                            Add this bundle to cart
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="footer__newsletter newsletter">
+                <h3 class="newsletter__title">3 million + Keto community</h3>
+                <p class="newsletter__description">Join our 3+ Million members. You will receive out latest news.</p>
+                <div class="newsletter__box">
+                    <form id="newsletter-js" action="" method="POST" class="frm__newsletter" name="frm__newsletter">
+                        <input type="email" name="email" class="form__control" placeholder="Enter your email" aria-label="Enter your email"/>
+                        <button type="submit" class="btn btn--newsletter">
+                            <img class="frm__newsletter__mail" src="../assets/images/mail.svg" alt="subscribe" width="17"> Subscribe
+                        </button>
+                    </form>
+                    <p class="frm__error frm__error--newsletter">This is a required field.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer footer__home">
+        <div class="container container--fixed">
+            <div class="row footer__top">
+                <div class="col__12 col__lg__3">
+                    <div class="footer__box">
+                        <h3 class="footer__title footer-top-js">About</h3>
+                        <div class="footer__mobile footer__about">
+                            <p class="about__title mb__30">Dr.Berg.com</p>
+                            <p class="mb__30">
+                                Hours of Operation: Monday – Friday:<br/>
+                                8:30am – 5:30pm Eastern Time
+                            </p>
+                            <p class="mb__30">Toll Free Number: 1800-816-8184</p>
+                            <p class="business"></p>
+                            <div class="rating">
+                                <p class="rating__mb">BBB rating</p>
+                                <p class="mb-0">Since: 12/30/2018</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col__12 col__lg__3">
+                    <div class="footer__box">
+                        <h3 class="footer__title footer-top-js">Orders and shipping</h3>
+                        <ul class="footer__mobile footer__nav">
+                            <li class="nav__item">
+                                <a class="nav__link" href="#">My account</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#">Shipping methods</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#">Refunds</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col__12 col__lg__3">
+                    <div class="footer__box">
+                        <h3 class="footer__title footer-top-js">Support</h3>
+                        <ul class="footer__mobile footer__nav">
+                            <li class="nav__item">
+                                <a class="nav__link" href="#">FAQ</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col__12 col__lg__3">
+                    <div class="footer__box">
+                        <h3 class="footer__title footer-top-js">Legal</h3>
+                        <ul class="footer__mobile footer__nav">
+                            <li class="nav__item">
+                                <a class="nav__link" href="#">Terms and conditions</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#">Cookie policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__follow">
+                <ul class="unstyled-list d-flex justify-content-center">
+                    <li>
+                        <a class="follow__link follow__link--youtube" href="#youtube" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="45.428" height="32" viewBox="0 0 45.428 32"><defs><style>.a_y{fill:#013253;}</style></defs><g transform="translate(-654 -3378.301)"><path class="a_y" d="M463.1,199.636s-.382-3.165-1.759-4.557a6.142,6.142,0,0,0-4.566-1.781c-6.429-.464-16.037-.3-16.037-.3h-.019s-9.641-.167-16.067.3a6.39,6.39,0,0,0-4.6,1.864c-1.376,1.392-1.708,4.515-1.708,4.515s-.34,3.675-.34,7.392v3.484c0,3.72.34,7.435.34,7.435s.391,3.164,1.768,4.558c1.746,1.829,4.013,1.774,5.033,1.964,3.677.351,15.6.461,15.6.461s9.643-.013,16.072-.477a6.589,6.589,0,0,0,4.6-1.948c1.373-1.394,1.69-4.558,1.69-4.558s.322-3.715.322-7.435v-3.484C463.428,203.352,463.1,199.636,463.1,199.636Zm-27.112,15.14,0-12.9,12.412,6.475Z" transform="translate(236 3185.33)"></path></g></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="follow__link follow__link--facebook" href="#facebook" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><defs><style>.a_f{fill:#013253;}</style></defs><g transform="translate(-718 -3378.33)"><path class="a_f" d="M568,193H542a3,3,0,0,0-3,3v26a3,3,0,0,0,3,3h14V213h-5v-5h5v-3.991c0-4.212,2.556-6.506,6.243-6.506,1.766,0,2.757.134,3.757.194v4.4l-2.582,0c-2,0-2.418.97-2.418,2.4V208h4.414l-.623,5H561v12h7a3,3,0,0,0,3-3V196A3,3,0,0,0,568,193Z" transform="translate(179 3185.33)"></path></g></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="follow__link follow__link--vimeo" href="#vimeo" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><defs><style>.a_v{fill:#013253;}.b_v{fill:#fff;}</style></defs><g transform="translate(-768.811 -3378)"><rect class="a_v" width="32" height="32" rx="5" transform="translate(768.811 3378)"></rect><path class="b_v" d="M94.823,117.117c-1.2,6.895-8.1,12.778-10.184,14.106-2.024,1.328-3.922-.569-4.618-1.9-.759-1.645-3.1-10.374-3.732-11.133-.569-.759-2.467.759-2.467.759l-.822-1.2s3.732-4.491,6.579-5c2.973-.633,2.973,4.618,3.732,7.464.7,2.846,1.139,4.428,1.708,4.428.633,0,1.834-1.518,3.1-3.985,1.328-2.34-.063-4.491-2.593-2.973C86.6,111.677,96.025,110.222,94.823,117.117Z" transform="translate(700.041 3272.586)"></path></g></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="follow__link follow__link--instagram" href="#instagram" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32.009" height="32" viewBox="0 0 32.009 32"><defs><style>.a_i{fill:url(#a_i);}.b_i{fill:#013253;}.c_i{fill:#fff;}</style><radialGradient id="a_i" cx="0.266" cy="1.077" r="0.991" gradientTransform="translate(-2.918 5.666) rotate(-90) scale(1 0.93)" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#fd5"></stop><stop offset="0.1" stop-color="#fd5"></stop><stop offset="0.5" stop-color="#ff543e"></stop><stop offset="1" stop-color="#c837ab"></stop></radialGradient><radialGradient id="b_i" cx="-0.168" cy="0.072" r="0.443" gradientTransform="matrix(0.196, 0.981, -4.042, 0.809, 15.634, -0.42)" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#3771c8"></stop><stop offset="0.128" stop-color="#3771c8"></stop><stop offset="1" stop-color="#60f" stop-opacity="0"></stop></radialGradient></defs><g transform="translate(-815.196 -3378)"><path class="a_i" d="M16.006,0C9.324,0,7.37.007,6.99.038A7.94,7.94,0,0,0,3.836.831,6.389,6.389,0,0,0,2,2.177,6.868,6.868,0,0,0,.144,6.07,28.883,28.883,0,0,0,0,10.793c0,1.274,0,2.951,0,5.2C0,22.67.005,24.622.037,25A8.038,8.038,0,0,0,.8,28.093a6.742,6.742,0,0,0,4.37,3.57,11.355,11.355,0,0,0,2.324.308c.4.017,4.436.03,8.478.03s8.084,0,8.471-.025a10.934,10.934,0,0,0,2.408-.315,6.7,6.7,0,0,0,4.37-3.577,7.907,7.907,0,0,0,.755-3.032c.022-.276.031-4.672.031-9.062S32,7.211,31.974,6.935a7.818,7.818,0,0,0-.77-3.062A6.343,6.343,0,0,0,29.834,2a6.91,6.91,0,0,0-3.9-1.849A28.842,28.842,0,0,0,21.215,0Z" transform="translate(815.199 3378)"></path><path class="b_i" d="M16.006,0C9.324,0,7.37.007,6.99.038A7.94,7.94,0,0,0,3.836.831,6.389,6.389,0,0,0,2,2.177,6.868,6.868,0,0,0,.144,6.07,28.883,28.883,0,0,0,0,10.793c0,1.274,0,2.951,0,5.2C0,22.67.005,24.622.037,25A8.038,8.038,0,0,0,.8,28.093a6.742,6.742,0,0,0,4.37,3.57,11.355,11.355,0,0,0,2.324.308c.4.017,4.436.03,8.478.03s8.084,0,8.471-.025a10.934,10.934,0,0,0,2.408-.315,6.7,6.7,0,0,0,4.37-3.577,7.907,7.907,0,0,0,.755-3.032c.022-.276.031-4.672.031-9.062S32,7.211,31.974,6.935a7.818,7.818,0,0,0-.77-3.062A6.343,6.343,0,0,0,29.834,2a6.91,6.91,0,0,0-3.9-1.849A28.842,28.842,0,0,0,21.215,0Z" transform="translate(815.199 3378)"></path><path class="c_i" d="M29.817,18c-3.209,0-3.612.014-4.872.071a8.671,8.671,0,0,0-2.868.549,6.044,6.044,0,0,0-3.457,3.456,8.631,8.631,0,0,0-.549,2.868C18.015,26.2,18,26.607,18,29.816s.014,3.611.071,4.871a8.684,8.684,0,0,0,.549,2.868,6.047,6.047,0,0,0,3.455,3.457,8.679,8.679,0,0,0,2.868.549c1.26.057,1.663.071,4.872.071s3.611-.014,4.871-.071a8.684,8.684,0,0,0,2.869-.549,6.054,6.054,0,0,0,3.456-3.457,8.758,8.758,0,0,0,.549-2.868c.057-1.26.071-1.662.071-4.871s-.015-3.612-.071-4.872a8.754,8.754,0,0,0-.549-2.868,6.046,6.046,0,0,0-3.456-3.456,8.7,8.7,0,0,0-2.87-.549c-1.26-.057-1.662-.071-4.872-.071Zm-1.06,2.129h1.06c3.155,0,3.529.011,4.775.068a6.542,6.542,0,0,1,2.194.407,3.915,3.915,0,0,1,2.242,2.243,6.529,6.529,0,0,1,.407,2.193c.057,1.246.069,1.62.069,4.773s-.012,3.528-.069,4.773a6.535,6.535,0,0,1-.407,2.193,3.918,3.918,0,0,1-2.242,2.241,6.518,6.518,0,0,1-2.194.407c-1.246.057-1.62.069-4.775.069s-3.529-.012-4.775-.069a6.555,6.555,0,0,1-2.194-.407,3.915,3.915,0,0,1-2.243-2.242,6.529,6.529,0,0,1-.407-2.193c-.057-1.246-.068-1.62-.068-4.775s.011-3.528.068-4.773a6.542,6.542,0,0,1,.407-2.194A3.916,3.916,0,0,1,22.848,20.6a6.528,6.528,0,0,1,2.194-.407c1.09-.049,1.512-.064,3.715-.066Zm7.368,1.962a1.418,1.418,0,1,0,1.418,1.417,1.418,1.418,0,0,0-1.418-1.417Zm-6.307,1.657a6.068,6.068,0,1,0,6.067,6.068,6.068,6.068,0,0,0-6.067-6.068Zm0,2.129a3.939,3.939,0,1,1-3.939,3.939A3.939,3.939,0,0,1,29.817,25.878Z" transform="translate(801.381 3364.186)"></path></g></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="follow__link follow__link--twitter" href="#twitter" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="39.375" height="32.001" viewBox="0 0 39.375 32.001"><defs><style>.a_t{fill:#013253;}</style></defs><g transform="translate(-861.81 -3378.385)"><g transform="translate(498 3237)"><path class="a_t" d="M376.193,173.386c14.86,0,22.985-12.31,22.985-22.986q0-.523-.024-1.044a16.444,16.444,0,0,0,4.031-4.183,16.091,16.091,0,0,1-4.64,1.272,8.1,8.1,0,0,0,3.552-4.468,16.19,16.19,0,0,1-5.129,1.961A8.085,8.085,0,0,0,383.2,151.3a22.941,22.941,0,0,1-16.652-8.441,8.087,8.087,0,0,0,2.5,10.785,8.015,8.015,0,0,1-3.659-1.01c0,.033,0,.066,0,.1a8.082,8.082,0,0,0,6.481,7.919,8.122,8.122,0,0,1-3.648.139,8.087,8.087,0,0,0,7.547,5.61,16.208,16.208,0,0,1-10.034,3.458,16.59,16.59,0,0,1-1.927-.112,22.877,22.877,0,0,0,12.384,3.63"></path></g></g></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="follow__link follow__link--pinterest" href="#pinterest" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><defs><style>.a_p{fill:#013253;}</style></defs><g transform="translate(-913.533 -3378)"><g transform="translate(432 3185.33)"><path class="a_p" d="M481.533,208.67a16,16,0,0,0,9.576,14.653,14.132,14.132,0,0,1,.28-3.674c.308-1.3,2.058-8.717,2.058-8.717a6.156,6.156,0,0,1-.51-2.532c0-2.37,1.373-4.141,3.084-4.141a2.144,2.144,0,0,1,2.161,2.4c0,1.463-.934,3.65-1.414,5.678a2.476,2.476,0,0,0,2.525,3.081c3.031,0,5.072-3.893,5.072-8.506,0-3.507-2.361-6.132-6.656-6.132a7.576,7.576,0,0,0-7.877,7.663,4.624,4.624,0,0,0,1.055,3.138.778.778,0,0,1,.23.891c-.076.295-.254,1-.326,1.285a.551.551,0,0,1-.8.4c-2.234-.912-3.277-3.36-3.277-6.112,0-4.545,3.834-9.994,11.435-9.994,6.108,0,10.129,4.42,10.129,9.165,0,6.277-3.49,10.965-8.633,10.965a4.587,4.587,0,0,1-3.908-1.994s-.929,3.686-1.127,4.4A13.4,13.4,0,0,1,493,224.013a16,16,0,1,0-11.467-15.343Z"></path></g></g></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__policy">
+                <p class="footer__p">Copyright © 2019 DrBerg.com. All Rights Reserved</p>
+                <p class="footer__p">
+                    Disclaimer: The dietary and other substances, and/or materials, equipment or devices discussed on this site may not have undergone evaluation and/or testing by the United States Food and Drug Administration or like agency of any other country. Risks that might be determined by such testing are unknown. <a href="#" class="footer__p_link">Click here</a> to read the full disclaimer text.
+                </p>
+                <p class="footer__p">
+                    These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure or prevent any disease. Information on this site is provided for informational purposes only, it is not meant to substitute medical advice provided by your physician or any other medical professional. You should not use the information contained on this site for diagnosing or treating a health problem, disease, or prescribing any medication. Please read product label before use. Best results are only achieved when combined with diet and exercise program. Results not typical for any or all claims.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        //Checkout link
+        document.querySelector('.btn-checkout-js').addEventListener('click', function(){
+            this.disabled = true;
+            let link = this.getAttribute('data-src');
+            window.setTimeout(function(){
+                window.location = link;
+            }, 500);
+        });
+        //Choose payment
+        let choosePayments = document.getElementsByName('pay_type');
+        for(let i = 0; i < choosePayments.length; i++){
+            choosePayments[i].addEventListener('change', function(e){
+                let hidden = document.querySelectorAll('.payment__none');
+                for(let j = 0; j < hidden.length; j++){
+                    hidden[j].classList.remove('payment--active');
+                }
+                let type = this.getAttribute('data-radio');
+                document.querySelector('.' + type).classList.add('payment--active');
+            })
+        }
+        //Discount Offer
+        document.querySelector('.offer-js').addEventListener('click', function(){    
+            if(document.querySelector('.offer-group-js').checked){
+                let coupon = document.querySelector('.offer-group-js').value;
+                discountOffer(coupon);
+                displayCart();
+            }else{
+                document.querySelector('.alert--error').style.display = 'block';
+            }
+        });
+        document.querySelector('.discount-js').addEventListener('click', function(){    
+            if(document.querySelector('.discount-group-js').value != ""){
+                let coupon = document.querySelector('.discount-group-js').value;
+                discountOffer(coupon);
+                displayCart();
+            }else{
+                document.querySelector('.alert--error').style.display = 'block';
+            }
+        });
+        // Close notify cart
+        document.querySelector('.notify-close-js').addEventListener('click', function(){    
+            this.parentElement.classList.remove('cart__notify--active');
+        });
+        //Close tooltip
+        let openTooltip = document.querySelectorAll('.icon-hint');
+        for(let i = 0; i < openTooltip.length; i++){
+            openTooltip[i].addEventListener('click', function(e){
+                e.stopPropagation();
+                let closeTooltip = document.querySelectorAll('.tooltip__price');
+                for(let i = 0; i < closeTooltip.length; i++){
+                    closeTooltip[i].style.display = 'none';
+                }
+                this.nextElementSibling.style.display = 'block';
+            });
+        }
+        let closeTooltip = document.querySelectorAll('.tooltip__close');
+        for(let i = 0; i < closeTooltip.length; i++){
+            closeTooltip[i].addEventListener('click', function(){
+                this.parentElement.style.display = 'none';
+            });
+        }
+        
+    </script>
+    <script src="../assets/js/home.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/cart.js"></script>
+    <script src="../assets/js/cart-page.js"></script>
+</body>
+</html>

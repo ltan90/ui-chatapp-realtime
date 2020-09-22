@@ -1,0 +1,154 @@
+@mixin property($property,$value){
+  #{$property} : #{$value}
+}
+@mixin fontPara($fs,$codeColor){
+  @include property(font-size, $fs);
+  @include property(color, $codeColor);
+}
+@mixin animation($atribute,$params) {
+  #{$atribute}: #{$params};
+  -webkit-#{$atribute}: #{$params};
+  -khtml-#{$atribute}: #{$params};
+  -moz-#{$atribute}: #{$params};
+  -ms-#{$atribute}: #{$params};
+  -o-#{$atribute}: #{$params};
+  @content
+}
+@mixin pos($pos: relative, $top: '', $right: '', $bottom: '', $left: '', $index: '') {
+  @include property(position, $pos);
+  @if($top != ''){
+    @include property(top, $top);
+  }
+  @if($right != ''){
+    @include property(right, $right);
+  }
+  @if($bottom != ''){
+    @include property(bottom, $bottom);
+  }
+  @if($left != ''){
+    @include property(left, $left);
+  }
+  @if($index != ''){
+    @include property(z-index, $index);
+  }
+}
+@mixin boxSize($w,$h){
+  @if($h != ''){
+    @include property(width, $w);
+  }
+  @if($h != ''){
+    @include property(height, $h);
+  }
+}
+@mixin space($type:margin, $direction:all, $amount:10px){
+  @if $type == padding {
+    @if $direction == all{
+      @include property(padding, $amount);
+    } @else if $direction == top {
+      @include property(padding-top, $amount);
+    } @else if $direction == left {
+      @include property(padding-left, $amount);
+    } @else if $direction == right {
+      @include property(padding-right, $amount);
+    } @else {
+      @include property(padding-bottom, $amount);
+    }
+  } @else {
+    @if $direction == all{
+      @include property(margin, $amount);
+    } @else if $direction == top {
+      @include property(margin-top, $amount);
+    } @else if $direction == left {
+      @include property(margin-left, $amount);
+    } @else if $direction == right {
+      @include property(margin-right, $amount);
+    } @else {
+      @include property(margin-bottom, $amount);
+    }
+  }
+}
+@mixin boxShadow($value,$inset: false) {
+  @if $inset {
+    @include property(box-shadow, inset $value);
+  } @else {
+    @include property(box-shadow, $value);
+  }
+}
+@mixin borderRadius($value){
+  @include property(border-radius, $value);
+  @include property(-webkit-border-radius, $value);
+  @include property(-moz-border-radius, $value);
+}
+
+@mixin btnMore($bg,$bd-radius,$text-color,$size){
+  @include property(background-color, $bg);
+  @include borderRadius(border-radius, $bd-radius);
+  @include fontPara($size, $text-color);
+}
+
+@mixin imagePosition($relative: relative, $display: block, $overflow: hidden){
+  @include property(position, $relative);
+  @include property(display, $display);
+  @include property(overflow, $overflow);
+}
+@mixin imageBefore($content: '',$paddingValue: 65%, $display: block){
+  content: $content;
+  @include property(padding-bottom, $paddingValue);
+  @include property(display, $display);
+}
+@mixin imageObject($width: 100%,$height: 100%, $object-fit: cover){
+  @include boxSize($width,$height);
+  @if($object-fit != ''){
+    @include property(object-fit, $object-fit);
+  }
+  @content;
+}
+
+@for $i from 10 to 50 {
+  .fs-#{$i}{
+    font-size: #{$i} + 'px';
+  }
+}
+
+@mixin backgroundColor($rgba){
+  @include property(background-color, $rgba);
+}
+
+@mixin flex($atribute, $params){
+  #{$atribute}: #{$params};
+  -webkit-#{$atribute}: #{$params};
+  -moz-#{$atribute}: #{$params};
+  -ms-#{$atribute}: #{$params};
+}
+
+@mixin textDisplay($display:'',$align:'',$justify:''){
+  @if($display != ''){
+    @include property(display, $display);
+  }
+  @if($align != ''){
+    @include flex(align-items, $align);
+  }
+  @if($justify != ''){
+    @include flex(justify-content, $justify);
+  }
+}
+
+@mixin spaceStyle($className,$styleName,$i){
+  #{$className + $i} {
+    #{$styleName}: #{$i}px;
+  }
+}
+
+@mixin col($val) {
+  -ms-flex: 0 0 $val;
+  flex: 0 0 $val;
+  max-width: $val;
+}
+
+@mixin font($value,$color:'') {
+  font: $value;
+  @if($color != ''){
+    color: $color;
+  }
+}
+

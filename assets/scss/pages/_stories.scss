@@ -1,0 +1,139 @@
+.stories{
+    margin-bottom: 7rem;
+    &__flex{
+        display: flex;
+        flex-direction: column;
+        padding-left: 60px;
+        @media (max-width: 1024px){
+            padding-left: 30px;
+        }
+    }
+    &__col{
+        height: 332px;
+        overflow: hidden; 
+    }
+    &__gallery{
+        display: flex;
+        align-items: flex-end;
+        height: 322px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    &__image{
+        height: 171px; 
+        width: 174px;   
+        transition: all .5s ease;
+        &__icon{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 4px;
+        }
+    }
+    .image{
+        &--small { transform: translateX(0); width: 92px; right: 552px; position: absolute;}
+        &--left { transform: translateX(102px); position: absolute; right: 470px;}
+        &--center { transform: translateX(286px); position: absolute; right: 470px;}
+        &--right { transform: translateX(470px); height: 322px; position: absolute; right: 470px;}
+        &--hidden { transform: translateX(470px); opacity: 0; visibility: hidden;}
+    }
+    &__box{
+        margin-bottom: auto;
+        position: relative;
+    }
+    &__name{
+        @include font(700 15px/15px "Roboto", $gray-semi-medium);
+        text-transform: uppercase;
+    }
+    &__source{
+        @include font(700 12px/18px "Roboto", $gray-semi-light);
+    }
+    &__description{
+        @include font(700 14px/19px "Roboto", $blue-bold);
+        text-align: justify;
+    }
+    &__info{
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        transition: opacity 500ms;
+        margin-top: 50px;
+        &--active{
+            opacity: 1;
+        }
+    }
+    &__next{
+        margin-bottom: 15px;
+    }
+    &__btn{
+        width: 34px;
+        height: 34px;
+        border: 0;
+        background-color: $gray-semi-light;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 10px;
+        &::before{
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-color: transparent;
+            border: 1.5px solid $white;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            transform: rotate(45deg);
+        }
+    }
+    &__number{
+        display: inline-block;
+        margin-left: 10px;
+        @include font(16px/18px "Roboto", $gray-semi-medium);
+    }
+    @media (max-width: 1024px){
+        &__info{
+            margin-top: 15px;
+            bottom: 0;
+            height: 228px;
+            overflow: hidden;
+        }
+    }
+    @media (max-width: 767px){
+        &__flex{
+            order: 1;
+            height: 350px;
+            padding-left: 0;
+        }
+        &__col{
+            order: 2;
+            flex: 0 0 290px;
+            max-width: 290px;
+            margin: 0 auto;
+            height: 230px;
+        }
+        &__gallery{
+            height: 230px;
+        }
+        &__image{
+            width: 125px;
+            height: 122px;
+        }
+        .image{
+            &--left { right: 360px;}
+            &--center { right: 415px;}
+            &--right { height: 230px;}
+        }
+        &__info{
+            margin-top: 0;
+            height: auto;
+            overflow: initial;
+        }
+        &__next{
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.price{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    &--spotlight{
+        margin-top: 10px;
+        margin-bottom: 3rem;
+    }
+    &__discount{
+        @include font(11px/11px "Roboto", $gray-semi-medium);
+        display: flex;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        &--spotlight{
+            margin-top: 0;
+            line-height: 24px;
+        }
+    }
+    &__cost{
+        text-decoration: line-through;
+    }
+    &__special{
+        @include font(900 14px/23px "Roboto", $text-title);
+        &--spotlight{
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+}

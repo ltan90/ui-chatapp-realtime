@@ -1,0 +1,174 @@
+.footer{
+  color: $blue-bold;
+  &__top{
+    margin-bottom: 80px;
+  }
+  &__home{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: $bg-footer;
+    .footer__p_link{
+      font-weight: 700;
+      color: #8f8f8f;
+      text-decoration: underline;
+    }
+  }
+  &__title{
+    @include font(700 14px/20px "Roboto", $blue-bold);
+    text-transform: uppercase;
+    margin-bottom: 15px;    
+    position: relative;
+    @media (max-width: 991px){
+      &:after{
+        content: url($pathImage + "icon_arrow.svg");
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+  &__about{    
+    @include font(14px/20px "Roboto");
+    .about__title{
+      margin-bottom: 30px;
+    }
+    .business{
+      display: inline-block;
+      width: 196px;
+      height: 69px;
+      background: url($pathImage + "icons.svg") no-repeat 0 -230px;
+    }
+    .rating{
+      position: relative;
+      padding-left: 45px;
+      font: 12px/12px "Roboto";
+      color: #8f8f8f;
+      padding-top: 5px;
+      &__mb{
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 38px;
+        background: url($pathImage + "icons.svg") no-repeat 0 -192px;
+      }
+    }
+  }
+  &__nav{
+    padding-left: 0;
+    list-style: none;
+    .nav__item{
+      margin-bottom: 1rem;
+    }
+    .nav__link{
+      color: $blue-bold;
+      font: 14px/20px "Roboto";
+      &:hover{
+        color: $blue-light;
+      }
+    }
+  }
+  &__newsletter{
+    margin-bottom: 55px;
+    border-radius: 3px;
+    padding: 20px;
+    background-color: #F4F4F4;
+    .newsletter__box{
+      display: flex;
+      width: 691px;
+      max-width: 100%;
+      margin: 0 auto;
+      flex-direction: column;
+    }
+    .newsletter__title{
+      @include font(700 19px/24px "Roboto", $blue-bold);
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .newsletter__description{
+      @include font(12px/18px "Roboto", #8f8f8f);
+      text-align: center;
+    }
+  }
+  &__follow{
+    margin-bottom: 100px;
+    .follow__link{
+      display: inline-block;
+      margin-right: 3px;
+      margin-left: 3px;
+    }
+    .a_y:hover{
+      fill: #cb1f27;
+    }
+    .a_f:hover{
+      fill: #395185;
+    }
+    .a_v:hover{
+      fill: #1eb8eb;
+    }
+    .b_i:hover{
+      fill: #c837ab;
+    }
+    .a_t:hover{
+      fill: #1da1f2;
+    }
+    .a_p:hover{
+      fill: #cb1f27;
+    }
+  }
+  &__policy{
+    margin-top: 40px;
+    @media (min-width: 992px){
+      text-align: center;
+    }
+  }
+  &--checkout{
+    margin-top: 80px;
+    margin-bottom: 50px;
+    text-align: left;
+    .footer__p{
+      text-align: left;
+      @include font(11px/15px 'Roboto', $gray-bold);
+      &:first-child{
+        padding-bottom: 10px; 
+      }
+      .footer__p_link{
+        font-size: 11px;
+        &--chatapp{
+          font-weight: 700;
+          text-decoration: underline;
+          color: $gray-bold;
+        }
+      }
+    }
+  }
+  &__p{
+    font-size: 12px;
+    color: #707070;
+    &_link{
+      color: $bg-btn-checkout;
+    }
+  }
+  @media (max-width: 991px){
+    &__mobile{
+      display: none;
+      margin-left: 20px;
+    }
+    &__box{
+      padding: 10px;
+      margin-bottom: 1rem;
+    }
+    &__active{
+      background-color: $white;
+      .footer__title{
+        &:after{
+          @include animation(transform, rotate(180deg));
+        }
+      }
+    }
+  }
+}

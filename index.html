@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dr. Berg's Health & Wellness Centre</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" type="image/x-icon" href="./../assets/images/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap"></noscript>
+        <link rel="stylesheet" type="text/css"  media="all" href="./../assets/css/style.min.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="header__promotion promotion__bg text-center" style="display: none;">
+                <b>24h Flash sale:</b>
+                <span class="header__promotion__price">$8 off selected products.</span>
+                <span class="header__promotion__view">
+                    View more
+                </span>
+            </div>
+            <section class="container-fluid">
+                <div class="header__top">
+                    <div class="header__left">
+                        <span class="nav__toggle nav-mobile-js"></span>
+                        <a href="#" class="header__logo">
+                            <img src="./../assets/images/logo.svg" alt="">
+                        </a>
+                    </div>
+                    <div id="search-mobile-js" class="header__center">
+                        <form id="search-js" action="../pages/carts.html" method="GET" class="frm frm__search">
+                            <input id="search-auto-js" class="form__control--search" type="text" name="search" autocomplete="off" placeholder="Search DrBerg for health products" />
+                            <div class="input__group d-flex">
+                                <button type="submit" class="btn--search">
+                                    <img src="./../assets/images/icon_search.svg" alt="search">
+                                </button>
+                            </div>
+                        </form>
+                        <ul id="search-autocomplete-js" class="header__center__autocomplete" style="display: none;">
+                            <li class="header__center__text"><a class="add-key-js" data-key="shop" href="#">Shop</a><span>7</span></li>
+                            <li class="header__center__text"><a class="add-key-js" data-key="shopping list" href="#">shopping list</a><span>40</span></li>
+                            <li class="header__center__text"><a class="add-key-js" data-key="shop.drberg.com" href="#">shop.drberg.com</a><span>3</span></li>
+                            <li class="header__center__text"><a class="add-key-js" data-key="shop with july code" href="#">shop with july code</a><span>25</span></li>
+                            <li class="header__center__text"><a class="add-key-js" data-key="shop with july discount code" href="#">shop with july discount code</a><span>15</span></li>
+                            <li class="header__center__text"><a class="add-key-js" data-key="shopping cart list" href="#">shopping cart list</a><span>43</span></li>
+                            <li class="header__center__text"><a class="add-key-js" data-key="Shop all products" href="#">Shop all products</a><span>20</span></li>
+                            <li class="header__center__text"><a class="add-key-js" data-key="Shopping method" href="#">Shopping method</a><span>24</span></li>
+                        </ul>
+                    </div>
+                    <div class="header__right">
+                        <ul class="nav__utilities unstyled-list">
+                            <li>
+                                <a id="show-search-js" class="nav__utilities__link nav__utilities__search" data-search="search-mobile-js">
+                                    <span class="nav__utilities__icon">
+                                        <svg class="search__open" xmlns="http://www.w3.org/2000/svg" width="16.914" height="15.914" viewBox="0 0 16.914 15.914"><defs><style>.a666,.b666,.c666,.e666{fill:none;}.a666,.b666,.c666{stroke:#013253;}.a666,.c666{stroke-linecap:round;}.a666,.b666{stroke-width:2px;}.d666{stroke:none;}</style></defs><g transform="translate(-212 -33)"><g transform="translate(-4581 16983)"><line class="a666" x1="4" y1="4" transform="translate(4804.5 -16939.5)"></line><g class="b666" transform="translate(4793 -16950)"><circle class="d666" cx="6.5" cy="6.5" r="6.5"></circle><circle class="e666" cx="6.5" cy="6.5" r="5.5"></circle></g></g><line class="c666" x2="4" transform="translate(216.5 39.5)"></line></g></svg>
+                                        <svg class="search__close" xmlns="http://www.w3.org/2000/svg" width="16.914" height="15.914" viewBox="0 0 16.914 15.914"><defs><style>.a777,.b777,.c777,.e777{fill:none;}.a777,.b777,.c777{stroke:#013253;}.a777,.c777{stroke-linecap:round;}.a777,.b777{stroke-width:2px;}.d777{stroke:none;}</style></defs><g transform="translate(-212 -33)"><g transform="translate(-4581 16983)"><line class="a777" x1="4" y1="4" transform="translate(4804.5 -16939.5)"></line><g class="b777" transform="translate(4793 -16950)"><circle class="d777" cx="6.5" cy="6.5" r="6.5"></circle><circle class="e777" cx="6.5" cy="6.5" r="5.5"></circle></g></g><line class="c777" y2="4" transform="translate(218.5 37.5)"></line><line class="c777" x2="4" transform="translate(216.5 39.5)"></line></g></svg>
+                                    </span>
+                                    <span class="nav__utilities__none">Search</span>
+                                </a>
+                            </li>
+                            <li class="nav__utilities__item">
+                                <a class="nav__utilities__link nav__utilities__help view-help-js" href="#">
+                                    <span class="nav__utilities__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><defs><style>.a1{fill:none;}.b{fill:#013253;}.c{fill:#fff;font-size:12px;font-family:Roboto-Bold, Roboto;font-weight:700;}</style></defs><path class="a1" d="M0,0H24V24H0Z"></path><circle class="b" cx="8" cy="8" r="8" transform="translate(4 4)"></circle><text class="c" transform="translate(9 16)"><tspan x="0" y="0">?</tspan></text></svg>
+                                    </span>
+                                    <span class="nav__utilities__none">Help</span>
+                                </a>
+                                <div class="dropdown__help stop-body-js">
+                                    <h4 class="help__title help__title--head">
+                                        <span class="info__label">Help</span>
+                                        <span class="icon__close close-view-js" data-close="dropdown__help"></span>
+                                    </h4>
+                                    <div class="help__contact">
+                                        <div class="help__item">
+                                            <div class="help__title">
+                                                Call us
+                                            </div>
+                                            <a href="tel:703-354-7336" class="help__link">703-354-7336</a>
+                                        </div>
+                                        <div class="help__item">
+                                            <div class="help__title">
+                                                E-mail us
+                                            </div>
+                                            <a href="mailto:orders@drberg.com" class="help__link">orders@drberg.com</a>                                            
+                                        </div>
+                                    </div>
+                                    <div class="help__block help__support">
+                                        <div class="help__title">
+                                            Support help
+                                        </div>
+                                        <div class="help__item">
+                                            <a href="#" class="help__link">Visit Support Portal</a>
+                                            <a href="#" class="help__link">Submit a support request</a>
+                                        </div>
+                                    </div>
+                                    <div class="help__block help__hours">
+                                        <div class="help__title">
+                                            Hours of Operation:
+                                        </div>
+                                        <div class="help__item">
+                                            Monday – Friday: 8:30am – 5:30pm Eastern Time + Closed weekends and major holidays
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="nav__utilities__link nav__utilities__favorites" href="#">
+                                    <span class="nav__utilities__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16"><defs><style>.a{fill:#013253;fill-rule:evenodd;}</style></defs><path class="a" d="M12,8A4.932,4.932,0,0,0,7.5,5,4.413,4.413,0,0,0,3,9.5c0,3.529,3.793,6.258,9,11.5,5.207-5.242,9-7.971,9-11.5A4.413,4.413,0,0,0,16.5,5,4.93,4.93,0,0,0,12,8Z" transform="translate(-3 -5)"></path></svg>
+                                    </span>
+                                    <span class="cart__quantity cart--favorites">1</span>
+                                    <span class="nav__utilities__none">Favorites</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav__utilities__link nav__utilities__account" href="#">
+                                    <span class="nav__utilities__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><defs><style>.a{fill:#013253;}</style></defs><path class="a" d="M12,12A4,4,0,1,0,8,8,4,4,0,0,0,12,12Zm0,2c-2.67,0-8,1.34-8,4v2H20V18C20,15.34,14.67,14,12,14Z" transform="translate(-4 -4)"></path></svg>
+                                    </span>
+                                    <span class="nav__utilities__none nav__utilities__none--sm">My Account</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav__utilities__link nav__utilities__cart view-cart-js" href="#">
+                                    <span class="nav__utilities__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><defs><style>.a{fill:#013253;}.b{fill:none;}</style></defs><path class="a" d="M7,18a2,2,0,1,0,2,2A2,2,0,0,0,7,18ZM1,2V4H3l3.6,7.59L5.25,14.04A1.933,1.933,0,0,0,5,15a2.006,2.006,0,0,0,2,2H19V15H7.42a.248.248,0,0,1-.25-.25l.03-.12L8.1,13h7.45a1.991,1.991,0,0,0,1.75-1.03l3.58-6.49A.977.977,0,0,0,21,5a1,1,0,0,0-1-1H5.21L4.27,2H1ZM17,18a2,2,0,1,0,2,2A2,2,0,0,0,17,18Z"></path><path class="b" d="M0,0H24V24H0Z"></path></svg>
+                                    </span>
+                                    <span class="total-count-js"></span>
+                                    <span class="nav__utilities__none nav__utilities__none--sm">My Cart</span>
+                                </a>
+                                <div class="dropdown__cart stop-body-js">
+                                    <div class="view__empty order__info">
+                                        <h4 class="order__info__title order__info--flex">
+                                            <label class="info__label">You have no items in your shopping cart.</label>
+                                            <span class="icon__close close-view-js" data-close="dropdown__cart"></span>
+                                        </h4>
+                                    </div>
+                                    <div class="view__cart">
+                                        <div class="order__info">
+                                            <h4 class="order__info__title order__info--flex">
+                                                <label class="info__label">Your cart</label>
+                                                <span class="icon__close close-view-js" data-close="dropdown__cart"></span>
+                                            </h4>
+                                            <div id="product-js" class="products show-quantity-js overscroll" style="display: block;"></div>
+                                        </div>
+                                        <div class="order__info order__info--total">
+                                            <p class="order__info__subtotal order__info--flex">
+                                                <label class="info__label total-view-js"></label>
+                                                <span class="info__price">$<span id="subtotal-cart-js"></span></span>
+                                            </p>
+                                            <a href="../pages/carts.html" class="btn btn--green btn-view-cart-js">View cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <nav id="nav-js" class="nav nav-js">
+                    <ul class="nav__navbar unstyled-list">
+                        <li class="nav__item nav__item__all stop-body-js">
+                            <a href="#" class="nav__link">
+                                <span class="nav__toggle"></span>
+                                Shop
+                            </a>
+                            <div class="close__menu d-none">
+                                <span class="close__menu__home nav-mobile-js"></span>
+                                <span id="nav-close-js" class="close__menu__back nav-close-js"></span>
+                                <span class="close__menu__close nav-mobile-js"></span>
+                            </div>
+                            <ul class="nav__dropdown nav__dropdown--categories">
+                                <li class="nav__item">
+                                    <a href="#" class="nav__link">
+                                        All products <span class="nav__link__count">(60)</span>
+                                    </a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#" class="nav__link">
+                                        Supplements <span class="nav__link__count">(30)</span>
+                                    </a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#" class="nav__link">
+                                        Powders <span class="nav__link__count">(2)</span>
+                                    </a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#" class="nav__link">
+                                        Bundles <span class="nav__link__count">(11)</span>
+                                    </a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#" class="nav__link">
+                                        Books <span class="nav__link__count">(5)</span>
+                                    </a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#" class="nav__link">
+                                        Digital Programs <span class="nav__link__count">(6)</span>
+                                    </a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="" class="nav__link">
+                                        Devices <span class="nav__link__count">(3)</span>
+                                    </a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#" class="nav__link">
+                                        Desserts <span class="nav__link__count">(2)</span>
+                                    </a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#" class="nav__link">
+                                        Summit <span class="nav__label">New</span>
+                                    </a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#" class="nav__link">
+                                        Immune <span class="nav__link__count">(3)</span> <span class="nav__label">Hot</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav__utilities unstyled-list nav__utilities--mobile">
+                                <li>
+                                    <a class="nav__utilities__link nav__utilities__help drop-js" href="#">
+                                        <span class="nav__utilities__icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><defs><style>.a1{fill:none;}.b{fill:#013253;}.c{fill:#fff;font-size:12px;font-family:Roboto-Bold, Roboto;font-weight:700;}</style></defs><path class="a1" d="M0,0H24V24H0Z"></path><circle class="b" cx="8" cy="8" r="8" transform="translate(4 4)"></circle><text class="c" transform="translate(9 16)"><tspan x="0" y="0">?</tspan></text></svg>
+                                        </span>
+                                        <span class="nav__utilities__none">Help</span>
+                                    </a>
+                                    <div class="drop__mobile drop__mobile--help">
+                                        <div class="help__title help__title--head">Help</div>
+                                        <div class="help__contact">
+                                            <div class="help__block">
+                                                <div class="help__title">
+                                                    Call us
+                                                </div>
+                                                <a href="tel:703-354-7336" class="help__link">703-354-7336</a>
+                                            </div>
+                                            <div class="help__block">
+                                                <div class="help__title">
+                                                    E-mail us
+                                                </div>
+                                                <a href="mailto:orders@drberg.com" class="help__link">orders@drberg.com</a>                                            
+                                            </div>
+                                        </div>
+                                        <div class="help__support">
+                                            <div class="help__title">
+                                                Support help
+                                            </div>
+                                            <div class="help__item">
+                                                <a href="#" class="help__link">Visit Support Portal</a>
+                                                <a href="#" class="help__link">Submit a support request</a>
+                                            </div>
+                                        </div>
+                                        <div class="help__hours">
+                                            <div class="help__title">
+                                                Hours of Operation:
+                                            </div>
+                                            <div class="help__item">
+                                                Monday – Friday: 8:30am – 5:30pm Eastern Time + Closed weekends and major holidays
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="nav__utilities__link nav__utilities__account drop-js" href="#">
+                                        <span class="nav__utilities__icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><defs><style>.a{fill:#013253;}</style></defs><path class="a" d="M12,12A4,4,0,1,0,8,8,4,4,0,0,0,12,12Zm0,2c-2.67,0-8,1.34-8,4v2H20V18C20,15.34,14.67,14,12,14Z" transform="translate(-4 -4)"></path></svg>
+                                        </span>
+                                        <span class="nav__utilities__none nav__utilities__none--sm">My Account</span>
+                                    </a>
+                                    <div class="drop__mobile drop__mobile--account">
+                                        <a href="#" class="account__link">Sign in your account</a>
+                                        <a href="#" class="account__link">Create a new account</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="nav__utilities__link nav__utilities__favorites" href="#">
+                                        <span class="nav__utilities__icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16"><defs><style>.a{fill:#013253;fill-rule:evenodd;}</style></defs><path class="a" d="M12,8A4.932,4.932,0,0,0,7.5,5,4.413,4.413,0,0,0,3,9.5c0,3.529,3.793,6.258,9,11.5,5.207-5.242,9-7.971,9-11.5A4.413,4.413,0,0,0,16.5,5,4.93,4.93,0,0,0,12,8Z" transform="translate(-3 -5)"></path></svg>
+                                        </span>
+                                        <span class="cart__quantity cart--favorites">1</span>
+                                        <span class="nav__utilities__none">Favorites</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav__utilities__link nav__utilities__cart" href="#">
+                                        <span class="nav__utilities__icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><defs><style>.a{fill:#013253;}.b{fill:none;}</style></defs><path class="a" d="M7,18a2,2,0,1,0,2,2A2,2,0,0,0,7,18ZM1,2V4H3l3.6,7.59L5.25,14.04A1.933,1.933,0,0,0,5,15a2.006,2.006,0,0,0,2,2H19V15H7.42a.248.248,0,0,1-.25-.25l.03-.12L8.1,13h7.45a1.991,1.991,0,0,0,1.75-1.03l3.58-6.49A.977.977,0,0,0,21,5a1,1,0,0,0-1-1H5.21L4.27,2H1ZM17,18a2,2,0,1,0,2,2A2,2,0,0,0,17,18Z"></path><path class="b" d="M0,0H24V24H0Z"></path></svg>
+                                        </span>
+                                        <span class="total-count-mobile-js"></span>
+                                        <span class="nav__utilities__none nav__utilities__none--sm">My Cart</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">Supplements</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">Powders</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">Bundles</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">Books</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">Digital Programs</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">Devices</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">Desserts</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">
+                                Summit
+                                <span class="nav__label">New</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">
+                                Immune
+                                <span class="nav__label">Hot</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+        </header>
+        <main class="wrapper">
+            <div class="container container--fixed">
+                <div class="alert__newsletter newsletter-success" style="display: none;">
+                    Thank you for your subscription.
+                </div>
+                <div class="alert__newsletter cart-success" style="display: none;">
+                    You added Keto Dessert Pecan Pie - Almonds to your <a href="pages/carts.html" class="cart__success__link">shopping cart</a>.
+                </div>
+                <section class="wrapper__explore explore">
+                    <h2 class="title title--lg">EXPLORE DRBERG</h2>
+                    <div class="row row--item">
+                        <div class="col__6 col__xl__3 col--item items">
+                            <a class="item" href="#">
+                                <div class="item__avatar">
+                                    <img class="item__avatar__img" src="assets/images/demo/Image_46.png" alt="Supplements"/>
+                                </div>
+                                <div class="item__info">
+                                    <h3 class="item__info__title">Supplements</h3>
+                                    <p class="item__info__summary">Nutrient-dense and mineral rich. High quality source ingredients.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col__6 col__xl__3 col--item items">
+                            <a class="item" href="#">
+                                <div class="item__avatar">
+                                    <img class="item__avatar__img" src="assets/images/demo/Image_45.png" alt="Supplements"/>
+                                </div>
+                                <div class="item__info">
+                                    <h3 class="item__info__title">Packages & Kits</h3>
+                                    <p class="item__info__summary">Body Type Packages & Kits, Uniquely formulated by Dr. Berg</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col__6 col__xl__3 col--item items">
+                            <a class="item" href="#">
+                                <div class="item__avatar">
+                                    <img class="item__avatar__img" src="assets/images/demo/Image_43.png" alt="Supplements"/>
+                                </div>
+                                <div class="item__info">
+                                    <h3 class="item__info__title">Books</h3>
+                                    <p class="item__info__summary">Author of the best selling The 7 Principles of Fat Burning</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col__6 col__xl__3 col--item items">
+                            <a class="item" href="#">
+                                <div class="item__avatar">
+                                    <img class="item__avatar__img" src="assets/images/demo/Image_44.png" alt="Supplements"/>
+                                </div>
+                                <div class="item__info">
+                                    <h3 class="item__info__title">Digital programs</h3>
+                                    <p class="item__info__summary">Exclusive Membership, Coaching, Meal Maker & Keto</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <section class="wrapper__new product__new mb-30">
+                    <div class="row">
+                        <div class="col__md__4">
+                            <div class="gallery">
+                                <img class="gallery__product" src="assets/images/demo/Cod_Liver_Oil_3D2_2020-transparent-homepage.png" alt="DrBerg’s Cod Liver Oil" width="100%">
+                            </div>
+                        </div>
+                        <div class="col__md__8">
+                            <div class="product">
+                                <span class="label label--sm">New product</span>
+                                <h2 class="title title--xl">DrBerg’s Cod Liver Oil</h2>
+                                <h3 class="title title--md">
+                                    A Rich Source of Essential Omega-3 Fatty Acids to Support Immunity, Heart and Brain Health
+                                </h3>
+                                <div class="product__summary">
+                                    Dr. Berg’s Cod Liver Oil is a fish oil rich in omega-3 fatty acids, vitamin A, D and other nutrients from a wild-caught cod source. It is minimally processed to preserve maximum nutrient value, it is packed with a unique technology to extend its shelf life, and includes purified bile salts to assist with absorption.
+                                </div>
+                                <a href="#" class="btn btn--add btn--detail">View details</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="wrapper__recommended recommended mb-50">
+                    <h2 class="title title--lg">
+                        RECOMMENDED FOR YOU
+                    </h2>
+                    <div class="row row--item">
+                        <div class="col__xl__20 col__sm__4 col__md__3 col--item col--recommend d-flex">
+                            <div class="card__box">
+                                <div class="card__box__header">
+                                    <span data-id="1" class="btn__towishlist"></span>
+                                    <a class="gallery__link" href="#">
+                                        <img class="gallery__image" src="assets/images/demo/electrolyte-powder-label-3d2_1_1.jpg" alt="Electrolyte Powder Raspberry Lemon">
+                                    </a>
+                                </div>
+                                <div class="card__box__body">
+                                    <a class="review" href="#">
+                                        <span class="review__box">
+                                            <span class="review__star">
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                            </span>
+                                            <span class="review__total">4.8</span>
+                                        </span>
+                                        <span class="review__subtotal">2321 Reviews</span>
+                                    </a>
+                                    <h3 class="title title--sm">
+                                        <a class="title__link" href="#">Electrolyte Powder Raspberry Lemon</a>
+                                    </h3>
+                                </div>
+                                <div class="card__box__footer">
+                                    <div class="price">
+                                        <span class="price__discount">
+                                            <span class="price__cost">$46.15</span>
+                                            <span class="price__persent">-18.48%</span>
+                                        </span>
+                                        <span class="price__special">$37.62</span>
+                                    </div>
+                                    <a href="#" class="card__box__view">View details »</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col__xl__20 col__sm__4 col__md__3 col--item col--recommend d-flex">
+                            <div class="card__box">
+                                <div class="card__box__header">
+                                    <span data-id="1" class="btn__towishlist"></span>
+                                    <a class="gallery__link" href="#">
+                                        <img class="gallery__image" src="assets/images/demo/raw_wheat_grass_lemon_label_3d2_2.jpg" alt="Electrolyte Powder Raspberry Lemon">
+                                    </a>
+                                </div>
+                                <div class="card__box__body">
+                                    <a class="review" href="#">
+                                        <span class="review__box">
+                                            <span class="review__star">
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                            </span>
+                                            <span class="review__total">4.8</span>
+                                        </span>
+                                        <span class="review__subtotal">1375 Reviews</span>
+                                    </a>
+                                    <h3 class="title title--sm">
+                                        <a class="title__link" href="#">Raw Wheat Grass Juice Powder (Lemon Flavor)</a>
+                                    </h3>
+                                </div>
+                                <div class="card__box__footer">
+                                    <div class="price">
+                                        <span class="price__discount">
+                                            <span class="price__cost">$56.38</span>
+                                            <span class="price__persent">-22.99%</span>
+                                        </span>
+                                        <span class="price__special">$43.42</span>
+                                    </div>
+                                    <a href="#" class="card__box__view">View details »</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col__xl__20 col__sm__4 col__md__3 col--item col--recommend d-flex">
+                            <div class="card__box">
+                                <div class="card__box__header">
+                                    <span data-id="1" class="btn__towishlist"></span>
+                                    <a class="gallery__link" href="#">
+                                        <img class="gallery__image" src="assets/images/demo/ezgif-6-ce53ced53df3.jpg" alt="Electrolyte Powder Raspberry Lemon">
+                                    </a>
+                                </div>
+                                <div class="card__box__body">
+                                    <a class="review" href="#">
+                                        <span class="review__box">
+                                            <span class="review__star">
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                            </span>
+                                            <span class="review__total">4.8</span>
+                                        </span>
+                                        <span class="review__subtotal">636 Reviews</span>
+                                    </a>
+                                    <h3 class="title title--sm">
+                                        <a class="title__link" href="#">D3 & K2 Vitamin</a>
+                                    </h3>
+                                </div>
+                                <div class="card__box__footer">
+                                    <div class="price">
+                                        <span class="price__discount">
+                                            <span class="price__cost">$42.65</span>
+                                            <span class="price__persent">-20%</span>
+                                        </span>
+                                        <span class="price__special">$34.12</span>
+                                    </div>
+                                    <a href="#" class="card__box__view">View details »</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col__xl__20 col__sm__4 col__md__3 col--item col--recommend d-flex">
+                            <div class="card__box">
+                                <div class="card__box__header">
+                                    <span data-id="1" class="btn__towishlist"></span>
+                                    <a class="gallery__link" href="#">
+                                        <img class="gallery__image" src="assets/images/demo/gallbladder-formula-label_sim2_2.jpg" alt="Electrolyte Powder Raspberry Lemon">
+                                    </a>
+                                </div>
+                                <div class="card__box__body">
+                                    <a class="review" href="#">
+                                        <span class="review__box">
+                                            <span class="review__star">
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                            </span>
+                                            <span class="review__total">4.7</span>
+                                        </span>
+                                        <span class="review__subtotal">1497 Reviews</span>
+                                    </a>
+                                    <h3 class="title title--sm">
+                                        <a class="title__link" href="#">Gallbladder Formula</a>
+                                    </h3>
+                                </div>
+                                <div class="card__box__footer">
+                                    <div class="price">
+                                        <span class="price__discount">
+                                            <span class="price__cost">$47.29</span>
+                                            <span class="price__persent">-22.99%</span>
+                                        </span>
+                                        <span class="price__special">$36.42</span>
+                                    </div>
+                                    <a href="#" class="card__box__view">View details »</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col__xl__20 col__sm__4 col__md__3 col--item col--recommend d-flex">
+                            <div class="card__box">
+                                <div class="card__box__header">
+                                    <span data-id="1" class="btn__towishlist"></span>
+                                    <a class="gallery__link" href="#">
+                                        <img class="gallery__image" src="assets/images/demo/hairformulalabel-3d2_3_1.jpg" alt="Electrolyte Powder Raspberry Lemon">
+                                    </a>
+                                </div>
+                                <div class="card__box__body">
+                                    <a class="review" href="#">
+                                        <span class="review__box">
+                                            <span class="review__star">
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="14px"/>
+                                            </span>
+                                            <span class="review__total">4.5</span>
+                                        </span>
+                                        <span class="review__subtotal">617 Reviews</span>
+                                    </a>
+                                    <h3 class="title title--sm">
+                                        <a class="title__link" href="#">Hair Formula</a>
+                                    </h3>
+                                </div>
+                                <div class="card__box__footer">
+                                    <div class="price">
+                                        <span class="price__discount">
+                                            <span class="price__cost">$49.95</span>
+                                            <span class="price__persent">-17.08%</span>
+                                        </span>
+                                        <span class="price__special">$41.42</span>
+                                    </div>
+                                    <a href="#" class="card__box__view">View details »</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="wrapper__stories stories">
+                    <h2 class="title title--lg title--stories">
+                        SUCCESS STORIES
+                    </h2>
+                    <h3 class="title title--hd mb-80">Dr. Berg is one of the most trusted sources of health information on the internet.</h3>
+                    <div class="row--stories">
+                        <div class="col__md__7 col__xl__53 stories__col">
+                            <div class="stories__gallery">
+                                <div class="stories__image image--right">
+                                    <img class="stories__image__icon" src="assets/images/demo/Krista_Simpkins_copy_1.jpg" alt="Krista Simpkins">
+                                </div>
+                                <div class="stories__image image--center">
+                                    <img class="stories__image__icon" src="assets/images/demo/JohnT.jpg" alt="john">
+                                </div> 
+                                <div class="stories__image image--left">
+                                    <img class="stories__image__icon" src="assets/images/demo/ChristopherG_2.jpg" alt="ChristopherG">
+                                </div>    
+                                <div class="stories__image image--small">
+                                    <img class="stories__image__icon" src="assets/images/demo/jasonh.jpg" alt="jasonh">
+                                </div>  
+                                <div class="stories__image image--hidden">
+                                    <img class="stories__image__icon" src="assets/images/demo/EdelH.jpg" alt="EdelH">
+                                </div>               
+                            </div>
+                        </div>
+                        <div class="col__md__5 stories__flex">
+                            <div class="stories__box">
+                                <div class="stories__info stories__info--active">
+                                    <p class="stories__name mb-0">Krista Simpkins</p>
+                                    <p class="stories__source">on: drberg.com</p>
+                                    <div class="stories__description">
+                                        <p>I’ve spent most of my adult being overweight in some capacity, and probably just like you, I tried all the diets. I’ve counted calories.&nbsp; I’ve joined Weight Watchers multiple times. Yes, I’d lose some weight initially, but it would always come back and I’d end up heavier than I was when I started.</p>
+                                        <p>I have lost 177 pounds.  I am currently at what feels like a healthy weight for me. My BMI is within normal range.</p>
+                                    </div>
+                                </div>
+                                <div class="stories__info">
+                                    <p class="stories__name mb-0">John T.</p>
+                                    <p class="stories__source">on: Youtube</p>
+                                    <div class="stories__description">
+                                        <p>My turn ... I hit my ""scale weight goal"" went from 210 to 159 and been on maintenance for a while. I was happy at 165 and under but last 2-3 weeks just tightened it up a bit and got below the 160 mark! Just for reference I'm 5'7 just under the 40 year mark and when we did the measurements for body fat started at about 26-28%, size 36-38 waist. I'm now closer to the 40 year mark</p>
+                                        <p>I still can't believe it!</p>
+                                    </div>
+                                </div>
+                                <div class="stories__info">
+                                    <p class="stories__name mb-0">Christopher G.</p>
+                                    <p class="stories__source">on: Trustpost</p>
+                                    <div class="stories__description">
+                                        <p>I owe all this to following a whole foods based, ketogenic (at times just low carb) diet, intermittent and longer term fasting as well as HIIT/weight training... I'm down 135lb on the scale, lost more body fat, gained muscle and feel like I've even aged backwards a little, lol. My main point is that stalls will happen. You might stumble here and there, but if you want it badly enough and keep at it, it is absolutely possible to start living a life you once thought was impossible. Be consistent, stay patient and trust the process.</p>
+                                    </div>
+                                </div>
+                                <div class="stories__info">
+                                    <p class="stories__name mb-0">Jason H.</p>
+                                    <p class="stories__source">on: drberg.com</p>
+                                    <div class="stories__description">
+                                        <p>I started Keto at the end of January 2019. I weighed 305 lbs. it is now November 5, 2019 and I weigh 214 lbs. so, 91 lbs in 9 months. I have followed Dr. Bergs suggestions/plan since day 1. I never cheated once. My wife introduced me to Keto and Dr. Berg and I’m so glad she did. Keto has absolutely changed my life.</p>
+                                        <p>I Have Never Felt So Good In My Life. I Plan On Staying In Ketosis The Rest Of My Life!</p>
+                                    </div>
+                                </div>
+                                <div class="stories__info">
+                                    <p class="stories__name mb-0">Edel T.</p>
+                                    <p class="stories__source">on: Facebook</p>
+                                    <div class="stories__description">
+                                        <p>I started my keto journey for better health. My main goal was not weightloss. That was a happy side effect I was sick and tired of feeling sick and tired so something had to change. Today I choose better. I choose not to eat the junk food I choose not to drink the soda I choose to eat good wholesome good I choose to eat the fat! I choose a better me!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stories__next">
+                                <button class="stories__btn"></button>
+                                <div class="stories__number">
+                                    <span class="stories__number__current">1</span>
+                                    <span class="stories__number__splitter">/</span>
+                                    <span class="stories__number__sum">5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="wrapper__spotlight spotlight">
+                    <h2 class="title title--lg">
+                        IN THE SPOTLIGHT
+                    </h2>
+                    <div class="row row--spotlight">
+                        <div class="col__md__6 col__xl__3 d-flex">
+                            <div class="card__box card__box--spotlight">
+                                <div class="card__box__header">
+                                    <span data-id="1" class="btn__towishlist"></span>
+                                    <a class="gallery__link" href="#">
+                                        <img class="gallery__image" src="assets/images/demo/electrolyte_sports_drink_label_2020_3d2_2.jpg" alt="Electrolyte Powder Raspberry Lemon">
+                                    </a>
+                                </div>
+                                <div class="card__box__body">
+                                    <a class="review" href="#">
+                                        <span class="review__box">
+                                            <span class="review__star">
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                            </span>
+                                            <span class="review__total review__total--spotlight">4.9</span>
+                                        </span>
+                                        <span class="review__subtotal review__subtotal--spotlight">26 Reviews</span>
+                                    </a>
+                                    <h3 class="title title--sm">
+                                        <a class="title__link" href="#">Electrolyte Sports Drink Raspberry & Lemon</a>
+                                    </h3>
+                                </div>
+                                <div class="card__box__footer">
+                                    <div class="price price--spotlight">
+                                        <span class="price__discount price__discount--spotlight">
+                                            <span class="price__cost">$46.15</span>
+                                            <span class="price__persent">-18.48%</span>
+                                        </span>
+                                        <span class="price__special price__special--spotlight">$37.62</span>
+                                    </div>
+                                    <a href="#" class="btn btn--add add-cart-js" data-id="5" data-name="Electrolyte Sports Drink Raspberry & Lemon">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col__md__6 col__xl__3 d-flex">
+                            <div class="card__box card__box--spotlight">
+                                <div class="card__box__header">
+                                    <span data-id="1" class="btn__towishlist"></span>
+                                    <a class="gallery__link" href="#">
+                                        <img class="gallery__image" src="assets/images/demo/vitaminc_3d1.jpg" alt="Electrolyte Powder Raspberry Lemon">
+                                    </a>
+                                </div>
+                                <div class="card__box__body">
+                                    <a class="review" href="#">
+                                        <span class="review__box">
+                                            <span class="review__star">
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                            </span>
+                                            <span class="review__total review__total--spotlight">4.9</span>
+                                        </span>
+                                        <span class="review__subtotal review__subtotal--spotlight">174 Reviews</span>
+                                    </a>
+                                    <h3 class="title title--sm">
+                                        <a class="title__link" href="#">Dr. Berg’s Chewable Vitamin C Complex</a>
+                                    </h3>
+                                </div>
+                                <div class="card__box__footer">
+                                    <div class="price price--spotlight">
+                                        <span class="price__discount price__discount--spotlight">
+                                            <span class="price__cost">$34.95</span>
+                                            <span class="price__persent">-14.31%</span>
+                                        </span>
+                                        <span class="price__special price__special--spotlight">$29.95</span>
+                                    </div>
+                                    <a href="#" class="btn btn--add add-cart-js" data-id="6" data-name="Dr. Berg’s Chewable Vitamin C Complex">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col__md__6 col__xl__3 d-flex">
+                            <div class="card__box card__box--spotlight">
+                                <div class="card__box__header">
+                                    <span data-id="1" class="btn__towishlist"></span>
+                                    <a class="gallery__link" href="#">
+                                        <img class="gallery__image" src="assets/images/demo/dr_berg_kd_pecan_pie-1p_1_1.jpg" alt="Electrolyte Powder Raspberry Lemon">
+                                    </a>
+                                </div>
+                                <div class="card__box__body">
+                                    <a class="review" href="#">
+                                        <span class="review__box">
+                                            <span class="review__star">
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                            </span>
+                                            <span class="review__total review__total--spotlight">4.9</span>
+                                        </span>
+                                        <span class="review__subtotal review__subtotal--spotlight">31 Reviews</span>
+                                    </a>
+                                    <h3 class="title title--sm">
+                                        <a class="title__link" href="#">Keto Dessert Pecan Pie - Almonds</a>
+                                    </h3>
+                                </div>
+                                <div class="card__box__footer">
+                                    <div class="price price--spotlight">
+                                        <span class="price__discount price__discount--spotlight">
+                                            <span class="price__cost">$18.95</span>
+                                            <span class="price__persent">-26.39%</span>
+                                        </span>
+                                        <span class="price__special price__special--spotlight">$13.95</span>
+                                    </div>
+                                    <a href="#" class="btn btn--add add-cart-js" data-id="7" data-name="Keto Dessert Pecan Pie - Almonds">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col__md__6 col__xl__3 d-flex">
+                            <div class="card__box card__box--spotlight">
+                                <div class="card__box__header">
+                                    <span data-id="1" class="btn__towishlist"></span>
+                                    <a class="gallery__link" href="#">
+                                        <img class="gallery__image" src="assets/images/demo/wheat-grass-raw-label_3d2_2.jpg" alt="Electrolyte Powder Raspberry Lemon">
+                                    </a>
+                                </div>
+                                <div class="card__box__body">
+                                    <a class="review" href="#">
+                                        <span class="review__box">
+                                            <span class="review__star">
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                                <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="16px"/>
+                                            </span>
+                                            <span class="review__total review__total--spotlight">4.8</span>
+                                        </span>
+                                        <span class="review__subtotal review__subtotal--spotlight">1089 Reviews</span>
+                                    </a>
+                                    <h3 class="title title--sm">
+                                        <a class="title__link" href="#">Raw Wheat Grass Juice Powder</a>
+                                    </h3>
+                                </div>
+                                <div class="card__box__footer">
+                                    <div class="price price--spotlight">
+                                        <span class="price__discount price__discount--spotlight">
+                                            <span class="price__cost">$49.95</span>
+                                            <span class="price__persent">-17.08%</span>
+                                        </span>
+                                        <span class="price__special price__special--spotlight">$41.42</span>
+                                    </div>
+                                    <a href="#" class="btn btn--add add-cart-js" data-id="8" data-name="Raw Wheat Grass Juice Powder">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="wrapper__reviews overall">
+                    <div class="overall__title">
+                        <h2 class="title title--lg title--lg--overall">
+                            ON THE WEB
+                        </h2>
+                        <h3 class="title title--lgm">
+                            4.89 Overall
+                        </h3>
+                        <div class="overall__reviews">
+                            Out of 21350 Reviews
+                        </div>
+                    </div>
+                    <div class="overall__draggable">
+                        <div class="overall__row" id="overlay" style="opacity: 1; width: 2000px; transform: translate3d(0,0,0);">
+                            <a href="#" class="overall__box overall__box--google">
+                                <div class="overall__box__avatar">
+                                    <img src="assets/images/google.png" alt="logo">
+                                </div>
+                                <div class="overall__box__review">
+                                    <span class="review__box review__box--overall">
+                                        <span class="review__total">4.9</span>
+                                        <span class="review__star">
+                                            <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="25px"/>
+                                            <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="25px"/>
+                                            <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="25px"/>
+                                            <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="25px"/>
+                                            <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="25px"/>
+                                        </span>
+                                    </span>
+                                    <span class="review__subtotal review__subtotal--overall">View 4403 reviews</span>
+                                </div>
+                            </a>
+                            <a href="#" class="overall__box overall__box--trust">
+                                <div class="overall__box__avatar">
+                                    <img src="assets/images/trustspot.png" alt="logo">
+                                </div>
+                                <div class="overall__box__review">
+                                    <span class="review__box review__box--overall">
+                                        <span class="review__total">4.9</span>
+                                        <span class="review__star">
+                                            <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="25px"/>
+                                            <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="25px"/>
+                                            <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="25px"/>
+                                            <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="25px"/>
+                                            <img class="review__star__icon" src="assets/images/icon_star.svg" alt="star" width="25px"/>
+                                        </span>
+                                    </span>
+                                    <span class="review__subtotal review__subtotal--overall">View 16857 reviews</span>
+                                </div>
+                            </a>
+                            <a href="#" class="overall__box overall__box--youtube">
+                                <div class="overall__box__avatar">
+                                    <img src="assets/images/avatar.png" alt="logo" width="48px">
+                                    <div class="overall__box__info">
+                                        <span class="review__name">
+                                            DR. Eric Berg DC
+                                        </span>
+                                        <span class="review__publish">Published on Dec 15, 2016</span>
+                                    </div>
+                                </div>
+                                <div class="overall__box__text">
+                                    SUBSCRIBE undefined M
+                                </div>
+                            </a>
+                            <a href="#" class="overall__box overall__box--facebook">
+                                <div class="overall__box__avatar overall__box__avatar--facebook">
+                                    <img src="assets/images/avatar2.png" alt="logo" width="48px">
+                                    <div class="overall__box__info">
+                                        <span class="review__name review__name--facebook">
+                                            DR. Eric Berg
+                                        </span>
+                                        <span class="review__publish">502k Like this</span>
+                                    </div>
+                                </div>
+                                <div class="overall__box__text overall__box__text--facebook">
+                                    <img class="icon-facebook" src="assets/images/facebook.svg" alt="facebook" width="28px">
+                                    Become a supporter
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <section class="footer__newsletter newsletter">
+                    <h3 class="newsletter__title">3 million + Keto community</h3>
+                    <p class="newsletter__description">Join our 3+ Million members. You will receive out latest news.</p>
+                    <div class="newsletter__box">
+                        <form id="newsletter-js" action="" method="POST" class="frm__newsletter" name="frm__newsletter">
+                            <input type="email" name="email" class="form__control" placeholder="Enter your email" aria-label="Enter your email"/>
+                            <button type="submit" class="btn btn--newsletter">
+                                <img class="frm__newsletter__mail" src="../assets/images/mail.svg" alt="subscribe" width="17"> Subscribe
+                            </button>
+                        </form>
+                        <p class="frm__error frm__error--newsletter">This is a required field.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer class="footer footer__home">
+            <div class="container container--fixed">
+                <div class="row footer__top">
+                    <div class="col__12 col__lg__3">
+                        <div class="footer__box">
+                            <h3 class="footer__title footer-top-js">About</h3>
+                            <div class="footer__mobile footer__about">
+                                <p class="about__title mb__30">Dr.Berg.com</p>
+                                <p class="mb__30">
+                                    Hours of Operation: Monday – Friday:<br/>
+                                    8:30am – 5:30pm Eastern Time
+                                </p>
+                                <p class="mb__30">Toll Free Number: 1800-816-8184</p>
+                                <p class="business"></p>
+                                <div class="rating">
+                                    <p class="rating__mb">BBB rating</p>
+                                    <p class="mb-0">Since: 12/30/2018</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col__12 col__lg__3">
+                        <div class="footer__box">
+                            <h3 class="footer__title footer-top-js">Orders and shipping</h3>
+                            <ul class="footer__mobile footer__nav">
+                                <li class="nav__item">
+                                    <a class="nav__link" href="#">My account</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="#">Shipping methods</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="#">Refunds</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col__12 col__lg__3">
+                        <div class="footer__box">
+                            <h3 class="footer__title footer-top-js">Support</h3>
+                            <ul class="footer__mobile footer__nav">
+                                <li class="nav__item">
+                                    <a class="nav__link" href="#">FAQ</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col__12 col__lg__3">
+                        <div class="footer__box">
+                            <h3 class="footer__title footer-top-js">Legal</h3>
+                            <ul class="footer__mobile footer__nav">
+                                <li class="nav__item">
+                                    <a class="nav__link" href="#">Terms and conditions</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="#">Cookie policy</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__follow">
+                    <ul class="unstyled-list d-flex justify-content-center">
+                        <li>
+                            <a class="follow__link follow__link--youtube" href="#youtube" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="45.428" height="32" viewBox="0 0 45.428 32"><defs><style>.a_y{fill:#013253;}</style></defs><g transform="translate(-654 -3378.301)"><path class="a_y" d="M463.1,199.636s-.382-3.165-1.759-4.557a6.142,6.142,0,0,0-4.566-1.781c-6.429-.464-16.037-.3-16.037-.3h-.019s-9.641-.167-16.067.3a6.39,6.39,0,0,0-4.6,1.864c-1.376,1.392-1.708,4.515-1.708,4.515s-.34,3.675-.34,7.392v3.484c0,3.72.34,7.435.34,7.435s.391,3.164,1.768,4.558c1.746,1.829,4.013,1.774,5.033,1.964,3.677.351,15.6.461,15.6.461s9.643-.013,16.072-.477a6.589,6.589,0,0,0,4.6-1.948c1.373-1.394,1.69-4.558,1.69-4.558s.322-3.715.322-7.435v-3.484C463.428,203.352,463.1,199.636,463.1,199.636Zm-27.112,15.14,0-12.9,12.412,6.475Z" transform="translate(236 3185.33)"></path></g></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="follow__link follow__link--facebook" href="#facebook" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><defs><style>.a_f{fill:#013253;}</style></defs><g transform="translate(-718 -3378.33)"><path class="a_f" d="M568,193H542a3,3,0,0,0-3,3v26a3,3,0,0,0,3,3h14V213h-5v-5h5v-3.991c0-4.212,2.556-6.506,6.243-6.506,1.766,0,2.757.134,3.757.194v4.4l-2.582,0c-2,0-2.418.97-2.418,2.4V208h4.414l-.623,5H561v12h7a3,3,0,0,0,3-3V196A3,3,0,0,0,568,193Z" transform="translate(179 3185.33)"></path></g></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="follow__link follow__link--vimeo" href="#vimeo" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><defs><style>.a_v{fill:#013253;}.b_v{fill:#fff;}</style></defs><g transform="translate(-768.811 -3378)"><rect class="a_v" width="32" height="32" rx="5" transform="translate(768.811 3378)"></rect><path class="b_v" d="M94.823,117.117c-1.2,6.895-8.1,12.778-10.184,14.106-2.024,1.328-3.922-.569-4.618-1.9-.759-1.645-3.1-10.374-3.732-11.133-.569-.759-2.467.759-2.467.759l-.822-1.2s3.732-4.491,6.579-5c2.973-.633,2.973,4.618,3.732,7.464.7,2.846,1.139,4.428,1.708,4.428.633,0,1.834-1.518,3.1-3.985,1.328-2.34-.063-4.491-2.593-2.973C86.6,111.677,96.025,110.222,94.823,117.117Z" transform="translate(700.041 3272.586)"></path></g></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="follow__link follow__link--instagram" href="#instagram" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32.009" height="32" viewBox="0 0 32.009 32"><defs><style>.a_i{fill:url(#a_i);}.b_i{fill:#013253;}.c_i{fill:#fff;}</style><radialGradient id="a_i" cx="0.266" cy="1.077" r="0.991" gradientTransform="translate(-2.918 5.666) rotate(-90) scale(1 0.93)" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#fd5"></stop><stop offset="0.1" stop-color="#fd5"></stop><stop offset="0.5" stop-color="#ff543e"></stop><stop offset="1" stop-color="#c837ab"></stop></radialGradient><radialGradient id="b_i" cx="-0.168" cy="0.072" r="0.443" gradientTransform="matrix(0.196, 0.981, -4.042, 0.809, 15.634, -0.42)" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#3771c8"></stop><stop offset="0.128" stop-color="#3771c8"></stop><stop offset="1" stop-color="#60f" stop-opacity="0"></stop></radialGradient></defs><g transform="translate(-815.196 -3378)"><path class="a_i" d="M16.006,0C9.324,0,7.37.007,6.99.038A7.94,7.94,0,0,0,3.836.831,6.389,6.389,0,0,0,2,2.177,6.868,6.868,0,0,0,.144,6.07,28.883,28.883,0,0,0,0,10.793c0,1.274,0,2.951,0,5.2C0,22.67.005,24.622.037,25A8.038,8.038,0,0,0,.8,28.093a6.742,6.742,0,0,0,4.37,3.57,11.355,11.355,0,0,0,2.324.308c.4.017,4.436.03,8.478.03s8.084,0,8.471-.025a10.934,10.934,0,0,0,2.408-.315,6.7,6.7,0,0,0,4.37-3.577,7.907,7.907,0,0,0,.755-3.032c.022-.276.031-4.672.031-9.062S32,7.211,31.974,6.935a7.818,7.818,0,0,0-.77-3.062A6.343,6.343,0,0,0,29.834,2a6.91,6.91,0,0,0-3.9-1.849A28.842,28.842,0,0,0,21.215,0Z" transform="translate(815.199 3378)"></path><path class="b_i" d="M16.006,0C9.324,0,7.37.007,6.99.038A7.94,7.94,0,0,0,3.836.831,6.389,6.389,0,0,0,2,2.177,6.868,6.868,0,0,0,.144,6.07,28.883,28.883,0,0,0,0,10.793c0,1.274,0,2.951,0,5.2C0,22.67.005,24.622.037,25A8.038,8.038,0,0,0,.8,28.093a6.742,6.742,0,0,0,4.37,3.57,11.355,11.355,0,0,0,2.324.308c.4.017,4.436.03,8.478.03s8.084,0,8.471-.025a10.934,10.934,0,0,0,2.408-.315,6.7,6.7,0,0,0,4.37-3.577,7.907,7.907,0,0,0,.755-3.032c.022-.276.031-4.672.031-9.062S32,7.211,31.974,6.935a7.818,7.818,0,0,0-.77-3.062A6.343,6.343,0,0,0,29.834,2a6.91,6.91,0,0,0-3.9-1.849A28.842,28.842,0,0,0,21.215,0Z" transform="translate(815.199 3378)"></path><path class="c_i" d="M29.817,18c-3.209,0-3.612.014-4.872.071a8.671,8.671,0,0,0-2.868.549,6.044,6.044,0,0,0-3.457,3.456,8.631,8.631,0,0,0-.549,2.868C18.015,26.2,18,26.607,18,29.816s.014,3.611.071,4.871a8.684,8.684,0,0,0,.549,2.868,6.047,6.047,0,0,0,3.455,3.457,8.679,8.679,0,0,0,2.868.549c1.26.057,1.663.071,4.872.071s3.611-.014,4.871-.071a8.684,8.684,0,0,0,2.869-.549,6.054,6.054,0,0,0,3.456-3.457,8.758,8.758,0,0,0,.549-2.868c.057-1.26.071-1.662.071-4.871s-.015-3.612-.071-4.872a8.754,8.754,0,0,0-.549-2.868,6.046,6.046,0,0,0-3.456-3.456,8.7,8.7,0,0,0-2.87-.549c-1.26-.057-1.662-.071-4.872-.071Zm-1.06,2.129h1.06c3.155,0,3.529.011,4.775.068a6.542,6.542,0,0,1,2.194.407,3.915,3.915,0,0,1,2.242,2.243,6.529,6.529,0,0,1,.407,2.193c.057,1.246.069,1.62.069,4.773s-.012,3.528-.069,4.773a6.535,6.535,0,0,1-.407,2.193,3.918,3.918,0,0,1-2.242,2.241,6.518,6.518,0,0,1-2.194.407c-1.246.057-1.62.069-4.775.069s-3.529-.012-4.775-.069a6.555,6.555,0,0,1-2.194-.407,3.915,3.915,0,0,1-2.243-2.242,6.529,6.529,0,0,1-.407-2.193c-.057-1.246-.068-1.62-.068-4.775s.011-3.528.068-4.773a6.542,6.542,0,0,1,.407-2.194A3.916,3.916,0,0,1,22.848,20.6a6.528,6.528,0,0,1,2.194-.407c1.09-.049,1.512-.064,3.715-.066Zm7.368,1.962a1.418,1.418,0,1,0,1.418,1.417,1.418,1.418,0,0,0-1.418-1.417Zm-6.307,1.657a6.068,6.068,0,1,0,6.067,6.068,6.068,6.068,0,0,0-6.067-6.068Zm0,2.129a3.939,3.939,0,1,1-3.939,3.939A3.939,3.939,0,0,1,29.817,25.878Z" transform="translate(801.381 3364.186)"></path></g></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="follow__link follow__link--twitter" href="#twitter" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="39.375" height="32.001" viewBox="0 0 39.375 32.001"><defs><style>.a_t{fill:#013253;}</style></defs><g transform="translate(-861.81 -3378.385)"><g transform="translate(498 3237)"><path class="a_t" d="M376.193,173.386c14.86,0,22.985-12.31,22.985-22.986q0-.523-.024-1.044a16.444,16.444,0,0,0,4.031-4.183,16.091,16.091,0,0,1-4.64,1.272,8.1,8.1,0,0,0,3.552-4.468,16.19,16.19,0,0,1-5.129,1.961A8.085,8.085,0,0,0,383.2,151.3a22.941,22.941,0,0,1-16.652-8.441,8.087,8.087,0,0,0,2.5,10.785,8.015,8.015,0,0,1-3.659-1.01c0,.033,0,.066,0,.1a8.082,8.082,0,0,0,6.481,7.919,8.122,8.122,0,0,1-3.648.139,8.087,8.087,0,0,0,7.547,5.61,16.208,16.208,0,0,1-10.034,3.458,16.59,16.59,0,0,1-1.927-.112,22.877,22.877,0,0,0,12.384,3.63"></path></g></g></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="follow__link follow__link--pinterest" href="#pinterest" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><defs><style>.a_p{fill:#013253;}</style></defs><g transform="translate(-913.533 -3378)"><g transform="translate(432 3185.33)"><path class="a_p" d="M481.533,208.67a16,16,0,0,0,9.576,14.653,14.132,14.132,0,0,1,.28-3.674c.308-1.3,2.058-8.717,2.058-8.717a6.156,6.156,0,0,1-.51-2.532c0-2.37,1.373-4.141,3.084-4.141a2.144,2.144,0,0,1,2.161,2.4c0,1.463-.934,3.65-1.414,5.678a2.476,2.476,0,0,0,2.525,3.081c3.031,0,5.072-3.893,5.072-8.506,0-3.507-2.361-6.132-6.656-6.132a7.576,7.576,0,0,0-7.877,7.663,4.624,4.624,0,0,0,1.055,3.138.778.778,0,0,1,.23.891c-.076.295-.254,1-.326,1.285a.551.551,0,0,1-.8.4c-2.234-.912-3.277-3.36-3.277-6.112,0-4.545,3.834-9.994,11.435-9.994,6.108,0,10.129,4.42,10.129,9.165,0,6.277-3.49,10.965-8.633,10.965a4.587,4.587,0,0,1-3.908-1.994s-.929,3.686-1.127,4.4A13.4,13.4,0,0,1,493,224.013a16,16,0,1,0-11.467-15.343Z"></path></g></g></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__policy">
+                    <p class="footer__p">Copyright © 2019 DrBerg.com. All Rights Reserved</p>
+                    <p class="footer__p">
+                        Disclaimer: The dietary and other substances, and/or materials, equipment or devices discussed on this site may not have undergone evaluation and/or testing by the United States Food and Drug Administration or like agency of any other country. Risks that might be determined by such testing are unknown. <a href="#" class="footer__p_link">Click here</a> to read the full disclaimer text.
+                    </p>
+                    <p class="footer__p">
+                        These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure or prevent any disease. Information on this site is provided for informational purposes only, it is not meant to substitute medical advice provided by your physician or any other medical professional. You should not use the information contained on this site for diagnosing or treating a health problem, disease, or prescribing any medication. Please read product label before use. Best results are only achieved when combined with diet and exercise program. Results not typical for any or all claims.
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <section class="chatapp">
+            <div id="chatapp-scroll" class="chatapp__panel panel">
+                <div class="panel__header">
+                    <div class="panel__header__top">
+                        <!--chatapp-visible-->
+                        <div class="panel__header__left chatapp-system chatapp-visible">
+                            <h4 class="panel__title"></h4>
+                            <span class="panel__name"></span>
+                        </div>
+                        <div class="panel__header__right">
+                            <span class="panel__icon panel__icon--arrow chatapp-close-js"></span>
+                            <span class="panel__icon panel__icon--close chatapp-session-js"></span>
+                        </div>
+                    </div>
+                    <div class="panel__header__welcome chatapp-logo text-center">
+                        <span class="panel__logo">
+                            <img src="assets/images/logo_chatapp.svg" alt="logo"/>
+                        </span>
+                        <h4 class="panel__title panel__title--welcome">Welcome to Live Chat</h4>
+                    </div>
+                </div>
+                <div id="messages" class="panel__body panel__body--login">
+                    <div class="chatapp-form chatapp__form">
+                        <span class="chatapp__form__hello">Hello! How can we help you?</span>
+                        <div class="panel__input panel__input--login chatapp__radius">
+                            <form action="" method="post" class="chatapp-login-js">
+                                <input type="email" name="email" class="panel__input__control" placeholder="Please enter your email..."/>
+                                <input type="hidden" name="room" class="random-room" value="sales">
+                                <button class="btn__login text-center">Start Chat Without Login</button>
+                                <button class="chatapp__radius btn__login btn__login--signup text-center" >Sign Up or Login </button>
+                            </form>
+                        </div>
+                    </div>   
+                    <div class="chatapp-content-js"></div>                 
+                </div>
+                <div class="panel__footer footer-active-js">
+                    <span class="panel__attach">
+                        <label for="file" class="panel__icon panel__icon--attach"></label>
+                        <input type="file" name="attach" id="file" class="file" disabled onchange="getFile()"/>
+                    </span>
+                    <span class="panel__icon panel__icon--cart active-search-js">
+                        <div class="chatapp__form chatapp__form--search search-list-js">
+                            <input type="text" class="search__input search__radius" id="search-product" placeholder="Search" autocomplete="off"/>
+                        </div>
+                    </span>
+                    <div class="panel__input">
+                        <form action="" method="get" name="frm-message" class="chatapp__frm chatapp-message-js">
+                            <input id="msg" type="text" name="message" class="panel__input__control" placeholder="Type a message" autocomplete="off" readonly/>
+                            <button type="submit" class="btn__chatapp" disabled>
+                                <span class="panel__icon panel__icon--send"></span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <span class="chatapp__icon chatapp-close-js">
+                <span class="chatapp__icon__arrow"></span>
+            </span>
+        </section>
+        <script>            
+            window.setInterval(function(){
+                loadStories();
+            }, 5000);
+            let slideGallery = document.querySelectorAll(".stories__image");
+            let nbr = slideGallery.length;
+            let nbrClick = 0;
+            function loadStories(){
+                nbrClick++;
+                if (nbrClick > nbr) {
+                    nbrClick = 1;
+                }
+                for (let i = 0; i < nbr; i++) {
+                    slideGallery[i].classList = "stories__image image--hidden";
+                }
+                slideGallery[nbrClick % nbr].classList = "stories__image image--right";
+                slideGallery[(nbrClick + 1) % nbr].classList = "stories__image image--center";
+                slideGallery[(nbrClick + 2) % nbr].classList = "stories__image image--left";
+                slideGallery[(nbrClick + 3) % nbr].classList = "stories__image image--small";
+                let contentStories = document.querySelectorAll('.stories__info');
+                for(let i = 0, j = 2; i < contentStories.length; i++, j++){
+                    if(contentStories[i].classList.contains('stories__info--active')){
+                        if(j == 6) j = 1;
+                        document.querySelector('.stories__number__current').innerText = j;
+                        contentStories[i].classList.remove('stories__info--active');
+                        if(i == contentStories.length - 1){
+                            contentStories[0].classList.add('stories__info--active');
+                        }else{
+                            contentStories[i+1].classList.add('stories__info--active');
+                        }
+                        break;
+                    }
+                }
+            }
+            for(let i = 0; i < nbr; i++){
+                slideGallery[i].addEventListener('click', function(){
+                    loadStories();
+                });
+            }
+            document.querySelector('.stories__btn').addEventListener('click', function(){
+                loadStories();
+            });
+            //Move reviews in on the web
+            function moveReviews(){
+                var offset = 0;
+                var divOverlay = document.getElementById ("overlay");
+                var isDown = false;
+                divOverlay.addEventListener('mousedown', function(e) {
+                    isDown = true;
+                    offset = divOverlay.offsetLeft - e.clientX;
+                }, true);
+
+                document.addEventListener('mouseup', function(e) {
+                    isDown = false;
+                    var setWidth = e.clientX + offset;
+                    if(setWidth > -150){
+                        divOverlay.style.transform = "translate3d(0,0,0)";
+                    }else if (setWidth <= -150 && setWidth > -450){
+                        divOverlay.style.transform = "translate3d(-299px,0,0)";
+                    }else if(setWidth <= -450 && setWidth > -1000){
+                        divOverlay.style.transform = "translate3d(-722px,0,0)";
+                    }else if(setWidth <= -1000){
+                        divOverlay.style.transform = "translate3d(-1202px,0,0)";
+                    }
+                }, true);
+
+                document.addEventListener('mousemove', function(e) {
+                    e.preventDefault();
+                    if (isDown) {
+                        var w = (e.clientX + offset) + 'px';
+                        divOverlay.style.transform = "translate3d("+w+",0,0)";
+                    }
+                }, true);
+            }
+            moveReviews();
+        </script>
+        <script src="../assets/js/home.js"></script>
+        <script src="../assets/js/main.js"></script>
+        <script src="../assets/js/cart.js"></script>
+        <script src="../assets/js/cart-page.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+        <script>
+            //Toggle ChatApp icon
+            let toggleChatApp = document.querySelectorAll('.chatapp-close-js');
+            for(let i = 0; i < toggleChatApp.length; i++){
+                toggleChatApp[i].addEventListener('click', function(){
+                    document.querySelector('.chatapp__icon').classList.toggle('chatapp-hidden');
+                    document.querySelector('.panel').classList.toggle('panel-active');
+                });
+            }
+			const socket = io('localhost:3000');
+			//if(document.querySelector('.random-room')) document.querySelector('.random-room').value = Math.floor((Math.random() * 1000000000) + 1);
+			document.querySelector('.chatapp-login-js').addEventListener('submit', function(e){
+				e.preventDefault();
+				if(validate(this)){
+					document.querySelector('.chatapp-logo').classList.add('chatapp-hidden');
+					document.querySelector('.chatapp-form').parentElement.classList.remove('panel__body--login');
+					document.querySelector('.chatapp-form').classList.add('chatapp-hidden');
+					document.querySelector('.panel__title').innerText = "Live Chat";
+					document.querySelector('.panel').classList.add('panel--system');
+					document.querySelector('.chatapp-system').classList.remove('chatapp-visible');                    
+					document.querySelector('.chatapp-message-js').firstElementChild.removeAttribute('readonly');
+					document.querySelector('.chatapp-message-js').firstElementChild.nextElementSibling.removeAttribute('disabled');
+					document.querySelector('.file').removeAttribute('disabled');
+					document.querySelector('.footer-active-js').firstElementChild.nextElementSibling.classList.add('search-product-js');
+					
+					//Chat app
+					let emailChat = this['email'].value;
+					let roomChat = this['room'].value;
+
+                    let userChat = users.find(user => user.email === emailChat);
+
+					const chatForm = document.querySelector('.chatapp-message-js');
+					const chatMessages = document.getElementById('messages');
+					
+					const { username, userInfo, room } = {username: emailChat.split('@')[0], userInfo: userChat, room: roomChat};
+					localStorage.setItem('email', this['email'].value);
+
+					//Join chat room
+					socket.emit('joinRoom', {username, userInfo, room});
+
+					//Message from server
+					socket.on('message', (message) => {
+                        const name = {username};
+
+						outputMessage(message, name.username);
+
+						//Scroll down
+						chatMessages.scrollTop = chatMessages.scrollHeight;
+					});
+
+					chatForm.addEventListener('submit', (e) => {
+						e.preventDefault();
+
+						//Get message text
+						const inputMessage = e.target.elements.msg;
+						const msg = inputMessage.value;
+						//Emit message to server
+						socket.emit('chatMessage', msg);
+
+						//Clear input
+						inputMessage.value = '';
+						inputMessage.focus();
+					});
+
+					//Send product in content chatapp
+					let sendProducts = document.querySelectorAll('.send-product-js');
+					for(let i = 0; i < sendProducts.length; i++){
+						sendProducts[i].addEventListener('click', function(e){
+							e.preventDefault();
+							let srcImg = this.parentElement.previousElementSibling.firstElementChild.getAttribute('data-img');
+							let contentLink = this.parentElement.previousElementSibling.firstElementChild.nextElementSibling.textContent;
+							let priceDiscount = this.previousElementSibling.getAttribute('data-discount');
+							let priceSpecial = this.previousElementSibling.getAttribute('data-special');
+							let ele = '<p class="search__item mb-0 add-product">' 
+												+ '<img width="40" class="search__img" src="'+srcImg+'" alt="">'
+												+ '<a class="search__link" href="#">'+contentLink+'</a>'
+												+ '<span class="search__price">'
+													+ '<span class="search__price__discount">$'+priceDiscount+'</span><br/>'
+													+ '<span class="search__price__special">$'+priceSpecial+'</span>'
+												+ '</span>'
+											+ '</p>';    							   
+							socket.emit('chatMessage', ele);                  
+						});
+					}	
+					//Confirm Your cart
+					function confirmCartChatApp(){
+						if(document.querySelector('.chatapp-confirm-js')) document.querySelector('.chatapp-confirm-js').addEventListener('click', function(e){
+							e.preventDefault();
+							let listProduct, content;
+							listProduct = this.parentElement.parentElement.previousElementSibling.innerHTML;
+							content = '<div class="chatapp__order__head">'
+											+ '<h4 class="order__heading order__heading--confirm">Confirmed Cart</h4>'
+										+ '</div>'
+										+ '<div class="confirm-cart">'
+											+ listProduct
+										+ '</div>';
+							socket.emit('chatMessage', content);          
+						});
+					}
+					//Confirm Billing in ChatApp
+					function confirmInformation(){
+						if(document.querySelector('.chatapp-confirm-billing-js')) document.querySelector('.chatapp-confirm-billing-js').addEventListener('click', function(e){
+							e.preventDefault();
+							let informationBody, content;        
+							informationBody = this.parentElement.parentElement.previousElementSibling.innerHTML;
+							content = '<div class="chatapp__order__head confirm-shipping-billing">'
+											+ '<h4 class="order__heading order__heading--confirm">Confirmed Information</h4>'
+										+ '</div>'
+										+ '<div class="chatapp__order__body chatapp__order__body--bill">'
+											+ informationBody
+										+ '</div>';
+							socket.emit('chatMessage', content);							
+						});
+					}
+					//Confirm Billing in ChatApp
+					function confirmShippingMethod(){
+						if(document.querySelector('.chatapp-confirm-shipping-js')) document.querySelector('.chatapp-confirm-shipping-js').addEventListener('click', function(e){
+							e.preventDefault();     
+							let typeShippingMethod = document.getElementById("type-shipping-js");
+							if(typeShippingMethod.value == ''){
+								typeShippingMethod.nextElementSibling.classList.add('frm__error--block');
+							}else{
+								typeShippingMethod.nextElementSibling.classList.remove('frm__error--block');								
+								let htmlBody = document.querySelector('.frm__shipping--active').innerHTML;
+								let content = '<div class="chatapp__order__head confirm-shipping-method">'
+													+ '<h4 class="order__heading order__heading--confirm">Confirmed Shipping Method</h4>'
+												+ '</div>'
+												+ '<div class="chatapp__order__body chatapp__order__body--bill">'
+													+ '<h2 class="order__secondary">Shipping Method</h2>'
+													+ '<div class="frm frm--checkout">'
+														+ '<div class="frm__shipping shipping-js frm__shipping--active">'
+															+ htmlBody
+														+ '</div>'
+													+ '</div>'
+												+ '</div>';
+								socket.emit('chatMessage', content);
+							}   
+						});
+					}
+					//Apply Coupon Chat App
+					function applyCouponChatApp(){
+						if(document.querySelector('.discount-group-js')) document.querySelector('.discount-group-js').addEventListener('keyup', function(){
+							if(this.value !== '') this.nextElementSibling.classList.remove('frm__error--block');
+						});
+						if(document.querySelector('.chatapp-apply-coupon-js')) document.querySelector('.chatapp-apply-coupon-js').addEventListener('click', function(e){
+							e.preventDefault();
+							let coupon = document.querySelector('.discount-group-js');
+							if(coupon.value === ''){
+								coupon.nextElementSibling.classList.add('frm__error--block');
+							}else{
+								let result = discountCode.find(code => code.coupon === coupon.value);
+								if(result === undefined){
+									document.querySelector('.alert-checkout-js').style.display = 'block';
+									setTimeout(function(){
+										document.querySelector('.alert-checkout-js').style.display = 'none';
+									}, 1000);
+								}else{
+									shoppingCart.couponToCart(result);
+									let content = '<div class="chatapp__order__head apply-discount">'
+														+ '<h4 class="order__heading order__heading--confirm">Applied</h4>'
+													+ '</div>'
+													+ '<div class="chatapp__order__body chatapp__order__body--coupon">'
+														+ '<h2 class="order__secondary">Coupon Code</h2>'
+														+ '<div class="chatapp__order__coupon">'
+															+ '<span>'+result.coupon+' - '+result.persent+'% OFF</span>'
+															+ '<span>- $'+shoppingCart.totalDiscount()+'</span>'
+														+ '</div>'
+													+ '</div>';
+									socket.emit('chatMessage', content);
+								}
+							}
+						});
+					}
+					//Confirm Order Summary
+					function confirmOrderSummary(){
+						if(document.querySelector('.chatapp-confirm-order-js')) document.querySelector('.chatapp-confirm-order-js').addEventListener('click', function(e){
+							e.preventDefault();
+							let htmlBody = this.parentElement.parentElement.previousElementSibling.innerHTML;							
+							let content = '<div class="chatapp__order__head confirm-order-summary">'
+													+ '<h4 class="order__heading order__heading--confirm">Confirmed Order Summary</h4>'
+												+ '</div>'
+												+ '<div class="chatapp__order__body chatapp__order__body--coupon chatapp__order--products">' + htmlBody + '</div>';
+							socket.emit('chatMessage', content);
+						});
+					}
+                    function saveCartChatApp(){
+                        if(document.querySelector('.chatapp-save-js')) document.querySelector('.chatapp-save-js').addEventListener('click', function(e){
+                            e.preventDefault();
+                            let contentSaveCart = '<div class="chatapp__order__head save-cart">'
+                                                        + '<h4 class="order__heading order__heading--confirm">Save Cart Successfully</h4>'
+                                                    + '</div>'
+                                                    + '<div class="chatapp__order__body chatapp__order__body--coupon">'
+                                                        + "<div class='chatapp__order__coupon text-center'>You don't have to start over. We'll save your cart and email you a link to it.</div>"
+                                                    + '</div>';
+                            socket.emit('chatMessage', contentSaveCart);
+                            this.parentElement.parentElement.remove();
+                        });
+                    }
+                    //Output message to DOM
+					function outputMessage(message, name){    
+						let isSentByCurrentUser = false;
+
+						const trimmedName = name.trim().toLowerCase();
+
+						if(message.username === trimmedName){
+							isSentByCurrentUser = true;
+						}
+
+						const div = document.createElement('div');
+						if(isSentByCurrentUser){
+							if(isHTML(message.text)){ 
+								if(message.text.includes("confirm-cart")){   
+									div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__order chatapp__order--cart">${message.text}</div>`;
+									document.querySelector('.chatapp-cart-close-js').remove();
+								}else if(message.text.includes("shop-cart")){   
+									div.innerHTML = '<div class="chatapp__box chatapp__box--customer chatapp__order chatapp__order--cart">'
+															+ '<div class="chatapp__order__head">'
+																+ '<h4 class="order__heading">Your cart</h4>'
+															+ '</div>'
+															+ '<div id="chatapp-body">'
+																+ message.text
+															+ '</div>'
+														+ '</div>';
+								}else if(message.text.includes("add-product")){
+									div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__box--product chatapp-customer-product"><span>${message.text}</span></div>`;
+								}else if(message.text.includes("confirm-shipping-billing")){
+									div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__order">${message.text}</div>`;
+									document.querySelector('.chatapp-billing-close-js').remove();
+								}else if(message.text.includes("shipping-billing")){
+									div.innerHTML = '<div class="chatapp__box chatapp__box--customer chatapp__order chatapp-change-info-js">'
+														+ '<div class="chatapp__order__body chatapp__order__body--bill">'
+															+ '<h2 class="order__secondary">Shipping and billing information</h2>'
+															+ message.text
+														+ '</div>'
+														+  '<div class="chatapp__order__foot chatapp-billing-close-js">'
+															+ '<div class="order__button">'
+																+ '<a href="#" class="btn btn--green chatapp-confirm-billing-js">Confirm</a>'
+																+ '<a href="chatapp/checkout-customer-shipping-billing.html" class="btn btn--grey chatapp-edit-js">Edit Info</a>'
+															+ '</div>'
+														+ '</div>'
+													+'</div>';
+								}else if(message.text.includes("confirm-shipping-method")){
+									div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__order">${message.text}</div>`;
+									document.querySelector('.chatapp-shipping-method-js').remove();
+								}else if(message.text.includes("shipping-method")){
+									div.innerHTML = '<div class="chatapp__box chatapp__box--customer chatapp__order">'
+														+ '<div class="chatapp__order__body chatapp__order__body--bill">'
+															+ '<h2 class="order__secondary">Shipping Method</h2>'
+															+ message.text                                           
+														+ '</div>'
+														+  '<div class="chatapp__order__foot chatapp-shipping-method-js">'
+															+ '<div class="order__button">'
+																+ '<a href="#" class="btn btn--green chatapp-confirm-shipping-js">Confirm</a>'
+															+ '</div>'
+														+ '</div>'
+													+'</div>';
+								}else if(message.text.includes("apply-discount")){
+									div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__order chatapp__order--coupon">${message.text}</div>`;
+									document.querySelector('.chatapp-apply-discount-js').remove();
+								}else if(message.text.includes('sales-coupon')){
+									div.innerHTML = '<div class="chatapp__box chatapp__box--customer chatapp__order chatapp__order--coupon">'
+															+ '<div class="chatapp__order__body chatapp__order__body--coupon">'
+																+ message.text
+															+ '</div>'
+															+  '<div class="chatapp__order__foot chatapp-apply-discount-js">'
+																+ '<div class="order__button">'
+																	+ '<a href="#" class="btn btn--green chatapp-apply-coupon-js">Apply Discount</a>'
+																+ '</div>'
+															+ '</div>'
+														+'</div>';									     
+								}else if(message.text.includes("confirm-order-summary")){
+									div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__order chatapp__order--coupon">${message.text}</div>`;
+									document.querySelector('.chatapp-order-summary-js').remove();
+								}else if(message.text.includes('order-summary')){
+									div.innerHTML = '<div class="chatapp__box chatapp__box--customer chatapp__order chatapp__order--coupon">'
+															+ '<div class="chatapp__order__body chatapp__order__body--coupon chatapp__order--products">'
+																+ '<h2 class="order__secondary">Order Summary</h2>'
+																+ message.text                                           
+															+ '</div>'
+															+  '<div class="chatapp__order__foot chatapp-order-summary-js">'
+																+ '<div class="order__button">'
+																	+ '<a href="#" class="btn btn--green chatapp-confirm-order-js">Confirm</a>'
+																+ '</div>'
+															+ '</div>'
+														+'</div>';									
+								}else if(message.text.includes('payment-method')){
+									div.innerHTML = '<div class="chatapp__box chatapp__box--customer chatapp__order chatapp__order--cart">'
+														+ '<div class="chatapp__order__body chatapp__order__body--coupon">'
+															+ '<h2 class="order__secondary">Payment Method</h2>'
+															+ message.text
+														+ '</div>'
+														+  '<div class="chatapp__order__foot chatapp-select-hidden-js">'
+															+ '<div class="order__button">'
+																+ '<a href="chatapp/checkout-customer-payment.html" class="btn btn--green chatapp-edit-js">Select</a>'
+															+ '</div>'
+														+ '</div>'
+													+'</div>';
+								}else if(message.text.includes('waiting-customer')){
+									div.innerHTML = `<p class="text-center chatapp__text chatapp-service">${message.text}</p>`;
+								}else if(message.text.includes('please-oops')){
+									div.innerHTML = `<p class="text-center chatapp__text chatapp-oops">${message.text}</p>`;
+								}else if(message.text.includes('chat-now')){
+									if(document.querySelector('.chatapp-service')) document.querySelector('.chatapp-service').parentElement.remove();
+                					if(document.querySelector('.chatapp-oops')) document.querySelector('.chatapp-oops').parentElement.remove();
+									document.querySelector('.panel__title').innerText = message.userInfo.fullname;
+                					document.querySelector('.panel__name').innerText = message.userInfo.position;
+									div.innerHTML = `<p class="text-center chatapp__text chatapp__text--sales chatapp-sales">${message.text}</p>`;
+									setTimeout(function(){
+										if(document.querySelector('.chatapp-sales')) document.querySelector('.chatapp-sales').parentElement.remove();
+									}, 2000)
+                                }else if(message.text.includes('upload-file')){
+                                    div.innerHTML = `<div class="chatapp__box chatapp__box--customer"><span>${message.text}</span></div>`;
+                                }else if(message.text.includes('payment-success')){
+                                    div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__order">${message.text}</div>`;
+                                    document.querySelector('.chatapp-select-hidden-js').remove();
+                                }else if(message.text.includes('payment-pending')){
+                                    div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__order">${message.text}</div>`;
+                                    document.querySelector('.chatapp-select-hidden-js').remove();
+                                }else if(message.text.includes('payment-unsuccess')){
+                                    div.innerHTML = '<div class="chatapp__box chatapp__box--customer chatapp__order">'
+                                                    + message.text
+                                                    + '<div class="chatapp__order__body chatapp__order__body--coupon">'
+                                                        + '<div class="chatapp__order__coupon text-center chatapp__order__coupon--danger">Unfortunately we have an issue with your payment. Do you want to select a different payment method?</div>'
+                                                        + '<h2 class="order__secondary">Payment Method</h2>'
+                                                        + '<div class="order__info__payment">'
+                                                            + '<label class="frm__checkbox">'
+                                                                + '<span class="info__payment">'
+                                                                    + '<svg xmlns="http://www.w3.org/2000/svg" width="51" height="30" viewBox="0 0 41 24"><defs><style>.a78{fill:#fff;stroke:#e3e3e3;}.b78{fill:#1a1f71;}.c78{stroke:none;}.d{fill:none;}</style></defs><g transform="translate(-1130 -256)"><g class="a78" transform="translate(1130 256)"><rect class="c78" width="41" height="24" rx="3"></rect><rect class="d" x="0.5" y="0.5" width="40" height="23" rx="2.5"></rect></g><g transform="translate(1133.891 263.055)"><path class="b78" d="M11.746.185l-4.051,10H5.045l-1.987-8a1.1,1.1,0,0,0-.586-.871A9.8,9.8,0,0,0,0,.475L.051.185H4.306A1.178,1.178,0,0,1,5.453,1.214L6.5,6.993,9.1.185Zm10.37,6.729c0-2.639-3.516-2.8-3.491-3.958,0-.369.331-.739,1.07-.844a4.619,4.619,0,0,1,2.472.449L22.6.449A6.319,6.319,0,0,0,20.257,0c-2.472,0-4.2,1.372-4.23,3.3C16,4.75,17.275,5.542,18.218,6.017s1.3.818,1.3,1.24c0,.66-.79.976-1.5.976A4.985,4.985,0,0,1,15.441,7.6l-.459,2.19a6.882,6.882,0,0,0,2.777.528c2.624.026,4.332-1.319,4.357-3.4Zm6.523,3.272h2.319l-2.013-10h-2.14a1.139,1.139,0,0,0-1.07.739l-3.771,9.263h2.624l.51-1.5h3.21Zm-2.8-3.536L27.162,2.9l.764,3.747ZM15.314.185l-2.064,10h-2.5l2.064-10Z" transform="translate(0 0)"></path></g></g></svg>'
+                                                                    + '<svg xmlns="http://www.w3.org/2000/svg" width="44" height="30" viewBox="0 0 35 24"><defs><style>.a79{fill:#fff;stroke:#e3e3e3;}.b79{fill:#222;}.c79{fill:#ff5f00;}.d79{fill:#eb001b;}.e79{fill:#f79e1b;}.f79{stroke:none;}.g79{fill:none;}</style></defs><g transform="translate(-1175 -256)"><g class="a79" transform="translate(1175 256)"><rect class="f79" width="35" height="24" rx="3"></rect><rect class="g79" x="0.5" y="0.5" width="34" height="23" rx="2.5"></rect></g><g transform="translate(1182.545 261.281)"><g transform="translate(0 0)"><path class="b79" d="M4.206,30.954v-1.04a.63.63,0,0,0-.158-.477.546.546,0,0,0-.441-.182.626.626,0,0,0-.551.295.558.558,0,0,0-.518-.295.539.539,0,0,0-.47.243V29.29H1.76v1.664h.308V30a.405.405,0,0,1,.1-.315.35.35,0,0,1,.29-.118c.227,0,.356.156.356.433v.953h.308V30a.405.405,0,0,1,.1-.315.35.35,0,0,1,.29-.118c.227,0,.356.156.356.433v.953ZM9.26,29.307H8.693v-.5H8.385v.5H8.061V29.6h.324v.78c0,.381.13.606.518.606a.861.861,0,0,0,.421-.121l-.1-.295a.507.507,0,0,1-.292.087.219.219,0,0,1-.184-.076.254.254,0,0,1-.059-.2v-.8H9.26Zm2.883-.052a.479.479,0,0,0-.421.243V29.29h-.308v1.664h.308v-.936c0-.277.13-.451.34-.451a.889.889,0,0,1,.211.035l.1-.312A1.026,1.026,0,0,0,12.143,29.255Zm-4.357.173a1.056,1.056,0,0,0-.632-.173c-.389,0-.632.191-.632.52,0,.277.178.433.518.485l.162.017c.178.035.292.1.292.191,0,.121-.13.208-.373.208A.816.816,0,0,1,6.6,30.5l-.162.26a1.118,1.118,0,0,0,.664.208c.454,0,.7-.225.7-.537s-.194-.433-.535-.485l-.162-.017c-.146-.017-.275-.069-.275-.173s.13-.208.308-.208a1.109,1.109,0,0,1,.486.139Zm4.714.693a.85.85,0,0,0,.222.628.737.737,0,0,0,.587.238.776.776,0,0,0,.551-.191l-.162-.26a.623.623,0,0,1-.405.156.56.56,0,0,1,0-1.109.623.623,0,0,1,.405.156l.162-.26a.776.776,0,0,0-.551-.191.7.7,0,0,0-.589.211.807.807,0,0,0-.221.621Zm-2.187-.866a.775.775,0,0,0-.761.866.848.848,0,0,0,.216.623.736.736,0,0,0,.578.244.95.95,0,0,0,.632-.225l-.162-.243a.743.743,0,0,1-.454.173.466.466,0,0,1-.47-.433h1.15v-.139c0-.52-.292-.866-.729-.866Zm0,.312a.373.373,0,0,1,.286.115.429.429,0,0,1,.119.3H9.875a.427.427,0,0,1,.437-.416Zm-4.2.554V29.29H5.81V29.5a.581.581,0,0,0-.5-.243.868.868,0,0,0,0,1.733.58.58,0,0,0,.5-.243v.208h.308Zm-1.263,0a.5.5,0,0,1,.506-.485.522.522,0,0,1-.02,1.039.461.461,0,0,1-.359-.161.532.532,0,0,1-.127-.394Zm11.971-.866a.479.479,0,0,0-.421.243V29.29H16.1v1.664H16.4v-.936c0-.277.13-.451.34-.451a.89.89,0,0,1,.211.035l.1-.312a1.026,1.026,0,0,0-.227-.035Zm-1.2.866V29.29h-.308V29.5a.581.581,0,0,0-.5-.243.868.868,0,0,0,0,1.733.581.581,0,0,0,.5-.243v.208h.308Zm-1.247,0a.5.5,0,0,1,.506-.485.522.522,0,0,1-.02,1.039c-.308.017-.486-.243-.486-.554Zm4.39,0v-1.49h-.308V29.5a.581.581,0,0,0-.5-.243.868.868,0,0,0,0,1.733.581.581,0,0,0,.5-.243v.208h.308Zm-1.263,0a.5.5,0,0,1,.506-.485.522.522,0,0,1-.02,1.039.461.461,0,0,1-.359-.161A.532.532,0,0,1,17.5,30.122Z" transform="translate(-1.126 -16.119)"></path><rect class="c79" width="5.684" height="9.142" transform="translate(6.708 1.244)"></rect><path class="d79" d="M7.613,5.962A5.8,5.8,0,0,1,9.857,1.391a5.963,5.963,0,0,0-6.991-.217A5.772,5.772,0,0,0,.584,7.694a5.935,5.935,0,0,0,9.274,2.839A5.8,5.8,0,0,1,7.613,5.962Z" transform="translate(-0.316 -0.147)"></path><path class="e79" d="M31.607,5.97a5.808,5.808,0,0,1-3.318,5.223,5.965,5.965,0,0,1-6.215-.652,5.778,5.778,0,0,0,0-9.142A5.965,5.965,0,0,1,28.289.747,5.808,5.808,0,0,1,31.607,5.97Z" transform="translate(-12.517 -0.155)"></path></g></g></g></svg>'
+                                                                    + '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="30" viewBox="0 0 48 30"><defs><style>.a80{fill:#fff;stroke:#e2e2e2;}.b80{fill:#016fd0;}.c80{stroke:none;}.d80{fill:none;}</style></defs><g transform="translate(-1238 -419)"><g class="a80" transform="translate(1238 419)"><rect class="c80" width="48" height="30" rx="3"></rect><rect class="d80" x="0.5" y="0.5" width="47" height="29" rx="2.5"></rect></g><g transform="translate(1101.209 75.233)"><path class="b80" d="M142.645,352.584l-1.952,4.538h1.271l.36-.909h2.094l.358.909h1.3l-1.95-4.538Zm.722,1.056.638,1.588h-1.278Z" transform="translate(0 -0.019)"></path><path class="b80" d="M283.223,357.1v-4.538l1.806.007,1.05,2.926,1.025-2.933H288.9V357.1h-1.135v-3.344l-1.2,3.344h-.995l-1.206-3.344V357.1Z" transform="translate(-137.014)"></path><path class="b80" d="M449.861,357.1v-4.538h3.7v1.015h-2.556v.776h2.5v.955h-2.5v.806h2.556v.985Z" transform="translate(-297.203)"></path><path class="b80" d="M562.5,352.584v4.538h1.135V355.51h.478l1.36,1.612h1.386l-1.493-1.672a1.382,1.382,0,0,0,1.245-1.394,1.468,1.468,0,0,0-1.586-1.472Zm1.135,1.015h1.3a.521.521,0,0,1,.537.478.513.513,0,0,1-.521.478h-1.314Z" transform="translate(-405.48 -0.019)"></path><path class="b80" d="M681.844,357.1h-1.158v-4.538h1.158Z" transform="translate(-519.095)"></path><path class="b80" d="M727.087,357.1h-.25a2,2,0,0,1-1.944-2.25,2.079,2.079,0,0,1,2.254-2.288H728.4v1.075h-1.3a1.092,1.092,0,0,0-1.059,1.224,1.111,1.111,0,0,0,1.224,1.248h.3Z" transform="translate(-561.591)"></path><path class="b80" d="M796.9,352.584l-1.952,4.538h1.271l.36-.909h2.094l.358.909h1.3l-1.95-4.538Zm.722,1.056.638,1.588h-1.278l.64-1.588Z" transform="translate(-628.938 -0.019)"></path><path class="b80" d="M937.434,357.1v-4.538h1.442l1.842,2.851v-2.851h1.135V357.1h-1.4l-1.888-2.926V357.1Z" transform="translate(-765.907)"></path><path class="b80" d="M354.2,562.314v-4.538h3.7v1.015h-2.556v.776h2.5v.955h-2.5v.806H357.9v.985Z" transform="translate(-205.242 -197.27)"></path><path class="b80" d="M822.946,562.314v-4.538h3.7v1.015h-2.556v.776h2.484v.955h-2.484v.806h2.556v.985Z" transform="translate(-655.85 -197.27)"></path><path class="b80" d="M452.508,562.314l1.8-2.241-1.845-2.3h1.429l1.1,1.42,1.1-1.42h1.373l-1.821,2.269,1.806,2.269h-1.429l-1.067-1.4-1.041,1.4Z" transform="translate(-299.706 -197.27)"></path><path class="b80" d="M584.869,557.795v4.538h1.164V560.9h1.194A1.57,1.57,0,0,0,589,559.321a1.494,1.494,0,0,0-1.629-1.526Zm1.164,1.026h1.258a.512.512,0,0,1,.56.523.524.524,0,0,1-.564.523h-1.254v-1.045Z" transform="translate(-426.986 -197.289)"></path><path class="b80" d="M704.448,557.776v4.538h1.135V560.7h.478l1.36,1.612h1.386l-1.493-1.672a1.382,1.382,0,0,0,1.245-1.394,1.468,1.468,0,0,0-1.586-1.472Zm1.135,1.015h1.3a.521.521,0,0,1,.537.478.513.513,0,0,1-.521.478h-1.314Z" transform="translate(-541.938 -197.27)"></path><path class="b80" d="M928.609,562.314v-.985h2.271c.336,0,.481-.182.481-.381s-.145-.384-.481-.384h-1.026a1.269,1.269,0,0,1-1.389-1.359c0-.728.455-1.429,1.78-1.429h2.209l-.478,1.021h-1.911c-.365,0-.478.192-.478.375a.4.4,0,0,0,.418.4h1.075a1.245,1.245,0,0,1,1.426,1.3,1.361,1.361,0,0,1-1.48,1.444Z" transform="translate(-757.285 -197.27)"></path><path class="b80" d="M1036.205,562.314v-.985h2.271c.336,0,.481-.182.481-.381s-.145-.384-.481-.384h-1.026a1.269,1.269,0,0,1-1.389-1.359c0-.728.455-1.429,1.78-1.429h2.209l-.478,1.021h-1.911c-.365,0-.478.192-.478.375a.4.4,0,0,0,.418.4h1.075a1.245,1.245,0,0,1,1.426,1.3,1.361,1.361,0,0,1-1.48,1.444Z" transform="translate(-860.717 -197.27)"></path></g></g></svg>'
+                                                                + '</span>'
+                                                                + '<input type="radio" name="pay_type" class="frm__checkbox__control" data-radio="card" checked/>'
+                                                                + '<span class="frm__checkbox__checkmark"></span>'
+                                                            + '</label>'
+                                                            + '<label class="frm__checkbox">'
+                                                                + '<span class="info__payment">'
+                                                                    + '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="30" viewBox="0 0 100 30"><defs><style>.a83{fill:#fff;stroke:#e2e2e2;}.b83{fill:#238ec2;}.b83,.c83,.d83{fill-rule:evenodd;}.c83{fill:#253667;}.d83{fill:#20274f;}.e83{stroke:none;}.f83{fill:none;}</style></defs><g transform="translate(-1130 -468)"><g class="a83" transform="translate(1130 468)"><rect class="e83" width="100" height="30" rx="3"></rect><rect class="f83" x="0.5" y="0.5" width="99" height="29" rx="2.5"></rect></g><g transform="translate(7 166)"><path class="b83" d="M24.608,27.728c-.208,1.382-1.254,1.382-2.264,1.382h-.575l.4-2.582a.319.319,0,0,1,.312-.272h.264c.688,0,1.337,0,1.673.4a1.309,1.309,0,0,1,.183,1.074Zm-.44-3.61h-3.81a.533.533,0,0,0-.523.453L18.3,34.447a.321.321,0,0,0,.312.371h1.956a.371.371,0,0,0,.367-.315l.435-2.8a.536.536,0,0,1,.524-.452H23.1a3.928,3.928,0,0,0,4.338-3.662,3,3,0,0,0-.487-2.485,3.529,3.529,0,0,0-2.782-.986Z" transform="translate(1168.687 286.215)"></path><path class="c83" d="M6.316,27.728C6.108,29.11,5.064,29.11,4.054,29.11H3.474l.4-2.582a.323.323,0,0,1,.316-.272h.264c.688,0,1.337,0,1.673.4a1.3,1.3,0,0,1,.184,1.074Zm-.44-3.61H2.068a.531.531,0,0,0-.523.453L0,34.446a.321.321,0,0,0,.312.371H2.139a.531.531,0,0,0,.523-.452L3.078,31.7a.531.531,0,0,1,.523-.452H4.807a3.928,3.928,0,0,0,4.338-3.662,2.992,2.992,0,0,0-.49-2.485,3.506,3.506,0,0,0-2.778-.986Z" transform="translate(1157.852 286.214)"></path><path class="c83" d="M11.9,30.164a2.041,2.041,0,0,1-2.059,1.76,1.533,1.533,0,0,1-1.226-.5,1.581,1.581,0,0,1-.288-1.3A2.048,2.048,0,0,1,10.37,28.36a1.534,1.534,0,0,1,1.218.5,1.612,1.612,0,0,1,.308,1.3Zm2.54-3.591H12.616a.317.317,0,0,0-.312.272l-.082.513-.128-.187A2.579,2.579,0,0,0,9.941,26.4a4.208,4.208,0,0,0-4.07,3.708,3.494,3.494,0,0,0,.677,2.833,2.838,2.838,0,0,0,2.3.936A3.476,3.476,0,0,0,11.37,32.82l-.08.514a.321.321,0,0,0,.312.371h1.644a.534.534,0,0,0,.523-.453l.983-6.314a.322.322,0,0,0-.315-.371Z" transform="translate(1161.291 287.322)"></path><path class="b83" d="M30.188,30.164a2.035,2.035,0,0,1-2.057,1.76,1.528,1.528,0,0,1-1.224-.5,1.574,1.574,0,0,1-.282-1.3,2.047,2.047,0,0,1,2.043-1.771,1.534,1.534,0,0,1,1.218.5,1.612,1.612,0,0,1,.308,1.3Zm2.545-3.591H30.909a.316.316,0,0,0-.312.272l-.082.513-.128-.187a2.583,2.583,0,0,0-2.154-.772,4.214,4.214,0,0,0-4.073,3.708,3.516,3.516,0,0,0,.679,2.833,2.833,2.833,0,0,0,2.3.936,3.48,3.48,0,0,0,2.525-1.055l-.082.514a.322.322,0,0,0,.315.371h1.643a.533.533,0,0,0,.523-.453l.986-6.314a.321.321,0,0,0-.312-.371Z" transform="translate(1172.414 287.322)"></path><path class="c83" d="M20.94,26.518H19.107a.524.524,0,0,0-.438.233l-2.53,3.766L15.069,26.9a.533.533,0,0,0-.51-.382h-1.8a.319.319,0,0,0-.3.423l2.02,5.991-1.9,2.708a.322.322,0,0,0,.26.508h1.835a.529.529,0,0,0,.435-.23l6.1-8.9a.32.32,0,0,0-.261-.5" transform="translate(1165.207 287.38)"></path><path class="b83" d="M31.872,24.388,30.309,34.445a.321.321,0,0,0,.312.371H32.2a.528.528,0,0,0,.52-.452l1.548-9.876a.322.322,0,0,0-.315-.371H32.184a.32.32,0,0,0-.312.272" transform="translate(1175.424 286.215)"></path></g><g transform="translate(11.674 168.886)"><path class="c83" d="M13.846,4.077a.629.629,0,0,1,.381-.463.744.744,0,0,1,.3-.061h4.295a9.806,9.806,0,0,1,1.417.093c.124.018.244.039.362.062s.23.05.34.079l.163.044a4.348,4.348,0,0,1,.594.228,2.95,2.95,0,0,0-.741-2.848c-.818-.84-2.293-1.2-4.18-1.2H11.292a.764.764,0,0,0-.775.6L8.239,13.692a.441.441,0,0,0,.464.492h3.383L13.847,4.077" transform="translate(1122.093 305.99)"></path><path class="b83" d="M20.275,4.06a3.189,3.189,0,0,0-.664-2.848c-.731-.84-2.05-1.2-3.738-1.2h-4.9a.7.7,0,0,0-.693.6L8.238,13.692a.424.424,0,0,0,.415.492H11.68l-.208,1.339a.37.37,0,0,0,.363.43h2.55a.618.618,0,0,0,.608-.523l.024-.131.482-3.08.03-.168a.616.616,0,0,1,.606-.524h.382c2.471,0,4.406-1.015,4.971-3.95a3.385,3.385,0,0,0-.511-2.969,2.4,2.4,0,0,0-.7-.546" transform="translate(1122.879 305.99)"></path><path class="d83" d="M21.692,4.06a2.948,2.948,0,0,0-.742-2.848c-.817-.84-2.291-1.2-4.179-1.2H11.292a.764.764,0,0,0-.775.6L8.239,13.692a.441.441,0,0,0,.464.492h3.383l.85-4.873-.025.151a.758.758,0,0,1,.77-.6h1.607c3.156,0,5.629-1.16,6.352-4.515.022-.1.04-.2.056-.291" transform="translate(1122.093 305.99)"></path></g></g></svg>'
+                                                                + '</span>'
+                                                                + '<input type="radio" name="pay_type" class="frm__checkbox__control" data-radio="card"/>'
+                                                                + '<span class="frm__checkbox__checkmark"></span>'
+                                                            + '</label>'
+                                                            + '<label class="frm__checkbox">'
+                                                                + '<span class="info__payment">'
+                                                                    + '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="30" viewBox="0 0 100 30"><defs><style>.a84{fill:#fff;stroke:#e2e2e2;}.b84{fill:#f8991d;}.b84,.c84{fill-rule:evenodd;}.c84{fill:#333e47;}.d84{stroke:none;}.e84{fill:none;}</style></defs><g transform="translate(-1130 -517)"><g class="a84" transform="translate(1130 517)"><rect class="d84" width="100" height="30" rx="3"></rect><rect class="e84" x="0.5" y="0.5" width="99" height="29" rx="2.5"></rect></g><g transform="translate(752 262)"><path class="b84" d="M429.507,287.161a18.567,18.567,0,0,1-10.482,3.2,18.968,18.968,0,0,1-12.8-4.884c-.265-.24-.029-.567.291-.381a25.771,25.771,0,0,0,12.811,3.4,25.482,25.482,0,0,0,9.772-2c.479-.2.881.316.412.663Z" transform="translate(-9.244 -12.652)"></path><path class="b84" d="M459.021,285.128c-.363-.464-2.4-.22-3.31-.111-.276.033-.32-.208-.07-.384,1.622-1.139,4.281-.81,4.59-.429s-.082,3.05-1.6,4.322c-.234.2-.457.091-.353-.167.342-.855,1.108-2.768.745-3.232Z" transform="translate(-37.579 -11.965)"></path><path class="c84" d="M455.8,264.928v-1.107a.273.273,0,0,1,.281-.28h4.963a.276.276,0,0,1,.286.279v.95a1.557,1.557,0,0,1-.373.7l-2.571,3.67a5.512,5.512,0,0,1,2.831.608.507.507,0,0,1,.263.432v1.182c0,.163-.179.351-.366.253a5.716,5.716,0,0,0-5.243.01c-.173.092-.353-.094-.353-.257v-1.123a1.336,1.336,0,0,1,.185-.761l2.978-4.273h-2.593a.277.277,0,0,1-.287-.279Z" transform="translate(-37.601 -0.31)"></path><path class="c84" d="M411.294,271.651h-1.51a.285.285,0,0,1-.27-.255v-7.748a.285.285,0,0,1,.291-.279h1.406a.285.285,0,0,1,.274.26v1.011h.028a2.074,2.074,0,0,1,3.946,0,2.23,2.23,0,0,1,3.833-.587,4.116,4.116,0,0,1,.381,2.43v4.89a.285.285,0,0,1-.291.279h-1.508a.282.282,0,0,1-.271-.278v-4.108a9.887,9.887,0,0,0-.042-1.451.787.787,0,0,0-.887-.669,1,1,0,0,0-.9.636,4.683,4.683,0,0,0-.141,1.484v4.108a.285.285,0,0,1-.291.279h-1.508a.283.283,0,0,1-.271-.278l0-4.108c0-.864.141-2.135-.93-2.135s-1.043,1.239-1.043,2.135v4.108a.285.285,0,0,1-.291.279Z" transform="translate(-11.2 -0.118)"></path><path class="c84" d="M474.621,264.787c-1.113,0-1.184,1.516-1.184,2.462s-.014,2.968,1.17,2.968,1.226-1.631,1.226-2.625a7.161,7.161,0,0,0-.226-2.055.945.945,0,0,0-.987-.75Zm-.013-1.582c2.24,0,3.452,1.925,3.452,4.37,0,2.364-1.339,4.24-3.452,4.24-2.2,0-3.4-1.924-3.4-4.321,0-2.414,1.212-4.289,3.4-4.289Z" transform="translate(-46.61 -0.118)"></path><path class="c84" d="M491.713,271.651h-1.5a.283.283,0,0,1-.271-.278l0-7.751a.286.286,0,0,1,.29-.253h1.4a.287.287,0,0,1,.268.217v1.185h.029a2.053,2.053,0,0,1,2.057-1.565,1.978,1.978,0,0,1,1.761.913,4.927,4.927,0,0,1,.395,2.413v4.876a.286.286,0,0,1-.289.244h-1.513a.284.284,0,0,1-.269-.244V267.2c0-.848.1-2.088-.944-2.088a.988.988,0,0,0-.874.62,3.44,3.44,0,0,0-.239,1.468v4.172a.29.29,0,0,1-.294.279Z" transform="translate(-57.356 -0.118)"></path><path class="c84" d="M442.422,271.531a.311.311,0,0,1-.356.035,3.684,3.684,0,0,1-.866-1.006,2.991,2.991,0,0,1-2.489,1.1,2.143,2.143,0,0,1-2.259-2.353,2.564,2.564,0,0,1,1.61-2.467,10.434,10.434,0,0,1,2.839-.523v-.2a1.934,1.934,0,0,0-.184-1.095,1.01,1.01,0,0,0-.847-.392,1.15,1.15,0,0,0-1.214.907.32.32,0,0,1-.262.278l-1.463-.158a.266.266,0,0,1-.226-.316c.332-1.751,1.9-2.3,3.317-2.311h.112a3.4,3.4,0,0,1,2.222.752c.735.686.663,1.6.663,2.6v2.352a2.062,2.062,0,0,0,.57,1.4.285.285,0,0,1-.005.4c-.308.258-.856.734-1.157,1l0,0Zm-1.521-3.681a2.964,2.964,0,0,1-.283,1.6,1.227,1.227,0,0,1-1.045.686c-.579,0-.918-.441-.918-1.095,0-1.286,1.153-1.52,2.246-1.52v.327Z" transform="translate(-26.66 -0.017)"></path><path class="c84" d="M395.971,271.531a.311.311,0,0,1-.357.035,3.668,3.668,0,0,1-.865-1.006,2.992,2.992,0,0,1-2.489,1.1,2.143,2.143,0,0,1-2.26-2.353,2.564,2.564,0,0,1,1.61-2.467,10.431,10.431,0,0,1,2.838-.523v-.2a1.933,1.933,0,0,0-.183-1.095,1.009,1.009,0,0,0-.847-.392,1.149,1.149,0,0,0-1.213.907.32.32,0,0,1-.262.278l-1.463-.158a.266.266,0,0,1-.225-.316c.331-1.751,1.895-2.3,3.316-2.311h.112a3.4,3.4,0,0,1,2.222.752c.734.686.664,1.6.664,2.6v2.352a2.059,2.059,0,0,0,.57,1.4.286.286,0,0,1,0,.4c-.308.258-.857.734-1.158,1l0,0Zm-1.522-3.681a2.96,2.96,0,0,1-.282,1.6,1.226,1.226,0,0,1-1.045.686c-.579,0-.918-.441-.918-1.095,0-1.286,1.153-1.52,2.245-1.52v.327Z" transform="translate(0 -0.017)"></path><path class="c84" d="M552.328,274.643v-.569c0-.162.08-.274.249-.264a3.547,3.547,0,0,0,1.078.024,1.252,1.252,0,0,0,.886-.781c.248-.566.411-1.022.515-1.321l-3.141-7.78c-.053-.132-.069-.378.2-.378h1.1a.342.342,0,0,1,.342.263l2.277,6.32,2.174-6.32a.343.343,0,0,1,.341-.263h1.035c.262,0,.247.245.2.378l-3.116,8.023c-.4,1.069-.94,2.769-2.15,3.065a3.181,3.181,0,0,1-1.82-.087.353.353,0,0,1-.157-.309Z" transform="translate(-92.91 -0.329)"></path><path class="c84" d="M540.706,271.059a.265.265,0,0,1-.264.263h-.774a.3.3,0,0,1-.3-.263l-.078-.527a4.527,4.527,0,0,1-1.267.75,3.182,3.182,0,0,1-2.85-.134,2.271,2.271,0,0,1-.985-1.963,2.408,2.408,0,0,1,.611-1.671,3.1,3.1,0,0,1,2.359-.9,7.34,7.34,0,0,1,2.062.272v-1.06c0-1.078-.454-1.545-1.651-1.545a8.012,8.012,0,0,0-2.589.441.237.237,0,0,1-.247-.258v-.6a.376.376,0,0,1,.258-.328,7.81,7.81,0,0,1,2.729-.527c1.366,0,2.988.308,2.988,2.409v5.651Zm-1.488-1.548v-1.6a8.277,8.277,0,0,0-1.713-.2,1.979,1.979,0,0,0-1.4.448,1.321,1.321,0,0,0-.326.907,1.212,1.212,0,0,0,.491,1.064,2,2,0,0,0,1.6.073,3.512,3.512,0,0,0,1.347-.691Z" transform="translate(-82.753)"></path><path class="c84" d="M517.807,264.307c1.718,0,2.186,1.351,2.186,2.9a3.479,3.479,0,0,1-.722,2.5,1.954,1.954,0,0,1-1.535.507,3.725,3.725,0,0,1-1.994-.754V265.04a3.551,3.551,0,0,1,2.066-.732Zm-2.329,10.29H514.44a.264.264,0,0,1-.263-.263V263.528a.264.264,0,0,1,.263-.263h.794a.3.3,0,0,1,.3.263l.083.566a4.079,4.079,0,0,1,2.613-1.084c2.554,0,3.395,2.1,3.395,4.293,0,2.342-1.285,4.223-3.458,4.223a3.637,3.637,0,0,1-2.428-.924v3.731a.264.264,0,0,1-.264.263Z" transform="translate(-71.269 -0.006)"></path></g></g></svg>'
+                                                                + '</span>'
+                                                                + '<input type="radio" name="pay_type" class="frm__checkbox__control" data-radio="amazon"/>'
+                                                                + '<span class="frm__checkbox__checkmark"></span>'
+                                                            + '</label>'
+                                                            + '<label class="frm__checkbox">'
+                                                                + '<span class="info__payment">'
+                                                                    + '<img src="assets/images/apple_pay.svg" alt="apple pay">'
+                                                                + '</span>'
+                                                                + '<input type="radio" name="pay_type" class="frm__checkbox__control" data-radio="apple_pay"/>'
+                                                                + '<span class="frm__checkbox__checkmark"></span>'
+                                                            + '</label>'
+                                                            + '<label class="frm__checkbox">'
+                                                                + '<span class="info__payment">'
+                                                                    + '<img src="assets/images/google_pay.svg" alt="google pay">'
+                                                                + '</span>'
+                                                                + '<input type="radio" name="pay_type" class="frm__checkbox__control" data-radio="google_pay"/>'
+                                                                + '<span class="frm__checkbox__checkmark"></span>'
+                                                            + '</label>'
+                                                        + '</div>'
+                                                    + '</div>'
+                                                    +  '<div class="chatapp__order__foot chatapp-reselect-hidden-js">'
+                                                        + '<div class="order__button order__button--unpayment">'
+                                                            + '<a href="chatapp/checkout-customer-payment.html" class="btn btn--green chatapp-edit-js">ReSelect Payment Method</a>'
+                                                            + '<a href="#" class="btn btn--green btn--green--warning chatapp-save-js">Save Cart for later</a> '
+                                                        + '</div>'
+                                                    + '</div>'
+                                                +'</div>';
+                                    document.querySelector('.chatapp-select-hidden-js').remove();
+                                }else if(message.text.includes('save-cart')){
+                                    div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__order">${message.text}</div>`;
+                                }
+							}else{
+								div.innerHTML = `<div class="chatapp__box chatapp__box--customer"><span>${message.text}</span></div>`;
+							}
+						}else{
+							if(isHTML(message.text)){ 
+								if(message.text.includes("confirm-cart")){   
+									div.innerHTML = `<div class="chatapp__box chatapp__box--system chatapp__order chatapp__order--cart">${message.text}</div>`;		
+									document.querySelector('.chatapp-cart-close-js').remove();						
+								}else if(message.text.includes("shop-cart")){    
+									div.innerHTML = '<div class="chatapp__box chatapp__box--system chatapp__order chatapp__order--cart">'
+															+ '<div class="chatapp__order__head">'
+																+ '<h4 class="order__heading">Your cart</h4>'
+															+ '</div>'
+															+ '<div id="chatapp-body">'
+																+ message.text
+															+ '</div>'
+														+ '</div>';	
+								}else if(message.text.includes("add-product")){
+									div.innerHTML = `<div class="chatapp__box chatapp__box--product chatapp__box--product-sales chatapp-customer-product"><span>${message.text}</span></div>`;
+								}else if(message.text.includes("confirm-shipping-billing")){
+									div.innerHTML = `<div class="chatapp__box chatapp__box--system chatapp__order">${message.text}</div>`;
+									document.querySelector('.chatapp-billing-close-js').remove();
+								}else if(message.text.includes("shipping-billing")){
+									div.innerHTML = '<div class="chatapp__box chatapp__box--system chatapp__order chatapp-change-info-js">'
+														+ '<div class="chatapp__order__body chatapp__order__body--bill">'
+															+ '<h2 class="order__secondary">Shipping and billing information</h2>'
+															+ message.text
+														+ '</div>'
+														+  '<div class="chatapp__order__foot chatapp-billing-close-js">'
+															+ '<div class="order__button">'
+																+ '<a href="#" class="btn btn--green chatapp-confirm-billing-js">Confirm</a>'
+																+ '<a href="chatapp/checkout-customer-shipping-billing.html" class="btn btn--grey chatapp-edit-js">Edit Info</a>'
+															+ '</div>'
+														+ '</div>'
+													+'</div>';
+								}else if(message.text.includes("confirm-shipping-method")){
+									div.innerHTML = `<div class="chatapp__box chatapp__box--system chatapp__order">${message.text}</div>`;
+									document.querySelector('.chatapp-shipping-method-js').remove();
+								}else if(message.text.includes("shipping-method")){
+									div.innerHTML = '<div class="chatapp__box chatapp__box--system chatapp__order">'
+														+ '<div class="chatapp__order__body chatapp__order__body--bill">'
+															+ '<h2 class="order__secondary">Shipping Method</h2>'
+															+ message.text
+														+ '</div>'
+														+  '<div class="chatapp__order__foot chatapp-shipping-method-js">'
+															+ '<div class="order__button">'
+																+ '<a href="#" class="btn btn--green chatapp-confirm-shipping-js">Confirm</a>'
+															+ '</div>'
+														+ '</div>'
+													+'</div>';
+								}else if(message.text.includes("apply-discount")){
+									div.innerHTML = `<div class="chatapp__box chatapp__box--system chatapp__order chatapp__order--coupon">${message.text}</div>`;
+									document.querySelector('.chatapp-apply-discount-js').remove();
+								}else if(message.text.includes('sales-coupon')){
+									div.innerHTML = '<div class="chatapp__box chatapp__box--system chatapp__order chatapp__order--coupon">'
+															+ '<div class="chatapp__order__body chatapp__order__body--coupon">'
+																+ message.text
+															+ '</div>'
+															+  '<div class="chatapp__order__foot chatapp-apply-discount-js">'
+																+ '<div class="order__button">'
+																	+ '<a href="#" class="btn btn--green chatapp-apply-coupon-js">Apply Discount</a>'
+																+ '</div>'
+															+ '</div>'
+														+'</div>';   
+								}else if(message.text.includes("confirm-order-summary")){
+									div.innerHTML = `<div class="chatapp__box chatapp__box--system chatapp__order chatapp__order--coupon">${message.text}</div>`;
+									document.querySelector('.chatapp-order-summary-js').remove();
+								}else if(message.text.includes('order-summary')){
+									div.innerHTML = '<div class="chatapp__box chatapp__box--system chatapp__order chatapp__order--coupon">'
+															+ '<div class="chatapp__order__body chatapp__order__body--coupon chatapp__order--products">'
+																+ '<h2 class="order__secondary">Order Summary</h2>'
+																+ message.text                                           
+															+ '</div>'
+															+  '<div class="chatapp__order__foot chatapp-order-summary-js">'
+																+ '<div class="order__button">'
+																	+ '<a href="#" class="btn btn--green chatapp-confirm-order-js">Confirm</a>'
+																+ '</div>'
+															+ '</div>'
+														+'</div>';									
+								}else if(message.text.includes('payment-method')){
+									div.innerHTML = '<div class="chatapp__box chatapp__box--system chatapp__order chatapp__order--cart">'
+														+ '<div class="chatapp__order__body chatapp__order__body--coupon">'
+															+ '<h2 class="order__secondary">Payment Method</h2>'
+															+ message.text
+														+ '</div>'
+														+  '<div class="chatapp__order__foot chatapp-select-hidden-js">'
+															+ '<div class="order__button">'
+																+ '<a href="chatapp/checkout-customer-payment.html" class="btn btn--green chatapp-edit-js">Select</a>'
+															+ '</div>'
+														+ '</div>'
+													+'</div>';
+								}else if(message.text.includes('waiting-customer')){
+									div.innerHTML = `<p class="text-center chatapp__text chatapp-service">${message.text}</p>`;
+								}else if(message.text.includes('please-oops')){
+									div.innerHTML = `<p class="text-center chatapp__text chatapp-oops">${message.text}</p>`;
+								}else if(message.text.includes('chat-now')){
+									if(document.querySelector('.chatapp-service')) document.querySelector('.chatapp-service').parentElement.remove();
+                					if(document.querySelector('.chatapp-oops')) document.querySelector('.chatapp-oops').parentElement.remove();
+									document.querySelector('.panel__title').innerText = message.userInfo.fullname;
+                					document.querySelector('.panel__name').innerText = message.userInfo.position;
+									div.innerHTML = `<p class="text-center chatapp__text chatapp__text--sales chatapp-sales">${message.text}</p>`;
+									setTimeout(function(){
+										if(document.querySelector('.chatapp-sales')) document.querySelector('.chatapp-sales').parentElement.remove();
+									}, 2000)
+								}else if(message.text.includes('upload-file')){
+                                    div.innerHTML = `<div class="chatapp__box chatapp__box--system"><span>${message.text}</span></div>`;
+                                }else if(message.text.includes('payment-success')){
+                                    div.innerHTML = `<div class="chatapp__box chatapp__box--system chatapp__order">${message.text}</div>`;
+                                    document.querySelector('.chatapp-select-hidden-js').remove();
+                                }else if(message.text.includes('payment-pending')){
+                                    div.innerHTML = `<div class="chatapp__box chatapp__box--system chatapp__order">${message.text}</div>`;
+                                    document.querySelector('.chatapp-select-hidden-js').remove();
+                                }else if(message.text.includes('payment-unsuccess')){
+                                    div.innerHTML = '<div class="chatapp__box chatapp__box--system chatapp__order">'
+                                                    + message.text
+                                                    + '<div class="chatapp__order__body chatapp__order__body--coupon">'
+                                                        + '<div class="chatapp__order__coupon text-center chatapp__order__coupon--danger">Unfortunately we have an issue with your payment. Do you want to select a different payment method?</div>'
+                                                        + '<h2 class="order__secondary">Payment Method</h2>'
+                                                        + '<div class="order__info__payment">'
+                                                            + '<label class="frm__checkbox">'
+                                                                + '<span class="info__payment">'
+                                                                    + '<svg xmlns="http://www.w3.org/2000/svg" width="51" height="30" viewBox="0 0 41 24"><defs><style>.a78{fill:#fff;stroke:#e3e3e3;}.b78{fill:#1a1f71;}.c78{stroke:none;}.d{fill:none;}</style></defs><g transform="translate(-1130 -256)"><g class="a78" transform="translate(1130 256)"><rect class="c78" width="41" height="24" rx="3"></rect><rect class="d" x="0.5" y="0.5" width="40" height="23" rx="2.5"></rect></g><g transform="translate(1133.891 263.055)"><path class="b78" d="M11.746.185l-4.051,10H5.045l-1.987-8a1.1,1.1,0,0,0-.586-.871A9.8,9.8,0,0,0,0,.475L.051.185H4.306A1.178,1.178,0,0,1,5.453,1.214L6.5,6.993,9.1.185Zm10.37,6.729c0-2.639-3.516-2.8-3.491-3.958,0-.369.331-.739,1.07-.844a4.619,4.619,0,0,1,2.472.449L22.6.449A6.319,6.319,0,0,0,20.257,0c-2.472,0-4.2,1.372-4.23,3.3C16,4.75,17.275,5.542,18.218,6.017s1.3.818,1.3,1.24c0,.66-.79.976-1.5.976A4.985,4.985,0,0,1,15.441,7.6l-.459,2.19a6.882,6.882,0,0,0,2.777.528c2.624.026,4.332-1.319,4.357-3.4Zm6.523,3.272h2.319l-2.013-10h-2.14a1.139,1.139,0,0,0-1.07.739l-3.771,9.263h2.624l.51-1.5h3.21Zm-2.8-3.536L27.162,2.9l.764,3.747ZM15.314.185l-2.064,10h-2.5l2.064-10Z" transform="translate(0 0)"></path></g></g></svg>'
+                                                                    + '<svg xmlns="http://www.w3.org/2000/svg" width="44" height="30" viewBox="0 0 35 24"><defs><style>.a79{fill:#fff;stroke:#e3e3e3;}.b79{fill:#222;}.c79{fill:#ff5f00;}.d79{fill:#eb001b;}.e79{fill:#f79e1b;}.f79{stroke:none;}.g79{fill:none;}</style></defs><g transform="translate(-1175 -256)"><g class="a79" transform="translate(1175 256)"><rect class="f79" width="35" height="24" rx="3"></rect><rect class="g79" x="0.5" y="0.5" width="34" height="23" rx="2.5"></rect></g><g transform="translate(1182.545 261.281)"><g transform="translate(0 0)"><path class="b79" d="M4.206,30.954v-1.04a.63.63,0,0,0-.158-.477.546.546,0,0,0-.441-.182.626.626,0,0,0-.551.295.558.558,0,0,0-.518-.295.539.539,0,0,0-.47.243V29.29H1.76v1.664h.308V30a.405.405,0,0,1,.1-.315.35.35,0,0,1,.29-.118c.227,0,.356.156.356.433v.953h.308V30a.405.405,0,0,1,.1-.315.35.35,0,0,1,.29-.118c.227,0,.356.156.356.433v.953ZM9.26,29.307H8.693v-.5H8.385v.5H8.061V29.6h.324v.78c0,.381.13.606.518.606a.861.861,0,0,0,.421-.121l-.1-.295a.507.507,0,0,1-.292.087.219.219,0,0,1-.184-.076.254.254,0,0,1-.059-.2v-.8H9.26Zm2.883-.052a.479.479,0,0,0-.421.243V29.29h-.308v1.664h.308v-.936c0-.277.13-.451.34-.451a.889.889,0,0,1,.211.035l.1-.312A1.026,1.026,0,0,0,12.143,29.255Zm-4.357.173a1.056,1.056,0,0,0-.632-.173c-.389,0-.632.191-.632.52,0,.277.178.433.518.485l.162.017c.178.035.292.1.292.191,0,.121-.13.208-.373.208A.816.816,0,0,1,6.6,30.5l-.162.26a1.118,1.118,0,0,0,.664.208c.454,0,.7-.225.7-.537s-.194-.433-.535-.485l-.162-.017c-.146-.017-.275-.069-.275-.173s.13-.208.308-.208a1.109,1.109,0,0,1,.486.139Zm4.714.693a.85.85,0,0,0,.222.628.737.737,0,0,0,.587.238.776.776,0,0,0,.551-.191l-.162-.26a.623.623,0,0,1-.405.156.56.56,0,0,1,0-1.109.623.623,0,0,1,.405.156l.162-.26a.776.776,0,0,0-.551-.191.7.7,0,0,0-.589.211.807.807,0,0,0-.221.621Zm-2.187-.866a.775.775,0,0,0-.761.866.848.848,0,0,0,.216.623.736.736,0,0,0,.578.244.95.95,0,0,0,.632-.225l-.162-.243a.743.743,0,0,1-.454.173.466.466,0,0,1-.47-.433h1.15v-.139c0-.52-.292-.866-.729-.866Zm0,.312a.373.373,0,0,1,.286.115.429.429,0,0,1,.119.3H9.875a.427.427,0,0,1,.437-.416Zm-4.2.554V29.29H5.81V29.5a.581.581,0,0,0-.5-.243.868.868,0,0,0,0,1.733.58.58,0,0,0,.5-.243v.208h.308Zm-1.263,0a.5.5,0,0,1,.506-.485.522.522,0,0,1-.02,1.039.461.461,0,0,1-.359-.161.532.532,0,0,1-.127-.394Zm11.971-.866a.479.479,0,0,0-.421.243V29.29H16.1v1.664H16.4v-.936c0-.277.13-.451.34-.451a.89.89,0,0,1,.211.035l.1-.312a1.026,1.026,0,0,0-.227-.035Zm-1.2.866V29.29h-.308V29.5a.581.581,0,0,0-.5-.243.868.868,0,0,0,0,1.733.581.581,0,0,0,.5-.243v.208h.308Zm-1.247,0a.5.5,0,0,1,.506-.485.522.522,0,0,1-.02,1.039c-.308.017-.486-.243-.486-.554Zm4.39,0v-1.49h-.308V29.5a.581.581,0,0,0-.5-.243.868.868,0,0,0,0,1.733.581.581,0,0,0,.5-.243v.208h.308Zm-1.263,0a.5.5,0,0,1,.506-.485.522.522,0,0,1-.02,1.039.461.461,0,0,1-.359-.161A.532.532,0,0,1,17.5,30.122Z" transform="translate(-1.126 -16.119)"></path><rect class="c79" width="5.684" height="9.142" transform="translate(6.708 1.244)"></rect><path class="d79" d="M7.613,5.962A5.8,5.8,0,0,1,9.857,1.391a5.963,5.963,0,0,0-6.991-.217A5.772,5.772,0,0,0,.584,7.694a5.935,5.935,0,0,0,9.274,2.839A5.8,5.8,0,0,1,7.613,5.962Z" transform="translate(-0.316 -0.147)"></path><path class="e79" d="M31.607,5.97a5.808,5.808,0,0,1-3.318,5.223,5.965,5.965,0,0,1-6.215-.652,5.778,5.778,0,0,0,0-9.142A5.965,5.965,0,0,1,28.289.747,5.808,5.808,0,0,1,31.607,5.97Z" transform="translate(-12.517 -0.155)"></path></g></g></g></svg>'
+                                                                    + '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="30" viewBox="0 0 48 30"><defs><style>.a80{fill:#fff;stroke:#e2e2e2;}.b80{fill:#016fd0;}.c80{stroke:none;}.d80{fill:none;}</style></defs><g transform="translate(-1238 -419)"><g class="a80" transform="translate(1238 419)"><rect class="c80" width="48" height="30" rx="3"></rect><rect class="d80" x="0.5" y="0.5" width="47" height="29" rx="2.5"></rect></g><g transform="translate(1101.209 75.233)"><path class="b80" d="M142.645,352.584l-1.952,4.538h1.271l.36-.909h2.094l.358.909h1.3l-1.95-4.538Zm.722,1.056.638,1.588h-1.278Z" transform="translate(0 -0.019)"></path><path class="b80" d="M283.223,357.1v-4.538l1.806.007,1.05,2.926,1.025-2.933H288.9V357.1h-1.135v-3.344l-1.2,3.344h-.995l-1.206-3.344V357.1Z" transform="translate(-137.014)"></path><path class="b80" d="M449.861,357.1v-4.538h3.7v1.015h-2.556v.776h2.5v.955h-2.5v.806h2.556v.985Z" transform="translate(-297.203)"></path><path class="b80" d="M562.5,352.584v4.538h1.135V355.51h.478l1.36,1.612h1.386l-1.493-1.672a1.382,1.382,0,0,0,1.245-1.394,1.468,1.468,0,0,0-1.586-1.472Zm1.135,1.015h1.3a.521.521,0,0,1,.537.478.513.513,0,0,1-.521.478h-1.314Z" transform="translate(-405.48 -0.019)"></path><path class="b80" d="M681.844,357.1h-1.158v-4.538h1.158Z" transform="translate(-519.095)"></path><path class="b80" d="M727.087,357.1h-.25a2,2,0,0,1-1.944-2.25,2.079,2.079,0,0,1,2.254-2.288H728.4v1.075h-1.3a1.092,1.092,0,0,0-1.059,1.224,1.111,1.111,0,0,0,1.224,1.248h.3Z" transform="translate(-561.591)"></path><path class="b80" d="M796.9,352.584l-1.952,4.538h1.271l.36-.909h2.094l.358.909h1.3l-1.95-4.538Zm.722,1.056.638,1.588h-1.278l.64-1.588Z" transform="translate(-628.938 -0.019)"></path><path class="b80" d="M937.434,357.1v-4.538h1.442l1.842,2.851v-2.851h1.135V357.1h-1.4l-1.888-2.926V357.1Z" transform="translate(-765.907)"></path><path class="b80" d="M354.2,562.314v-4.538h3.7v1.015h-2.556v.776h2.5v.955h-2.5v.806H357.9v.985Z" transform="translate(-205.242 -197.27)"></path><path class="b80" d="M822.946,562.314v-4.538h3.7v1.015h-2.556v.776h2.484v.955h-2.484v.806h2.556v.985Z" transform="translate(-655.85 -197.27)"></path><path class="b80" d="M452.508,562.314l1.8-2.241-1.845-2.3h1.429l1.1,1.42,1.1-1.42h1.373l-1.821,2.269,1.806,2.269h-1.429l-1.067-1.4-1.041,1.4Z" transform="translate(-299.706 -197.27)"></path><path class="b80" d="M584.869,557.795v4.538h1.164V560.9h1.194A1.57,1.57,0,0,0,589,559.321a1.494,1.494,0,0,0-1.629-1.526Zm1.164,1.026h1.258a.512.512,0,0,1,.56.523.524.524,0,0,1-.564.523h-1.254v-1.045Z" transform="translate(-426.986 -197.289)"></path><path class="b80" d="M704.448,557.776v4.538h1.135V560.7h.478l1.36,1.612h1.386l-1.493-1.672a1.382,1.382,0,0,0,1.245-1.394,1.468,1.468,0,0,0-1.586-1.472Zm1.135,1.015h1.3a.521.521,0,0,1,.537.478.513.513,0,0,1-.521.478h-1.314Z" transform="translate(-541.938 -197.27)"></path><path class="b80" d="M928.609,562.314v-.985h2.271c.336,0,.481-.182.481-.381s-.145-.384-.481-.384h-1.026a1.269,1.269,0,0,1-1.389-1.359c0-.728.455-1.429,1.78-1.429h2.209l-.478,1.021h-1.911c-.365,0-.478.192-.478.375a.4.4,0,0,0,.418.4h1.075a1.245,1.245,0,0,1,1.426,1.3,1.361,1.361,0,0,1-1.48,1.444Z" transform="translate(-757.285 -197.27)"></path><path class="b80" d="M1036.205,562.314v-.985h2.271c.336,0,.481-.182.481-.381s-.145-.384-.481-.384h-1.026a1.269,1.269,0,0,1-1.389-1.359c0-.728.455-1.429,1.78-1.429h2.209l-.478,1.021h-1.911c-.365,0-.478.192-.478.375a.4.4,0,0,0,.418.4h1.075a1.245,1.245,0,0,1,1.426,1.3,1.361,1.361,0,0,1-1.48,1.444Z" transform="translate(-860.717 -197.27)"></path></g></g></svg>'
+                                                                + '</span>'
+                                                                + '<input type="radio" name="pay_type" class="frm__checkbox__control" data-radio="card" checked/>'
+                                                                + '<span class="frm__checkbox__checkmark"></span>'
+                                                            + '</label>'
+                                                            + '<label class="frm__checkbox">'
+                                                                + '<span class="info__payment">'
+                                                                    + '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="30" viewBox="0 0 100 30"><defs><style>.a83{fill:#fff;stroke:#e2e2e2;}.b83{fill:#238ec2;}.b83,.c83,.d83{fill-rule:evenodd;}.c83{fill:#253667;}.d83{fill:#20274f;}.e83{stroke:none;}.f83{fill:none;}</style></defs><g transform="translate(-1130 -468)"><g class="a83" transform="translate(1130 468)"><rect class="e83" width="100" height="30" rx="3"></rect><rect class="f83" x="0.5" y="0.5" width="99" height="29" rx="2.5"></rect></g><g transform="translate(7 166)"><path class="b83" d="M24.608,27.728c-.208,1.382-1.254,1.382-2.264,1.382h-.575l.4-2.582a.319.319,0,0,1,.312-.272h.264c.688,0,1.337,0,1.673.4a1.309,1.309,0,0,1,.183,1.074Zm-.44-3.61h-3.81a.533.533,0,0,0-.523.453L18.3,34.447a.321.321,0,0,0,.312.371h1.956a.371.371,0,0,0,.367-.315l.435-2.8a.536.536,0,0,1,.524-.452H23.1a3.928,3.928,0,0,0,4.338-3.662,3,3,0,0,0-.487-2.485,3.529,3.529,0,0,0-2.782-.986Z" transform="translate(1168.687 286.215)"></path><path class="c83" d="M6.316,27.728C6.108,29.11,5.064,29.11,4.054,29.11H3.474l.4-2.582a.323.323,0,0,1,.316-.272h.264c.688,0,1.337,0,1.673.4a1.3,1.3,0,0,1,.184,1.074Zm-.44-3.61H2.068a.531.531,0,0,0-.523.453L0,34.446a.321.321,0,0,0,.312.371H2.139a.531.531,0,0,0,.523-.452L3.078,31.7a.531.531,0,0,1,.523-.452H4.807a3.928,3.928,0,0,0,4.338-3.662,2.992,2.992,0,0,0-.49-2.485,3.506,3.506,0,0,0-2.778-.986Z" transform="translate(1157.852 286.214)"></path><path class="c83" d="M11.9,30.164a2.041,2.041,0,0,1-2.059,1.76,1.533,1.533,0,0,1-1.226-.5,1.581,1.581,0,0,1-.288-1.3A2.048,2.048,0,0,1,10.37,28.36a1.534,1.534,0,0,1,1.218.5,1.612,1.612,0,0,1,.308,1.3Zm2.54-3.591H12.616a.317.317,0,0,0-.312.272l-.082.513-.128-.187A2.579,2.579,0,0,0,9.941,26.4a4.208,4.208,0,0,0-4.07,3.708,3.494,3.494,0,0,0,.677,2.833,2.838,2.838,0,0,0,2.3.936A3.476,3.476,0,0,0,11.37,32.82l-.08.514a.321.321,0,0,0,.312.371h1.644a.534.534,0,0,0,.523-.453l.983-6.314a.322.322,0,0,0-.315-.371Z" transform="translate(1161.291 287.322)"></path><path class="b83" d="M30.188,30.164a2.035,2.035,0,0,1-2.057,1.76,1.528,1.528,0,0,1-1.224-.5,1.574,1.574,0,0,1-.282-1.3,2.047,2.047,0,0,1,2.043-1.771,1.534,1.534,0,0,1,1.218.5,1.612,1.612,0,0,1,.308,1.3Zm2.545-3.591H30.909a.316.316,0,0,0-.312.272l-.082.513-.128-.187a2.583,2.583,0,0,0-2.154-.772,4.214,4.214,0,0,0-4.073,3.708,3.516,3.516,0,0,0,.679,2.833,2.833,2.833,0,0,0,2.3.936,3.48,3.48,0,0,0,2.525-1.055l-.082.514a.322.322,0,0,0,.315.371h1.643a.533.533,0,0,0,.523-.453l.986-6.314a.321.321,0,0,0-.312-.371Z" transform="translate(1172.414 287.322)"></path><path class="c83" d="M20.94,26.518H19.107a.524.524,0,0,0-.438.233l-2.53,3.766L15.069,26.9a.533.533,0,0,0-.51-.382h-1.8a.319.319,0,0,0-.3.423l2.02,5.991-1.9,2.708a.322.322,0,0,0,.26.508h1.835a.529.529,0,0,0,.435-.23l6.1-8.9a.32.32,0,0,0-.261-.5" transform="translate(1165.207 287.38)"></path><path class="b83" d="M31.872,24.388,30.309,34.445a.321.321,0,0,0,.312.371H32.2a.528.528,0,0,0,.52-.452l1.548-9.876a.322.322,0,0,0-.315-.371H32.184a.32.32,0,0,0-.312.272" transform="translate(1175.424 286.215)"></path></g><g transform="translate(11.674 168.886)"><path class="c83" d="M13.846,4.077a.629.629,0,0,1,.381-.463.744.744,0,0,1,.3-.061h4.295a9.806,9.806,0,0,1,1.417.093c.124.018.244.039.362.062s.23.05.34.079l.163.044a4.348,4.348,0,0,1,.594.228,2.95,2.95,0,0,0-.741-2.848c-.818-.84-2.293-1.2-4.18-1.2H11.292a.764.764,0,0,0-.775.6L8.239,13.692a.441.441,0,0,0,.464.492h3.383L13.847,4.077" transform="translate(1122.093 305.99)"></path><path class="b83" d="M20.275,4.06a3.189,3.189,0,0,0-.664-2.848c-.731-.84-2.05-1.2-3.738-1.2h-4.9a.7.7,0,0,0-.693.6L8.238,13.692a.424.424,0,0,0,.415.492H11.68l-.208,1.339a.37.37,0,0,0,.363.43h2.55a.618.618,0,0,0,.608-.523l.024-.131.482-3.08.03-.168a.616.616,0,0,1,.606-.524h.382c2.471,0,4.406-1.015,4.971-3.95a3.385,3.385,0,0,0-.511-2.969,2.4,2.4,0,0,0-.7-.546" transform="translate(1122.879 305.99)"></path><path class="d83" d="M21.692,4.06a2.948,2.948,0,0,0-.742-2.848c-.817-.84-2.291-1.2-4.179-1.2H11.292a.764.764,0,0,0-.775.6L8.239,13.692a.441.441,0,0,0,.464.492h3.383l.85-4.873-.025.151a.758.758,0,0,1,.77-.6h1.607c3.156,0,5.629-1.16,6.352-4.515.022-.1.04-.2.056-.291" transform="translate(1122.093 305.99)"></path></g></g></svg>'
+                                                                + '</span>'
+                                                                + '<input type="radio" name="pay_type" class="frm__checkbox__control" data-radio="card"/>'
+                                                                + '<span class="frm__checkbox__checkmark"></span>'
+                                                            + '</label>'
+                                                            + '<label class="frm__checkbox">'
+                                                                + '<span class="info__payment">'
+                                                                    + '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="30" viewBox="0 0 100 30"><defs><style>.a84{fill:#fff;stroke:#e2e2e2;}.b84{fill:#f8991d;}.b84,.c84{fill-rule:evenodd;}.c84{fill:#333e47;}.d84{stroke:none;}.e84{fill:none;}</style></defs><g transform="translate(-1130 -517)"><g class="a84" transform="translate(1130 517)"><rect class="d84" width="100" height="30" rx="3"></rect><rect class="e84" x="0.5" y="0.5" width="99" height="29" rx="2.5"></rect></g><g transform="translate(752 262)"><path class="b84" d="M429.507,287.161a18.567,18.567,0,0,1-10.482,3.2,18.968,18.968,0,0,1-12.8-4.884c-.265-.24-.029-.567.291-.381a25.771,25.771,0,0,0,12.811,3.4,25.482,25.482,0,0,0,9.772-2c.479-.2.881.316.412.663Z" transform="translate(-9.244 -12.652)"></path><path class="b84" d="M459.021,285.128c-.363-.464-2.4-.22-3.31-.111-.276.033-.32-.208-.07-.384,1.622-1.139,4.281-.81,4.59-.429s-.082,3.05-1.6,4.322c-.234.2-.457.091-.353-.167.342-.855,1.108-2.768.745-3.232Z" transform="translate(-37.579 -11.965)"></path><path class="c84" d="M455.8,264.928v-1.107a.273.273,0,0,1,.281-.28h4.963a.276.276,0,0,1,.286.279v.95a1.557,1.557,0,0,1-.373.7l-2.571,3.67a5.512,5.512,0,0,1,2.831.608.507.507,0,0,1,.263.432v1.182c0,.163-.179.351-.366.253a5.716,5.716,0,0,0-5.243.01c-.173.092-.353-.094-.353-.257v-1.123a1.336,1.336,0,0,1,.185-.761l2.978-4.273h-2.593a.277.277,0,0,1-.287-.279Z" transform="translate(-37.601 -0.31)"></path><path class="c84" d="M411.294,271.651h-1.51a.285.285,0,0,1-.27-.255v-7.748a.285.285,0,0,1,.291-.279h1.406a.285.285,0,0,1,.274.26v1.011h.028a2.074,2.074,0,0,1,3.946,0,2.23,2.23,0,0,1,3.833-.587,4.116,4.116,0,0,1,.381,2.43v4.89a.285.285,0,0,1-.291.279h-1.508a.282.282,0,0,1-.271-.278v-4.108a9.887,9.887,0,0,0-.042-1.451.787.787,0,0,0-.887-.669,1,1,0,0,0-.9.636,4.683,4.683,0,0,0-.141,1.484v4.108a.285.285,0,0,1-.291.279h-1.508a.283.283,0,0,1-.271-.278l0-4.108c0-.864.141-2.135-.93-2.135s-1.043,1.239-1.043,2.135v4.108a.285.285,0,0,1-.291.279Z" transform="translate(-11.2 -0.118)"></path><path class="c84" d="M474.621,264.787c-1.113,0-1.184,1.516-1.184,2.462s-.014,2.968,1.17,2.968,1.226-1.631,1.226-2.625a7.161,7.161,0,0,0-.226-2.055.945.945,0,0,0-.987-.75Zm-.013-1.582c2.24,0,3.452,1.925,3.452,4.37,0,2.364-1.339,4.24-3.452,4.24-2.2,0-3.4-1.924-3.4-4.321,0-2.414,1.212-4.289,3.4-4.289Z" transform="translate(-46.61 -0.118)"></path><path class="c84" d="M491.713,271.651h-1.5a.283.283,0,0,1-.271-.278l0-7.751a.286.286,0,0,1,.29-.253h1.4a.287.287,0,0,1,.268.217v1.185h.029a2.053,2.053,0,0,1,2.057-1.565,1.978,1.978,0,0,1,1.761.913,4.927,4.927,0,0,1,.395,2.413v4.876a.286.286,0,0,1-.289.244h-1.513a.284.284,0,0,1-.269-.244V267.2c0-.848.1-2.088-.944-2.088a.988.988,0,0,0-.874.62,3.44,3.44,0,0,0-.239,1.468v4.172a.29.29,0,0,1-.294.279Z" transform="translate(-57.356 -0.118)"></path><path class="c84" d="M442.422,271.531a.311.311,0,0,1-.356.035,3.684,3.684,0,0,1-.866-1.006,2.991,2.991,0,0,1-2.489,1.1,2.143,2.143,0,0,1-2.259-2.353,2.564,2.564,0,0,1,1.61-2.467,10.434,10.434,0,0,1,2.839-.523v-.2a1.934,1.934,0,0,0-.184-1.095,1.01,1.01,0,0,0-.847-.392,1.15,1.15,0,0,0-1.214.907.32.32,0,0,1-.262.278l-1.463-.158a.266.266,0,0,1-.226-.316c.332-1.751,1.9-2.3,3.317-2.311h.112a3.4,3.4,0,0,1,2.222.752c.735.686.663,1.6.663,2.6v2.352a2.062,2.062,0,0,0,.57,1.4.285.285,0,0,1-.005.4c-.308.258-.856.734-1.157,1l0,0Zm-1.521-3.681a2.964,2.964,0,0,1-.283,1.6,1.227,1.227,0,0,1-1.045.686c-.579,0-.918-.441-.918-1.095,0-1.286,1.153-1.52,2.246-1.52v.327Z" transform="translate(-26.66 -0.017)"></path><path class="c84" d="M395.971,271.531a.311.311,0,0,1-.357.035,3.668,3.668,0,0,1-.865-1.006,2.992,2.992,0,0,1-2.489,1.1,2.143,2.143,0,0,1-2.26-2.353,2.564,2.564,0,0,1,1.61-2.467,10.431,10.431,0,0,1,2.838-.523v-.2a1.933,1.933,0,0,0-.183-1.095,1.009,1.009,0,0,0-.847-.392,1.149,1.149,0,0,0-1.213.907.32.32,0,0,1-.262.278l-1.463-.158a.266.266,0,0,1-.225-.316c.331-1.751,1.895-2.3,3.316-2.311h.112a3.4,3.4,0,0,1,2.222.752c.734.686.664,1.6.664,2.6v2.352a2.059,2.059,0,0,0,.57,1.4.286.286,0,0,1,0,.4c-.308.258-.857.734-1.158,1l0,0Zm-1.522-3.681a2.96,2.96,0,0,1-.282,1.6,1.226,1.226,0,0,1-1.045.686c-.579,0-.918-.441-.918-1.095,0-1.286,1.153-1.52,2.245-1.52v.327Z" transform="translate(0 -0.017)"></path><path class="c84" d="M552.328,274.643v-.569c0-.162.08-.274.249-.264a3.547,3.547,0,0,0,1.078.024,1.252,1.252,0,0,0,.886-.781c.248-.566.411-1.022.515-1.321l-3.141-7.78c-.053-.132-.069-.378.2-.378h1.1a.342.342,0,0,1,.342.263l2.277,6.32,2.174-6.32a.343.343,0,0,1,.341-.263h1.035c.262,0,.247.245.2.378l-3.116,8.023c-.4,1.069-.94,2.769-2.15,3.065a3.181,3.181,0,0,1-1.82-.087.353.353,0,0,1-.157-.309Z" transform="translate(-92.91 -0.329)"></path><path class="c84" d="M540.706,271.059a.265.265,0,0,1-.264.263h-.774a.3.3,0,0,1-.3-.263l-.078-.527a4.527,4.527,0,0,1-1.267.75,3.182,3.182,0,0,1-2.85-.134,2.271,2.271,0,0,1-.985-1.963,2.408,2.408,0,0,1,.611-1.671,3.1,3.1,0,0,1,2.359-.9,7.34,7.34,0,0,1,2.062.272v-1.06c0-1.078-.454-1.545-1.651-1.545a8.012,8.012,0,0,0-2.589.441.237.237,0,0,1-.247-.258v-.6a.376.376,0,0,1,.258-.328,7.81,7.81,0,0,1,2.729-.527c1.366,0,2.988.308,2.988,2.409v5.651Zm-1.488-1.548v-1.6a8.277,8.277,0,0,0-1.713-.2,1.979,1.979,0,0,0-1.4.448,1.321,1.321,0,0,0-.326.907,1.212,1.212,0,0,0,.491,1.064,2,2,0,0,0,1.6.073,3.512,3.512,0,0,0,1.347-.691Z" transform="translate(-82.753)"></path><path class="c84" d="M517.807,264.307c1.718,0,2.186,1.351,2.186,2.9a3.479,3.479,0,0,1-.722,2.5,1.954,1.954,0,0,1-1.535.507,3.725,3.725,0,0,1-1.994-.754V265.04a3.551,3.551,0,0,1,2.066-.732Zm-2.329,10.29H514.44a.264.264,0,0,1-.263-.263V263.528a.264.264,0,0,1,.263-.263h.794a.3.3,0,0,1,.3.263l.083.566a4.079,4.079,0,0,1,2.613-1.084c2.554,0,3.395,2.1,3.395,4.293,0,2.342-1.285,4.223-3.458,4.223a3.637,3.637,0,0,1-2.428-.924v3.731a.264.264,0,0,1-.264.263Z" transform="translate(-71.269 -0.006)"></path></g></g></svg>'
+                                                                + '</span>'
+                                                                + '<input type="radio" name="pay_type" class="frm__checkbox__control" data-radio="amazon"/>'
+                                                                + '<span class="frm__checkbox__checkmark"></span>'
+                                                            + '</label>'
+                                                            + '<label class="frm__checkbox">'
+                                                                + '<span class="info__payment">'
+                                                                    + '<img src="assets/images/apple_pay.svg" alt="apple pay">'
+                                                                + '</span>'
+                                                                + '<input type="radio" name="pay_type" class="frm__checkbox__control" data-radio="apple_pay"/>'
+                                                                + '<span class="frm__checkbox__checkmark"></span>'
+                                                            + '</label>'
+                                                            + '<label class="frm__checkbox">'
+                                                                + '<span class="info__payment">'
+                                                                    + '<img src="assets/images/google_pay.svg" alt="google pay">'
+                                                                + '</span>'
+                                                                + '<input type="radio" name="pay_type" class="frm__checkbox__control" data-radio="google_pay"/>'
+                                                                + '<span class="frm__checkbox__checkmark"></span>'
+                                                            + '</label>'
+                                                        + '</div>'
+                                                    + '</div>'
+                                                    +  '<div class="chatapp__order__foot chatapp-reselect-hidden-js">'
+                                                        + '<div class="order__button order__button--unpayment">'
+                                                            + '<a href="chatapp/checkout-customer-payment.html" class="btn btn--green chatapp-edit-js">ReSelect Payment Method</a>'
+                                                            + '<a href="#" class="btn btn--green btn--green--warning chatapp-save-js">Save Cart for later</a> '
+                                                        + '</div>'
+                                                    + '</div>'
+                                                +'</div>';
+                                    document.querySelector('.chatapp-select-hidden-js').remove();
+                                }else if(message.text.includes('save-cart')){
+                                    div.innerHTML = `<div class="chatapp__box chatapp__box--system chatapp__order">${message.text}</div>`;
+                                }
+							}else{
+								div.innerHTML = `<div class="chatapp__box chatapp__box--system chatapp-thank"><span>${message.text}</span></div>`;
+							}
+						}
+						document.querySelector('.chatapp-content-js').appendChild(div);    
+						openEditConfirm();
+						confirmCartChatApp();
+						confirmInformation();
+						activeShippingMethod();
+						confirmShippingMethod();
+						applyCouponChatApp();
+                        confirmOrderSummary();
+                        toggleCartDetail();
+                        saveCartChatApp();
+					}
+				}
+			});
+			//Validate form input
+			function validate(form){
+				let email = form['email'];
+				let room = form['room'];
+				if(email.value === ''){
+					email.focus();
+					return false;
+				}
+				if(room.value === ''){
+					email.focus();
+					return false;
+				}
+				return true;
+			}
+			//Check html
+			function isHTML(str) {
+				var doc = new DOMParser().parseFromString(str, "text/html");
+				return Array.from(doc.body.childNodes).some(node => node.nodeType === 1);
+			}
+			//Search product
+			document.querySelector('.active-search-js').addEventListener('click', function(e){
+				e.stopPropagation();
+				this.firstElementChild.classList.add('chatapp__form--active');
+				searchProduct();
+			});
+			let html = '';
+			for(let i in chatappProducts){
+				html += '<li class="search__item search__radius">'
+						+ '<div class="search__item__col">'
+							+ '<img width="40" data-img="'+chatappProducts[i].image +'" class="search__img" src="'+chatappProducts[i].image+'" alt="">'
+							+ '<a class="search__link" href="#">'+chatappProducts[i].name+'</a>'
+						+ '</div>'
+						+ '<div class="search__item__col">'
+							+ '<span class="search__price" data-discount="'+chatappProducts[i].price_discount+'" data-special="'+chatappProducts[i].price+'">'
+								+ '<span class="search__price__discount">$'+chatappProducts[i].price_discount+'</span><br/>'
+								+ '<span class="search__price__special">$'+chatappProducts[i].price+'</span>'
+							+ '</span>'
+							+ '<button class="btn__send send-product-js">Send</button>'
+						+ '</div>'
+					+ '</li>';
+			}
+			let listProduct = document.createElement('div');         
+			listProduct.innerHTML = '<ul id="autocomplete-products-js" class="search__list" style="display: none;">'+html+'</ul>';
+			document.querySelector('.search-list-js').appendChild(listProduct);
+			function searchProduct() {
+				document.getElementById('search-product').addEventListener('keyup', function(e){
+					var filter, ul, li, a, i, txtValue;               
+					filter = this.value.toUpperCase();
+					ul = document.getElementById("autocomplete-products-js");
+					if(filter !== ''){
+						ul.style.display = 'block';
+					}else{
+						ul.style.display = 'none';
+					}
+					li = ul.getElementsByTagName("li");
+					for (i = 0; i < li.length; i++) {
+						a = li[i].getElementsByTagName("a")[0];
+						txtValue = a.textContent || a.innerText;
+						if (txtValue.toUpperCase().indexOf(filter) > -1) {
+							li[i].style.display = "";
+						} else {
+							li[i].style.display = "none";
+						}
+					}
+				});
+			}
+            //Get file
+            function getFile(){
+                let attach = document.getElementById('file');
+                let file = '';
+                if('files' in attach){
+                    file = attach.files[0].name;
+                }
+                let fileChat = '<a class="upload-file" href="'+file+'" download>'+file+'</a>';
+                socket.emit('chatMessage', fileChat);   
+            }
+            //Edit Cart Info
+			function openEditConfirm(){
+				let popup;
+				let openWebConfirm = document.querySelectorAll('.chatapp-edit-js');
+				for(let i = 0; i < openWebConfirm.length; i++){
+					openWebConfirm[i].addEventListener('click', function(e){
+						e.preventDefault();
+						popup = window.open(this.href, "Popup", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=250,width=1023,height=650");
+						return false;
+					});
+				}
+			}
+			/*Active shipping*/
+			function activeShippingMethod(){
+				let activeShipping = document.querySelectorAll('.shipping-js');
+				for (var i = 0; i < activeShipping.length; i++) {
+					activeShipping[i].onclick = function (event) {
+						event.preventDefault();
+						for (var i = 0; i < activeShipping.length; i++) {
+							activeShipping[i].classList.remove('frm__shipping--active');
+						}
+						this.classList.add("frm__shipping--active");
+						document.getElementById("type-shipping-js").nextElementSibling.classList.remove('frm__error--block');
+						let shippingMethod = this.getAttribute('data-shipping-method');                
+						document.getElementById("type-shipping-js").setAttribute('value', shippingMethod);
+						localStorage.setItem('shipping-method', shippingMethod);
+					}
+				}
+			}
+            //Received Popup data
+            function receivedPopup(data){
+				socket.emit('chatMessage', data);
+			}
+            //Toggle Cart Detail
+            function toggleCartDetail(){
+                let toggleEl = document.querySelectorAll('.toggle-chatapp-cart-js');
+                for(i = 0; i < toggleEl.length; i++){
+                    toggleEl[i].addEventListener('click', function(){
+                        this.classList.toggle('order__coupon__title--checkout');
+                        this.nextElementSibling.classList.toggle('products-active');
+                    });
+                }
+            }
+            //Close ChatApp
+            document.querySelector('.chatapp-session-js').addEventListener('click', function(){   
+                document.querySelector('.chatapp-logo').classList.remove('chatapp-hidden');
+                document.querySelector('.chatapp-form').parentElement.classList.add('panel__body--login');
+                document.querySelector('.chatapp-form').classList.remove('chatapp-hidden');    
+                document.querySelector('.panel').classList.remove('panel--system');
+                document.querySelector('.chatapp-system').classList.add('chatapp-visible');                    
+                document.querySelector('.chatapp-message-js').firstElementChild.setAttribute('readonly','readonly');
+                document.querySelector('.chatapp-message-js').firstElementChild.nextElementSibling.setAttribute('disabled','disabled');
+                document.querySelector('.file').setAttribute('disabled','disabled');
+                document.querySelector('.footer-active-js').firstElementChild.nextElementSibling.classList.remove('search-product-js');
+                document.querySelector('.chatapp-content-js').innerHTML = '';
+                document.querySelector('.panel').classList.remove('panel-active');
+                document.querySelector('.chatapp__icon').classList.remove('chatapp-hidden');
+                document.querySelector('.panel__title').innerText = "";
+                document.querySelector('.panel__name').innerText = "";
+                window.location = '';
+                localStorage.removeItem('email');
+            });
+        </script>
+    </body>
+</html>

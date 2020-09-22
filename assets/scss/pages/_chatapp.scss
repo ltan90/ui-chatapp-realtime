@@ -1,0 +1,379 @@
+.chatapp{
+    &__panel{
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+        z-index: 100;
+        @media (max-width: 575px){
+            bottom: 0;
+            top: 0;
+            right: 0;
+            left: 0;
+        }
+    }
+    &__icon{
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+        z-index: 100;
+        cursor: pointer;
+        @include animation(transition, all ease-in 300ms);
+        background-color: $blue-light-semi-medium;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        @include textDisplay(flex, center, center);
+        &::before{
+            content: "";
+            width: 60px;
+            height: 60px;
+            border: 1px solid $white;
+            position: absolute;
+            border-radius: 50%;
+        }
+        &::after{
+            content: url($pathImage + "icon_personal.svg");
+        }
+        &__arrow{
+            border: 19px solid $blue-light-semi-medium;
+            position: absolute;
+            bottom: 5px;
+            left: -5px;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            transform: rotate(-20deg);
+            z-index: -1;
+        }
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+    &__form{
+        display: flex;
+        margin-bottom: 23px;
+        border-radius: 25px;
+        max-width: 215px;
+        @include font(14px/19px "Roboto", $white);
+        position: relative;
+        background-color: $white;
+        padding: 12px 7px 18px;
+        max-width: 242px;
+        flex-direction: column;
+        &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            border: 9px solid $white;
+            border-left-color: transparent;
+            border-top-color: transparent;
+            border-left-width: 18px;
+            border-top-width: 0;
+        }
+        &__hello{
+            @include font(14px/19px "Roboto", $blue-bold);
+            margin-bottom: 4px;
+        }
+        &--search{
+            position: absolute;
+            bottom: 29px;
+            left: -12px;
+            width: 270px;
+            border-radius: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            max-width: 270px;
+            z-index: 1;            
+            transform: scale(0,0);
+            transform-origin: left bottom;
+            transition: all .3s;
+            &::after{
+                transform: rotate(-25deg);
+                bottom: -5px;
+                left: 20px;
+                border-width: 20px;
+                z-index: -1;
+            }
+        }
+        &--active{            
+            transform: scale(1,1);
+            transform-origin: left bottom;
+            transition: all .3s;
+        }
+    }
+    &__box{
+        display: flex;
+        margin-bottom: 23px;
+        max-width: 225px;
+        @include font(14px/19px "Roboto", $white);
+        position: relative;
+        > span{
+            border-radius: 25px;
+            padding: 7px 16px 10px;
+            &::after{
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                border: 10px solid $blue-light-semi-medium;
+                border-left-color: transparent;
+                border-top-color: transparent;
+                border-top-width: 0;
+                border-left-width: 14px;
+            }
+            > a{
+                text-decoration: underline;
+                word-break: break-word;
+            }
+        }
+        
+        &--system{
+            > span{
+                background-color: $blue-light-semi-medium;
+                > a{
+                    color: #fff;
+                }
+            }
+        }
+        &--customer{
+            margin-left: auto;
+            > span{
+                background-color: $white;
+                color: $blue-bold;
+                margin-left: auto;
+                &::after{
+                    right: 0;
+                    left: auto;
+                    border-color: $white;
+                    border-right-color: transparent;
+                    border-top-color: transparent;
+                    border-top-width: 0;
+                    border-right-width: 12px;
+                }
+            }
+        }
+        &--product{
+            max-width: 257px;
+            > span{
+                background-color: $gray-semi-medium-white;
+                padding: 7px 9px;
+                border-radius: 50px;
+                &::after{
+                    border-color: $gray-semi-medium-white;
+                    border-right-color: transparent;
+                    border-top-color: transparent;
+                    border-right-width: 20px;
+                    z-index: -1;
+                }
+            }
+            &-sales{
+                > span{
+                    &::after{
+                        border-color: $gray-semi-medium-white;
+                        border-left-color: transparent;
+                        border-left-width: 20px;
+                    }
+                }
+            }
+            .search__item{
+                border: 1px solid $blue-light-semi-medium;
+                border-radius: 50px;
+                overflow: hidden;
+                padding: 3px 10px;
+                background-color: $white;
+            }
+            .search__link{
+                font-size: 14px;
+            }
+            .search__price{
+                font-size: 11px;
+            }
+        }
+    }
+    &__text{
+        @include font(italic 14px/19px "Roboto", $gray-semi-medium-bold);
+        margin-bottom: 23px;
+        &--sales{
+            width: 200px;
+            margin: 0 auto;
+        }
+    }
+    &__frm{
+        display: flex;
+    }   
+    &__order{
+        max-width: 317px;
+        display: block;
+        border-radius: 5px;
+        overflow: hidden;
+        &--cart{
+            max-width: 264px;
+        }
+        &--coupon{
+            max-width: 286px;
+            color: $blue-bold;
+        }
+        &__head{
+            .order__heading{
+                padding: 13px 10px;
+                text-transform: uppercase;
+                margin-bottom: 0;
+                background-color: $white;
+                @include font(700 14px/19px "Roboto", $blue-bold);
+                &--confirm{
+                    background-color: $color-green-confirm;
+                    color: $white;
+                    position: relative;
+                    padding-left: 30px;
+                    &::before{
+                        content: '';
+                        background-image: url($pathImage + "icon_chatapp_ticket.svg");
+                        position: absolute;
+                        left: 10px;
+                        width: 13px;
+                        height: 13px;
+                        top: 16px;
+                    }
+                }
+                &--pending{
+                    background-color: $color-warning;
+                    &::before{
+                        background-image: url($pathImage + "icon_pending.svg");
+                        height: 17px;
+                        width: 15px;
+                        top: 13px;
+                    }
+                }
+                &--danger{
+                    background-color: $color-red-error-danger-payment;
+                    &::before{
+                        background-image: url($pathImage + "icon_unpayment.svg");
+                    }
+                }
+            }
+        }
+        &__body{
+            background-color: $white;
+            padding: 13px 10px;
+            .products__quantity{
+                @include font(11px/15px "Roboto", $gray-semi-medium);
+                margin-bottom: 0;
+            }
+            .products__title{
+                @include font(700 14px/19px "Roboto", $blue-light-semi-medium);
+            }
+            .order__price{
+                @include font(italic 11px/15px "Roboto", $blue-light);
+                &__discount{
+                    color: $gray-semi-medium;
+                    text-decoration: line-through;
+                    margin-left: 15px;
+                }
+            }
+            .order__secondary{
+                @include font(700 14px/24px "Roboto", $blue-bold);
+                text-transform: uppercase;
+                margin-bottom: 15px;
+            }
+            .order__shipping{
+                margin-top: 20px;
+                margin-bottom: 0;
+            }
+            .chatapp__order__coupon{
+                @include font(14px/24px "Roboto", $blue-bold);
+                @include textDisplay(flex,center,space-between);
+                &--pending{
+                    color: $color-warning;
+                }
+                &--danger{
+                    color: $color-red-error-danger-payment;
+                    border-bottom: 1px solid $gray-semi-medium;
+                    margin: 0 -15px 5px;
+                    padding: 0 15px 10px;
+                }
+            }
+            &--bill{
+                padding: 25px 25px 13px;
+            }
+            &--coupon{
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .order__info__cart{
+                margin-top: 15px;
+                margin-bottom: 15px;
+                .order__coupon__title{
+                    @include font(700 14px/24px "Roboto", $blue-bold);
+                }
+            }
+            .order__info__tax{
+                padding-top: 1rem;
+            }
+            .order__info__subtotal{
+                padding-top: 1rem;
+                font-weight: 700;
+            }
+            .info__label__box{
+                display: flex;
+                flex-direction: column;
+                padding-right: 20px;
+                .info__label__shipping{
+                    color: $gray-semi-medium;
+                    margin-top: 5px;
+                }
+            }
+        }
+        &__foot{
+            background-color: $gray-semi-medium-white;
+            padding: 10px 15px;
+            .order__subtotal{
+                color: $blue-bold;
+                font-weight: 700;
+                label{
+                    margin-bottom: 0;
+                }
+                span{
+                    font-weight: normal;
+                }
+            }
+            .order__button{
+                display: flex;
+                flex-wrap: nowrap;
+                margin-left: -7.5px;
+                margin-right: -7.5px;
+                .btn{
+                    margin: 0 7.5px;
+                    padding: 14px;
+                    font: 700 14px/19px "Roboto";
+                }
+                &--unpayment{
+                    flex-wrap: wrap;
+                }
+            }
+            &--cart{
+                padding-top: 0;
+            }
+        }
+        .discount--active{
+            display: flex;
+        }        
+        &--products{
+            label{
+                margin-bottom: 0;
+            }
+            img{
+                width: 100%;
+            }
+        }
+    }
+    &-hidden{
+        display: none;
+    }
+    &-visible{
+        visibility: hidden;
+    }
+    &__radius{
+        border-radius: 10px;
+    }
+}

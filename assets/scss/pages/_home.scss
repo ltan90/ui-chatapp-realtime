@@ -1,0 +1,140 @@
+.explore{
+    margin-top: 14px;
+    margin-bottom: 60px;
+    .items{
+      &:nth-child(2) {
+          .item__avatar{
+              &__img{
+                  @include animation(transform, translate(-15px, -46px));
+              }
+          }
+      }
+      &:nth-child(3) {
+          .item__avatar{
+              &__img{
+                  @include animation(transform, translate(-46px, -36px));
+              }
+          }
+      }
+      &:last-child {
+          .item__avatar{
+              &__img{
+                  @include animation(transform, translate(0px, 0px));
+              }
+          }
+      }
+      @media (max-width: 748px){
+        &:nth-child(2) {
+            .item__avatar{
+                &__img{
+                    @include animation(transform, translate(-14px, -62px));
+                    width: 450px;
+                }
+            }
+        }
+        &:nth-child(3) {
+            .item__avatar{
+                &__img{
+                    @include animation(transform, translate(-28px, -25px) rotate(-12deg));
+                }
+            }
+        }
+        &:last-child {
+            .item__avatar{
+                &__img{
+                    @include animation(transform, translate(0px, 0px));
+                }
+            }
+        }
+      }
+    }
+    @media (max-width: 900px){
+      margin-top: 54px;
+    }
+    @media (max-width: 748px){
+        margin-bottom: 30px;
+    }
+}
+.product{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    &__summary{
+        @include font(14px/20px "Roboto", $blue-bold);
+        @include space(margin, bottom, 30px);
+    }
+    @media (max-width: 767px){
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+.overall{
+    &__title{
+        margin-top: 13rem;
+        margin-bottom: 3rem;
+    }
+    &__draggable{
+        transform: translate3d(0,0,0);
+        overflow-x: hidden;    
+    }
+    &__row{
+        display: flex;
+        flex-wrap: nowrap;
+        margin-bottom: 8rem;    
+        transition: all 500ms;
+    }
+    &__reviews{
+        @include font(16px/19px "Roboto", $blue-bold);
+    }
+    &__box{
+        border: 1px solid #E3E3E3;
+        padding: 26px 30px;
+        margin-right: 18px;
+        display: flex;
+        align-items: center;
+        &__avatar{
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            &--facebook{
+                margin-right: 40px;
+            }
+        }
+        &__info{
+            display: flex;
+            flex-direction: column;
+            margin-left: 15px;
+        }
+        &__text{
+            @include font(700 16px/18px "Roboto", $color-red);
+            &--facebook{
+                @include font(16px/18px "Roboto", $color-facebook);
+                .icon-facebook{
+                    margin-right: 10px;
+                }
+            }
+        }
+        &--google{
+            @include col(287px);
+        }
+        &--trust{
+            @include col(412px);
+        }
+        &--youtube{
+            @include col(455px);
+        }
+        &--facebook{
+            @include col(422px);
+        }
+    }
+    @media (max-width: 767px){
+        position: relative;
+        margin-bottom: 20px;
+        &:after{
+            content: '';
+            position: absolute;
+            left: -15px;
+            right: -15px;
+            border-bottom: 1px solid $gray-semi-medium-light;
+        }
+    }
+}

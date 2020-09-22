@@ -1,0 +1,94 @@
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 102;
+    box-shadow: 0 0 12px 2px rgba(0,0,0,.35);
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: opacity .3s ease;
+    transition: opacity .3s ease;
+    overflow-y: visible;
+    pointer-events: none;
+    min-width: 0;
+    right: 0;
+    bottom: 0;
+    &__content{
+        margin: 5rem auto;
+        width: 75%;
+        display: flex;
+        flex-direction: column; 
+        left: 0;
+        position: absolute;
+        right: 0;
+        -webkit-transform: translateY(-200%);
+        transform: translateY(-200%);
+        -webkit-transition: -webkit-transform 0.2s ease;
+        transition: transform .2s ease;
+        box-shadow: 0 0 12px 2px rgba(0, 0, 0, 0.35);
+        opacity: 1;
+        pointer-events: auto;
+        .overscroll{
+            max-height: none;
+        }
+    }
+    &__header{
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        @include textDisplay(flex, center, space-between);
+        padding: 41px 33px 0;
+        &__title{
+            @include font(700 14px/16px "Roboto", $blue-bold);
+            text-transform: uppercase;
+        }
+        .icon__close:before, 
+        .icon__close:after{
+            width: 20px;
+            height: 1.4px;
+        }
+    }
+    &__body{
+        padding: 15px 33px 35px;
+        margin: 5px 5px 5px 0;
+        color: #333;
+        .heading-quaternary{
+            font: 900 14px/15px "Roboto";
+        }
+    }
+    &__footer{
+        padding: 21px 19px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: #F2F2F2;
+        text-align: left;
+        .btn--add{
+            width: 254px;
+            max-width: 100%;
+        }
+    }
+    &--show{
+        .modal__content{
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+            background: $white;
+            border: 2px solid $blue-bold;
+            border-radius: 5px;
+            width: 100% !important;
+            max-width: 701px !important;
+            max-height: 90%;
+        }
+    }
+    &--term{
+        .modal__header{
+            padding: 15px;
+        }
+        .modal__content{
+            background: $white;
+            border: none;
+            border-radius: 0;
+            width: 100% !important;
+            max-width: 701px !important;
+            max-height: 90%;
+        }
+    }
+}

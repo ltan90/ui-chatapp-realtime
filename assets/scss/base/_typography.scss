@@ -1,0 +1,41 @@
+.title{
+    @include font(700 19px/24px "Roboto", $text-title);
+    @include space(margin, bottom, 22px);
+    &--sm{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    &--md{
+        @include font(700 18px/20px "Roboto", $blue-light);
+        @include space(margin, bottom, 40px);
+    }
+    &--lg{
+        text-transform: uppercase;
+        &--overall{
+            margin-bottom: 0;
+        }
+    }
+    &--lgm{
+        @include font(700 25px/32px "Roboto");
+        margin-bottom: 0;
+    }
+    &--xl{
+      @include font(700 26px/29px "Roboto");
+      @include space(margin, top, 2.5rem);
+      @include space(margin, bottom, 2rem);
+      font-weight: 700;
+    }
+    &--hd{
+        @include font(700 28px/30px "Roboto", $blue-light);
+    }
+    &__link{
+        @include font(700 16px/24px "Roboto", $text-title);
+        &:hover{
+            text-decoration: underline;
+            color: $text-title;
+        }
+    }
+    &--stories{
+        margin-bottom: 0;
+    }
+}

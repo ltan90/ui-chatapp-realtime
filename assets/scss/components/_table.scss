@@ -1,0 +1,17 @@
+.table{
+    > thead {
+        > tr {
+            > th {
+                padding: 11px 10px;
+            }
+        }
+    }
+    > tbody {
+        > tr {
+            > th, > td {
+                border-top: 1px solid #ccc;
+                padding: 11px 10px;
+            }
+        }
+    }
+}

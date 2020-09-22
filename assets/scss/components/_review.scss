@@ -1,0 +1,83 @@
+.review{
+    display: block;    
+    margin-top: 10px;
+    &__box{
+        vertical-align: middle;
+        &--overall{
+            display: flex;
+            align-items: center;
+            .review__total{
+                @include font(14px/18px "Roboto", $gray-semi-medium);
+                margin-right: 10px;
+            }
+
+        }
+    }
+    &__star{
+        display: inline-flex;        
+        &__icon{
+            margin-right: 3px;
+        }
+    }
+    &__total{
+        @include font(700 12px/16px "Roboto", $blue-bold);
+        &--spotlight{
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+    &__subtotal{
+        @include font(12px "Roboto", $blue-light);
+        border-left: 1px solid $blue-light;
+        padding-left: 5px;
+        margin-left: 5px;
+        white-space: nowrap;
+        vertical-align: middle;
+        &--spotlight{
+            font-size: 14px;
+        }
+        &--overall{
+            border-left: none;
+            @include font(700 14px/17px "Roboto", $blue-bold);
+            margin-left: 0;
+            padding-left: 0;
+            text-decoration: underline;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+    &:hover &__subtotal{
+        text-decoration: underline;
+    }
+    &__name{
+        @include font(700 12px/18px "Roboto", $gray-medium);
+        position: relative;
+        &::after{
+            content: '';
+            background: $blue-light url($pathImage + "icon_check_white.svg") no-repeat;
+            display: inline-flex;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-left: 8px;
+            background-position: center;
+            position: absolute;
+        }
+        &--facebook{
+            color: $color-facebook-title;
+            &::after{
+                background-color: $gray-semi-light;
+            }
+        }
+    }
+    &__publish{
+        @include font(11px/13px "Roboto", $gray-medium);
+    }
+    @media (max-width: 1264px){
+        line-height: 12px;
+        &__subtotal{
+            margin-left: 3px;
+        }
+    }
+}

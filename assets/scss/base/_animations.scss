@@ -1,0 +1,17 @@
+%chat_bounce_out_left{
+    opacity: 0;
+    transform: scale(0, 0);
+    transform-origin: bottom left;
+    transition: all ease-out 300ms;
+}
+%chat_bounce_out_right{
+    opacity: 0;
+    transform: scale(0, 0);
+    transform-origin: bottom right;
+    transition: all ease-out 300ms;
+}
+%chat_bounce_in{
+    opacity: 1;
+    transform: scale(1, 1);
+    transition: all ease-in 300ms;
+}

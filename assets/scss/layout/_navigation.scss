@@ -1,0 +1,366 @@
+.nav{
+  &__toggle{
+    display: flex;
+    @media (min-width: 1051px){
+      display: none;
+    }
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 48px;
+    &::before{
+      content: url($pathImage + 'icon_menu.svg');
+    }
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  &__utilities{
+    display: flex;
+    align-items: center;
+    &__item{
+      position: relative;
+    }
+    &__help{
+      .b{
+        fill: #013253;
+      }
+    }
+    &__link{
+      margin-right: 16px;
+      color: $blue-bold;      
+      font: 700 12px/19px "Roboto";
+      position: relative;
+      white-space: nowrap;
+      &:hover{
+        color: #3076a5;
+        .a{
+          fill: #3076a5;
+        }
+      }
+      .fa-shopping-cart{
+        font-size: 19px;
+        margin-right: 5px;
+      }
+    }
+    &__help{
+      &:hover{
+        .b{
+          fill: #3076a5;
+        }
+      }
+    }
+    &__icon{
+      width: 36px;
+      vertical-align: middle;
+      justify-content: center;
+      display: inline-flex;
+    }
+    &__cart::after{
+      content: url($pathImage + 'icon_arrow.svg');
+      margin-left: 10px;
+    }
+    @media (min-width: 900px){
+      &__search{
+        display: none;
+      }
+    }
+    @media (max-width: 767px){
+      &__none{
+          display: none;        
+      }
+    }
+    @media (min-width: 600px){
+      &__none{
+        &--sm{
+          display: inline-flex;
+        }
+      }
+    }
+    @media (max-width: 1050px) {
+      &__cart::after{
+        content: inherit;
+      }
+    }
+    @media (max-width: 460px) {
+      &__help{
+        display: none;
+      }
+      &__favorites{
+        display: none;
+      }
+      &__link{
+        margin-right: 8px;
+      }
+    }
+  }
+  &__navbar{
+    display: inline-flex;
+    @media (min-width: 1051px){
+       .nav__item{
+        padding: 0 15px;
+        position: relative;
+        &:hover{
+          .nav__toggle{
+            &::before{
+              content: url($pathImage + 'icon_close.svg');
+            }
+          }
+          .nav__dropdown{
+            top: 90%;
+            opacity: 1;
+            visibility: visible;
+            @include animation(transition,top ease-out 200ms);
+          }
+        }
+      }
+    }
+    .nav__link{
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 700;
+      color: $blue-bold;
+      line-height: 40px;
+      position: relative;
+      @include animation(transition,all ease-in 200ms);
+      &:hover{
+        @include animation(transition,all ease-out 200ms);
+        color: #3076a5;
+        &:after{
+          content: '';
+          transform: scale(1);
+          @include animation(transition,transform ease-out 200ms);
+        }
+      }
+      &:after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #3076a5;
+        border-radius: 5px;
+        transform: scale(0);
+        @include animation(transition,transform ease-in 200ms);
+      }
+      .nav__toggle{
+        display: flex;
+        line-height: 0.6;
+        height: 36px;
+      }
+      @media (max-width: 1150px){
+        font-size: 12px;
+      }
+    }
+  }
+  &__label{
+    font: 700 10px/12px "Roboto";
+    background-color: $orange;
+    color: #fff;
+    border-radius: 5px;
+    padding: 3px 5px;
+    margin-left: 5px;
+  }
+  .active{
+    .nav__link{
+      color: #3076a5;
+      &:after{
+        content: '';
+        transform: scale(1);
+        @include animation(transition,transform ease-out 200ms);
+      }
+    }
+  }
+  &__dropdown{
+    list-style: none;
+    padding: 15px 0;
+    position: absolute;
+    left: 0;
+    background-color: #fff;
+    z-index: 1;
+    top: 150%;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.5);
+    min-width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    @include animation(transition,top ease-in 200ms);
+    .nav__item{
+      margin-bottom: 1rem;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .nav__link{
+      text-transform: none;
+      &__count{
+        color:#0091A8;
+        font: 14px/37px 'Roboto';
+      }
+      &:hover{
+        &:after{
+          content: inherit;
+        }
+      }
+    }
+    &--categories{
+      .nav__link{
+        font: 700 14px/37px 'Roboto';
+      }
+    }
+  }
+  .nav__utilities--mobile{
+    display: none;
+  }
+  @media (max-width: 1050px){
+    height: 0;
+    .nav__navbar {
+      > .nav__item:not(.nav__item__all){
+        display: none;
+      }
+      > .nav__item{
+        > .nav__link{
+          display: none;
+        }
+      }
+    }
+    .nav__item__all, 
+    .drop__mobile{
+      left: -100%;
+      transition: left ease-in 200ms;
+    }
+  }
+  @media (max-width: 1050px){
+    &--mobile{
+      .nav__item__all{
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 250px;
+        height: 100vh;
+        background-color: #eef8fa;
+        bottom: 0;
+        transition: left ease-out 200ms;
+        z-index: 102;
+        .close__menu{
+          background-color: #fff;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 250px;
+          padding: 10px 15px;
+          &__home,
+          &__back,
+          &__close{
+            cursor: pointer;
+          }
+          &__back{
+            display: none;
+            &::before{
+              content: url($pathImage + 'icon_back.svg');
+            }
+          }
+          &__home::before{
+            content: url($pathImage + 'icon_home.svg');
+          }
+          &__close::before{
+            content: url($pathImage + 'icon_close.svg');
+          }
+        }     
+      }
+      .nav__dropdown{
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+        min-width: 250px;
+        left: 0;
+        transition: left ease-out 200ms;
+        padding-top: 0;
+        box-shadow: none;
+        position: relative;
+        > .nav__item{
+          margin-bottom: 0;
+          > .nav__link{
+            font-size: 1.4rem;
+          }
+        }
+      }
+      .nav__utilities--mobile{
+        display: block;
+        padding: 8px 24px 8px 8px;
+        .nav__utilities__none{
+          display: inline-flex;
+        }
+        .nav__utilities__link{
+          margin-right: 0;
+          font: 700 14px/37px 'Roboto';
+          display: flex;
+          align-items: center;
+        }
+        .nav__utilities__help,
+        .nav__utilities__account{
+          position: relative;
+          &:after{
+            content: url($pathImage + 'icon_rightarrow.svg');
+            position: absolute;
+            right: 0;
+          }
+        }
+        .cart__quantity{
+          left: 95px;
+          top: 10px;
+        }
+      }
+      .drop__mobile{
+        position: absolute;
+        top: 46px;
+        left: 0;
+        z-index: 1;
+        background-color: #eef8fa;
+        height: 100vh;
+        transition: left ease-out 200ms;
+        padding: 19px 17px;
+        display: none;
+        &--help{
+          .help__link{
+            font: 12px/24px 'Roboto';
+            color: #3076A5;
+            display: block;
+            margin-top: 10px;
+          }
+          .help__title{
+            font: 700 12px/18px 'Roboto';
+            color: #013253;
+            text-transform: uppercase;
+            &--head{
+              color: #333333;
+              padding-bottom: 5px;
+            }
+          }
+          .help__block{
+            margin: 10px 18px 18px 0;
+            .help__link{
+              line-height: 14px;
+            }
+          }
+          .help__hours{
+            padding: 16px 18px 16px 0;
+            .help__item{
+              font: 12px/24px 'Roboto';
+              color: #5E5E5E;
+            }
+          }
+          .help__support{
+            padding: 16px 18px 16px 0;
+          }
+        }
+        &--account{
+          .account__link{
+            font: 13px/30px 'Roboto';
+            color: #3076A5;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+}

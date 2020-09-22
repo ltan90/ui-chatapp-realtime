@@ -1,0 +1,600 @@
+.frm{
+  &__error{
+    @include font(12px/17px "Roboto", $color-red-error);
+    margin-top: 7px;
+    margin-bottom: 0;
+    &__border{
+      border: 1px solid $color-red-error !important;
+    }
+    &--block{
+      display: block;
+    }
+    &--newsletter{
+      color: $color-red-error;
+    }
+    &--policy{
+      @include font(14px/20px "Roboto", #ff1c1c);
+    }
+  }
+  &__condition{
+    @include font(700 14px/16px "Roboto", $orange);
+    border: 1px solid $orange;
+    padding: 13px 14px 13px 45px;
+    margin-bottom: 12px;    
+    position: relative;
+    border-radius: 3px;
+    display: none;
+    &::before{
+      content: '';
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      bottom: 0;
+      background-image: url($pathImage + "icon_message_info.svg");
+      width: 24px;
+      height: 24px;
+    }
+  }
+  &__group{
+    margin-bottom: 20px;
+    position: relative;
+    &--billing{
+      margin-top: 30px;
+      .active{
+        display: block;
+      }
+    }
+    &--policy{
+      margin-top: 0;
+    }
+    &__text{
+      font-size: 12px;
+      color: $gray-semi-medium;
+      &--email{
+        text-align: center;
+      }
+    }
+    &__input{
+      position: relative;
+      .input__icon{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(1, 50, 83, 0.1);
+        padding: 5px 7px;
+        bottom: 0;
+        width: 36px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .frm__control{
+        padding-left: 50px;
+        height: calc(26px + 10px);
+        @include font(700 14px/18px "Roboto", $gray-medium);
+      }
+    }
+    &__date{
+      background: url($pathImage + "dropdown-arrow.png") no-repeat 92% 55%;
+      cursor: pointer;
+      font-size: 16px;
+      color: $color-gray;
+      padding: 1px;
+      -webkit-appearance: none;
+      -moz-appearance: none;      
+      border: 1px solid $color-grey;
+      width: 100%;
+      line-height: 1.42857143;
+      margin-right: 5%;
+    }
+    &--credit,
+    &--security{
+      .frm__control{
+        font-size: 16px;
+        color: $color-gray;
+        font-family: Roboto;
+        font-weight: normal;
+      }
+    }
+    &--none{
+      display: none;
+    }
+    @media (min-width: 576px){
+      &--security{
+        padding-left: 2.5px;
+      } 
+    }
+  }
+  &__control{
+    display: block;
+    width: 100%;
+    height: calc(36px + 12px + 2px);
+    padding: 6px 15px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $text-checkout-color;
+    background-color: $white;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+    -webkit-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    -moz-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    -ms-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    -o-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    &:focus{
+      outline: none;
+      @include boxShadow(0 0 3px 1px $blue-light-sm-bold);
+    }
+    &--option{
+      height: calc(40px + 12px + 2px);
+      font: 700 14px/19px "Roboto";
+      position: relative;
+      .option{
+        font-family: "Roboto";
+        color: #131313;
+        margin-bottom: 10px;
+        &:hover{
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+      .active{
+        color: $blue-light;
+        margin-bottom: 10px;
+      }
+      .active__suggest{
+        font-weight: 700;
+      }
+    }
+    &--lg{
+      height: calc(40px + 12px + 2px);
+      padding: 25px 13px 10px;
+      font: 700 14px/18px "Roboto";
+      + .frm__label{
+          position: absolute;
+          transition: all 300ms;
+          margin-bottom: 0;
+          left: 13px;
+          top: 15px;
+          transform: translateY(-50%);
+          text-transform: uppercase;
+          color: $gray-semi-medium;
+          font-size: 11px;
+          pointer-events: none;
+      }
+      &:not(:focus):not(.frm__label--focus) {
+        + .frm__label{
+          left: 20px;
+          top: 27px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  &__checkbox__checkmark:after{
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  &__checkbox{
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    &--account{
+      color: $gray-semi-medium;
+      font-size: 12px;
+      padding-left: 23px;
+      .account__link{
+        font-size: 12px;
+        color: $blue-light;
+        &:focus{
+          outline: none;
+          box-shadow: 0 0 3px 1px $blue-light-sm-bold;
+        }
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    &--checkout{      
+      @include font(14px/16px "Roboto", $black);
+      padding-left: 23px;
+      margin-bottom: 27px;
+    }
+    &--policy{      
+      @include font(12px/18px "Roboto", $gray-semi-medium);
+      padding-left: 23px;
+    }
+    &__control{
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+      &:checked ~ .frm__checkbox__checkmark{
+        &:after{
+          display: block;
+        }
+      }
+    }
+    &__checkmark{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: $white;
+      border: 1px solid $blue-bold;
+      border-radius: 50%;
+      &:after{
+        left: 50%;
+        top: 50%;
+        border-radius: 50%;
+        transform: translate(-50%,-50%);
+        width: 10px;
+        height: 10px;
+        background-color: $blue-bold;
+      }
+      &--checkout{
+        border-radius: 3px;
+        height: 15px;
+        width: 15px;
+        top: 2px;
+        &:after{
+          content: url($pathImage + "icon_check_checkout.svg");
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%,-50%);
+          background-color: transparent;
+          width: auto;
+          height: auto;
+        }
+      }
+      &--policy{
+        border-color: $blue-light;
+        .frm__checkbox__link{
+          font-size: 12px;
+          color: $blue-bold;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+        &:after{
+          content: '';
+          width: 15px;
+          height: 15px;
+          border-radius: 3px;
+          background: $blue-light url(../images/icon_check_white.svg) no-repeat 2px 4px;
+        }
+      }
+    }
+    &__link{
+      color: $blue-bold;
+      &:hover{
+        text-decoration: underline;
+        color: $blue-bold;
+      }
+    }
+  }
+  &__shipping{
+    display: flex;
+    justify-content: space-between;
+    background-color: $br-shipping;
+    margin-bottom: 13px;
+    border-radius: 5px;
+    border: 1px solid $br-shipping;
+    color: $gray-bold;
+    padding: 14px 22px;
+    &__info{
+      .frm__name{
+        margin-bottom: 0;
+        text-transform: uppercase;
+        font: 700 13px/15px "Roboto";
+      }
+      .frm__text{
+        margin-bottom: 6px;
+        font-size: 12px;
+      }
+    }
+    &__with{
+      min-width: 62px;
+      width: 62px;
+      text-align: center;
+      @include font(700 10px/12px "Roboto", $blue-bold);
+      display: none;
+      align-items: center;
+      text-transform: uppercase;
+      background-color: rgba(0, 145, 168, 0.09);
+      border-radius: 5px 0 0 5px;
+    }
+    &__left{
+      display: flex;
+    }
+    &__right{
+      @include font(700 13px/15px "Roboto", $blue-bold);
+    }
+    &__policy{
+      margin-bottom: 16px;
+      margin-top: 36px;
+      @include font(13px/15px "Roboto", $gray-bold);
+      .frm__link{
+        color: $text-card-body;
+        text-decoration: underline;
+        &:hover{
+          color: $text-card-body;
+        }
+      }
+    }
+    &:hover{
+      cursor: pointer;
+      border: 1px solid $blue-bold;
+    }
+    &--active{
+      border: 2px solid $bg-btn-checkout;
+      &:hover{
+        border: 2px solid $blue-bold;
+      }
+      .frm__shipping__with{
+        display: inline-flex;
+        margin: -14px 10px -14px -22px;
+      }
+      .frm__name{
+        color: $blue-bold;
+      }
+      .frm__text{
+        color: $blue-light;
+      }
+    }
+  }
+  &__payment{
+    &__img{
+      display: inline-flex;
+      border: 2px solid $blue-bold;
+      padding: 15px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      margin-bottom: 30px;
+      .frm__img{
+        margin-right: 3px;
+        margin-left: 3px;
+      }
+    }
+  }
+  &__newsletter{
+    display: flex;
+    width: 100%;
+    .form__control{
+      border: 1px solid $gray-light;      
+      width: 100%;
+      padding: 14px 15px;
+      display: block;   
+      color: $gray-semi-light;
+      &:focus{
+        outline: none;
+      }   
+      &::placeholder {
+        color: $gray-semi-light;
+        text-transform: uppercase;
+      }
+    }
+    &__mail{
+      filter: invert(1);
+      margin-bottom: 3px;
+      margin-right: 10px;
+    }
+    @media (max-width: 991px){
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    @media (max-width: 478px){
+      flex-direction: column;
+    }
+  }
+  &__search{
+    display: flex;
+    position: relative;
+    .form__control--search{
+      @include font(900 12px/14px "Roboto", $gray-semi-medium);
+      width: 100%;
+      padding: 17px 75px 17px 19px;
+      border-radius: 3px;
+      border: 1px solid $br-input-search;
+      &::placeholder {
+        color: $gray-semi-medium;
+      }
+      &:focus{
+        outline: none;
+        box-shadow: 0 0 3px 1px $blue-light-sm-bold;
+      }
+    }
+  }
+  &__highline{
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    &:before{
+      content: '';
+      left: 0;
+      right: 0;
+      height: 1px;
+      position: absolute;
+      width: 100%;
+      background-color: $gray-semi-light;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &__or{
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: $white;
+      width: 50px;
+      margin: 0 auto;
+      color: $blue-bold;
+      font-weight: 700;
+    }
+  }
+  &__password{
+    &__forgot{
+      font-size: 12px;
+      font-family: "Roboto";
+      color: $blue-bold;
+      &:hover{
+        text-decoration: underline;
+        color: $blue-bold;
+      }
+    }
+  }
+  &--checkout{
+    .label_pay{
+      color: $blue-bold;
+    }
+    .label__security{
+      color: $gray-semi-medium;
+    }
+    .label__expiration{
+      color: #363636;
+    }
+    .frm__pay__type{
+      padding: 20px 0;
+      text-align: center;
+      border: 2px solid $color-white-light-semi;
+      border-radius: 3px;
+      margin-bottom: 40px;
+      background-color: $color-white-light-semi;  
+      flex: 1 1 auto;    
+      @include animation(transition, all 500ms);
+      cursor: pointer;
+      .frm__pay__title{
+        @include font(700 13px/15px "Roboto", $blue-bold);
+        text-transform: uppercase;
+        margin-bottom: 0;
+      }
+      .frm__pay__info{
+        @include font(11px/17px "Roboto", $blue-bold);
+        margin-top: 8px;
+        margin-bottom: 0;
+      }
+      &:hover{
+        background-color: transparent;
+        border-color: #c5d0d7;
+      }
+    }
+    .frm__pay--type{
+      border-color: $blue-bold;
+      padding-top: 30px;
+      background-color: transparent;
+      &:hover{
+        border-color: $blue-bold;
+      }
+    }
+    .frm__pay--chatapp{
+      margin-bottom: 20px;
+    }
+    @media (max-width: 478px){
+      .frm__pay__type{
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      .frm__pay--type{
+        padding-top: 20px;
+      }
+    }
+  }
+  &__required{
+    list-style: none;
+    padding-left: 0;
+    &__li{
+      margin-bottom: 1rem;
+    }
+    .error{
+      font-size: 12px;
+      color: #F41F1F;
+    }
+    .active{
+      color: #11C341;
+    }
+  }
+  &__send__mail{
+    &__check{
+      display: block;
+      margin-bottom: 1rem;
+    }
+    &__link{
+      @include font(700 14px/18px "Roboto", $blue-bold);
+      &:hover{
+        text-decoration: underline;
+        color: $blue-bold;
+      }
+    }
+  }
+  &__dropdown{
+    position: absolute;
+    top: 50px;
+    left: -1px;
+    right: -1px;
+    z-index: 1;
+    border: 1px solid #dededf;
+    border-top: none;
+    background-color: $white;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 10px;
+    display: none;
+    &__search{
+      background: #f8f8f8 url($pathImage + 'icon_search_grey.svg') no-repeat 95% 50%;
+      border: 1px solid $gray-semi-light;
+      height: 37px;
+      width: 100%;
+      border-radius: 3px;
+    }
+    &__hometown{
+      list-style: none;
+      padding-left: 10px;
+      padding-right: 10px;
+      max-height: 280px;
+      margin-bottom: 0;
+      margin-top: 10px;
+    }
+  }
+  &__account{
+    &__email{
+      @include font(700 14px/18px "Roboto", $gray-medium);
+      &--forgot{
+        margin-top: 27px;
+        margin-bottom: 39px;
+      }
+      &--sendmail{
+        font-family: "Roboto";
+        margin-bottom: 39px;        
+      }
+    }
+    &__customer{
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font: 14px/16px "Roboto";
+      color: rgba($black,0.8);
+    }
+  }
+}
+.form__control--search::-webkit-input-placeholder { /* Edge */
+  color: $gray-semi-medium;
+}
+.form__control--search:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $gray-semi-medium;
+}

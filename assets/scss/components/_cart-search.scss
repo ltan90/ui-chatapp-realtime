@@ -1,0 +1,44 @@
+.cart{
+    &__search-box{
+        @include textDisplay(flex, center, space-between);
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+    &__search{
+        @include col(75%);
+        position: relative;
+        .form__control--search{
+            @include font(14px/14px "Roboto", $gray-semi-medium);
+        }
+    }
+    &__search-list{
+        background-color: $white;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        box-shadow: 0px 3px 6px rgba($black,.08);
+        border-radius: 3px;
+        margin-top: 3px;
+        max-height: 223px;
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $gray-semi-medium;
+        }
+        .search__item{
+            margin: 5px;
+            justify-content: space-between;
+        }
+        .search__link{
+            font-size: 14px;
+        }
+        .search__price{
+            font-size: 12px;
+        }
+    }
+}

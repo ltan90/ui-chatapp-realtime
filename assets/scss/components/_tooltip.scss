@@ -1,0 +1,78 @@
+.tooltip{
+    position: relative;
+    cursor: pointer;
+    margin-left: 3px;
+    &:hover{
+        .tooltip__price{
+            display: block !important;
+        }
+        .tooltip__text {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    &__price{
+        display: none;
+        position: absolute;
+        top: 24px;                
+        width: 300px;
+        z-index: 1;
+        color: #030304;
+        right: -50px;
+        background-color: #fff;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+        border-radius: 3px;
+        padding: 17px 37px 17px 17px;
+        font: 13px/16px "Roboto";
+        font-weight: normal;
+        &--shipping{
+            width: 376px;
+            right: -140px;
+        }
+        &--order{
+            right: -165px;
+        }
+        @media (max-width: 1024px){
+            right: -166px;
+        }
+        @media (max-width: 380px){
+            right: -116px;
+            width: 250px;
+            &--shipping-order{
+                width: 250px;
+                right: -20px;
+            }
+        }
+    }
+    &__close{
+        position: absolute;
+        right: 10px;
+        top: 14px;
+    }
+    .tooltip__text {
+        visibility: hidden;
+        width: 135px;
+        background-color: $blue-bold;
+        color: $white;
+        font-size: 12px;
+        text-align: center;
+        border-radius: 6px;
+        position: absolute;
+        z-index: 1;
+        bottom: 150%;
+        left: 50%;
+        margin-left: -75px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: $blue-bold transparent transparent transparent;
+          }
+    }
+}
