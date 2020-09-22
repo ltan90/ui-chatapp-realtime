@@ -189,7 +189,7 @@
     <script>
         let shippingMethod = localStorage.getItem('shipping-method');        
         shippingMethod = shippingMethod == null || shippingMethod == '' ? 0 : parseFloat(shippingMethod.split(",")[2]);
-        document.getElementById('total-place-js').innerText = shoppingCart.subTotalCart() + shippingMethod;
+        document.getElementById('total-place-js').innerText = Number(shoppingCart.subTotalCart() + shippingMethod).toFixed(2);
         //Month and Years
         function renderCalendar(start, end, id){
             let html = '<option value="">'+id.charAt(0).toUpperCase() + id.slice(1)+'</option>';

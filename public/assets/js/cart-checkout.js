@@ -78,10 +78,12 @@ function displayCartOrder() {
                     + "</div>"
                 +  "</div><hr class='hr'/>";
     }
+    let shippingMethod = localStorage.getItem('shipping-method');        
+    shippingMethod = shippingMethod == null || shippingMethod == '' ? 0 : parseFloat(shippingMethod.split(",")[2]);
     document.querySelector('.show-cart-js').innerHTML = output;
     document.getElementById('product-cost-js').innerText = shoppingCart.totalCart();
-    document.getElementById('subtotal-cart-js').innerText = shoppingCart.subTotalCart();
-    document.getElementById('total-place-js').innerText = shoppingCart.subTotalCart();
+    document.getElementById('subtotal-cart-js').innerText = Number(shoppingCart.subTotalCart() + shippingMethod).toFixed(2);
+    document.getElementById('total-place-js').innerText = Number(shoppingCart.subTotalCart() + shippingMethod).toFixed(2);
     document.getElementById('hidden-subtotal').value = shoppingCart.subTotalCart();
     if(shoppingCart.totalDiscount() === 0){
         document.getElementById('total-discount-js').innerText = 0;

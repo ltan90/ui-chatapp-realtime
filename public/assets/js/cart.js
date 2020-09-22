@@ -358,16 +358,15 @@ function copyToClipBoard(str){
     el.select();
     el.setSelectionRange(0,99999);//mobile
     document.execCommand('copy');
-    var tooltip = document.getElementById("tooltip");
-    tooltip.innerText = "Copy to clipboard";
-    tooltip.classList.add('tooltip__text');
     document.body.removeChild(el);
 }
 function copyContent() {
     let copyEl = document.querySelectorAll('.copy-step');
     for(let i = 0; i < copyEl.length; i++){
         copyEl[i].addEventListener('click', function(){
-            let elVal = document.getElementById(this.getAttribute('data-type')).innerHTML;                    
+            let elVal = document.getElementById(this.getAttribute('data-type')).innerHTML;  
+            this.firstElementChild.innerText = "Copy to clipboard";     
+            this.firstElementChild.classList.add('tooltip__text');         
             copyToClipBoard(elVal);
         });
     }
