@@ -121,14 +121,18 @@
 						e.preventDefault();
 
 						//Get message text
-						const inputMessage = e.target.elements.msg;
-						const msg = inputMessage.value;
-						//Emit message to server
-						socket.emit('chatMessage', msg);
+                        const inputMessage = e.target.elements.msg;
+                        if(inputMessage.value === ''){
+                            inputMessage.focus();
+                        }else{
+                            const msg = inputMessage.value;
+                            //Emit message to server
+                            socket.emit('chatMessage', msg);
 
-						//Clear input
-						inputMessage.value = '';
-						inputMessage.focus();
+                            //Clear input
+                            inputMessage.value = '';
+                            inputMessage.focus();
+                        }
 					});
 
 					//Send product in content chatapp
