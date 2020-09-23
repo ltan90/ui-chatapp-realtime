@@ -18,12 +18,16 @@ io.on('connection', socket => {
     socket.on('joinRoom', ({ username, userInfo, room }) => {
         
         const user = addUser({id: socket.id, username, userInfo, room});
-        
+      
         socket.join(user.room);
 
         //Welcome current user
         var t,t1;
         if(user.userInfo.roles !== 'sales'){
+            //Broadcast when a use connect for sales
+            //socket.emit('message', formatMessage(botName, `A new Chat has just been started by ${user.userInfo.email}`));
+            socket.broadcast.emit('userInfo', `A new Chat has just been started by ${user.userInfo.email}`);
+
             socket.emit('message', formatMessage(botName, `Thank you for messaging us. How can we help you?`));
             //Loading find customer service
             t = setTimeout(function(){
@@ -40,13 +44,12 @@ io.on('connection', socket => {
             socket.broadcast.to(user.room).emit('message', formatMessage(botName, `<span class="chat-now">You are now chatting with ${user.userInfo.fullname} - ${user.userInfo.position}</span>`, user.userInfo));
         }
     });
-    
+
     //Listen chat message in client
     socket.on('chatMessage', msg => {
         const user = getUser(socket.id);
         
         io.to(user.room).emit('message', formatMessage(user.username, msg));
-
     });
 
     //When a client disconnect

@@ -49,6 +49,25 @@
             opacity: 0.8;
         }
     }
+    &__assign{
+        border-radius: 5px;
+        background-color: $blue-bold;
+        color: $white;
+        border: 0;
+        box-shadow: 0 2px 3px rgba($black,.5);
+        padding: 0;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 200px;
+        overflow: hidden;
+        .customer-chat{
+            background-color: $blue-light;
+            padding: 15px;
+            border-bottom: 1px solid $white;
+            display: block;
+        }
+    }
     &__form{
         display: flex;
         margin-bottom: 23px;

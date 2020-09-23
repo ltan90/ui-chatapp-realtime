@@ -1201,7 +1201,7 @@
                     document.querySelector('.panel').classList.toggle('panel-active');
                 });
             }
-			const socket = io();
+            const socket = io();
 			//if(document.querySelector('.random-room')) document.querySelector('.random-room').value = Math.floor((Math.random() * 1000000000) + 1);
 			document.querySelector('.chatapp-login-js').addEventListener('submit', function(e){
 				e.preventDefault();
@@ -1223,6 +1223,10 @@
 
                     let userChat = users.find(user => user.email === emailChat);
 
+                    if(userChat.roles !== 'sales'){
+                        socket.emit('sendEmailSale', emailChat);
+                    }
+
 					const chatForm = document.querySelector('.chatapp-message-js');
 					const chatMessages = document.getElementById('messages');
 					
@@ -1234,6 +1238,7 @@
 
 					//Message from server
 					socket.on('message', (message) => {
+                        console.log(message);
                         const name = {username};
 
 						outputMessage(message, name.username);

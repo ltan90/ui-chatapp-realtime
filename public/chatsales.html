@@ -14,11 +14,10 @@
 	</head>
 	<body>
 		<section class="chatapp">
-            <div id="chatapp-scroll" class="chatapp__panel panel panel-active">
+            <div id="chatapp-scroll" class="chatapp__panel panel">
                 <div class="panel__header">
-                    <div class="panel__header__top">
-                        <!--chatapp-visible-->
-                        <div class="panel__header__left chatapp-system chatapp-visible">
+                    <div class="panel__header__top">                        
+                        <div class="panel__header__left chatapp-system">
                             <h4 class="panel__title"></h4>
                             <span class="panel__name"></span>
                         </div>
@@ -27,31 +26,14 @@
                             <span class="panel__icon panel__icon--close chatapp-session-js"></span>
                         </div>
                     </div>
-                    <div class="panel__header__welcome chatapp-logo text-center">
-                        <span class="panel__logo">
-                            <img src="assets/images/logo_chatapp.svg" alt="logo"/>
-                        </span>
-                        <h4 class="panel__title panel__title--welcome">Welcome to Live Chat</h4>
-                    </div>
                 </div>
-                <div id="messages" class="panel__body panel__body--login">
-                    <div class="chatapp-form chatapp__form">
-                        <span class="chatapp__form__hello">Hello! How can we help you?</span>
-                        <div class="panel__input panel__input--login chatapp__radius">
-                            <form action="" method="post" class="chatapp-login-js">
-                                <input type="email" name="email" class="panel__input__control" placeholder="Please enter your email..."/>
-                                <input type="hidden" name="room" class="random-room" value="sales">
-                                <button class="btn__login text-center">Start Chat Without Login</button>
-                                <button class="chatapp__radius btn__login btn__login--signup text-center" >Sign Up or Login </button>
-                            </form>
-                        </div>
-                    </div>   
+                <div id="messages" class="panel__body panel__body--login">   
                     <div class="chatapp-content-js"></div>                 
                 </div>
                 <div class="panel__footer footer-active-js">
                     <span class="panel__attach">
                         <label for="file" class="panel__icon panel__icon--attach"></label>
-                        <input type="file" name="attach" id="file" class="file" disabled onchange="getFile()"/>
+                        <input type="file" name="attach" id="file" class="file" onchange="getFile()"/>
                     </span>
                     <span class="panel__icon panel__icon--cart active-search-js">
                         <div class="chatapp__form chatapp__form--search search-list-js">
@@ -60,37 +42,47 @@
                     </span>
                     <div class="panel__input">
                         <form action="" method="get" name="frm-message" class="chatapp__frm chatapp-message-js">
-                            <input id="msg" type="text" name="message" class="panel__input__control" placeholder="Type a message" autocomplete="off" readonly/>
-                            <button type="submit" class="btn__chatapp" disabled>
+                            <input id="msg" type="text" name="message" class="panel__input__control" placeholder="Type a message" autocomplete="off"/>
+                            <button type="submit" class="btn__chatapp">
                                 <span class="panel__icon panel__icon--send"></span>
                             </button>
                         </form>
                     </div>
                 </div>
             </div>
-            <span class="chatapp__icon chatapp-close-js chatapp-hidden">
-                <span class="chatapp__icon__arrow"></span>
-            </span>
+			<form action="" method="post" class="chatapp__form__assign chatapp-login-js">
+				<input type="hidden" value="jasminetran@gmail.com" name="email" />
+				<input type="hidden" name="room" class="random-room" value="sales">
+				<button class="chatapp__assign" disabled>
+					<p id="info-customer"></p>
+					<p>Assign to Me</p>
+				</button>
+			</form>            
         </section>
         <script src="../assets/js/main.js"></script>
         <script src="../assets/js/cart.js"></script>
         <script src="/socket.io/socket.io.js"></script>
 		<script>
 			const socket = io();
+			//Hidden ChatApp
+			document.querySelector('.chatapp-close-js').addEventListener('click', function(){
+				document.querySelector('.chatapp__form__assign').classList.remove('chatapp-hidden');
+				document.querySelector('.panel').classList.remove('panel-active');
+				document.querySelector('.panel').classList.remove('panel--system');
+			});
+			socket.on('userInfo', (message) => {
+				let infoCustomer = document.getElementById('info-customer');
+				infoCustomer.innerHTML = `<span class="customer-chat">${message}</span>`;
+				infoCustomer.parentElement.removeAttribute('disabled');
+			});
 			//if(document.querySelector('.random-room')) document.querySelector('.random-room').value = Math.floor((Math.random() * 1000000000) + 1);
 			document.querySelector('.chatapp-login-js').addEventListener('submit', function(e){
 				e.preventDefault();
+				document.querySelector('.chatapp__form__assign').classList.toggle('chatapp-hidden');
+				document.querySelector('.panel').classList.add('panel-active');
 				if(validate(this)){
-					document.querySelector('.chatapp-logo').classList.add('chatapp-hidden');
-					document.querySelector('.chatapp-form').parentElement.classList.remove('panel__body--login');
-					document.querySelector('.chatapp-form').classList.add('chatapp-hidden');
 					document.querySelector('.panel__title').innerText = "Live Chat";
 					document.querySelector('.panel').classList.add('panel--system');
-					document.querySelector('.chatapp-system').classList.remove('chatapp-visible');                    
-					document.querySelector('.chatapp-message-js').firstElementChild.removeAttribute('readonly');
-					document.querySelector('.chatapp-message-js').firstElementChild.nextElementSibling.removeAttribute('disabled');
-					document.querySelector('.file').removeAttribute('disabled');
-					document.querySelector('.footer-active-js').firstElementChild.nextElementSibling.classList.add('search-product-js');
 					
 					//Chat app
 					let emailChat = this['email'].value;
@@ -109,6 +101,7 @@
 
 					//Message from server
 					socket.on('message', (message) => {
+						console.log(message);
 						const name = {username};
 
 						outputMessage(message, name.username);
