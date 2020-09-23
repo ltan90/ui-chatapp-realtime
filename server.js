@@ -24,8 +24,6 @@ io.on('connection', socket => {
         //Welcome current user
         var t,t1;
         if(user.userInfo.roles !== 'sales'){
-            //Broadcast when a use connect for sales
-            //socket.emit('message', formatMessage(botName, `A new Chat has just been started by ${user.userInfo.email}`));
             socket.broadcast.emit('userInfo', `A new Chat has just been started by ${user.userInfo.email}`);
 
             socket.emit('message', formatMessage(botName, `Thank you for messaging us. How can we help you?`));
