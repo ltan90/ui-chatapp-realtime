@@ -24,4 +24,6 @@ const removeUser = (id) => {
 
 const getUser = (id) => users.find(user => user.id === id);
 
-module.exports = { addUser, removeUser, getUser };
+const countUser = () => users.length;
+
+module.exports = { addUser, removeUser, getUser, countUser };

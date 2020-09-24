@@ -3,7 +3,7 @@ const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
 const formatMessage = require('./utils/messages');
-const { addUser, removeUser, getUser }  = require('./utils/users');
+const { addUser, removeUser, getUser, countUser }  = require('./utils/users');
 
 const app = express();
 const server = http.createServer(app);
@@ -55,14 +55,13 @@ io.on('connection', socket => {
 
     //Listen chat message in client
     socket.on('chatMessage', msg => {
+        const user = getUser(socket.id); 
 
-        const user = getUser(socket.id);
+        if(countUser() == 1){
+            socket.broadcast.emit('receivedMessageClient', formatMessage(user.username, msg));
+        }
 
-        // if(user.userInfo.roles === 'sales'){
-        //     socket.broadcast.emit('receivedMessageClient', formatMessage(user.username, msg, user.userInfo));
-        // }
-
-        io.to(user.room).emit('message', formatMessage(user.username, msg, user)); 
+        io.to(user.room).emit('message', formatMessage(user.username, msg));
     });
 
     //When a client disconnect

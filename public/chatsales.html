@@ -76,11 +76,11 @@
 				infoCustomer.innerHTML = `<span class="customer-chat">${message.text}</span>`;
 				infoCustomer.parentElement.removeAttribute('disabled');
 			});
-			// socket.on('receivedMessageClient', (message) => {
-			// 	const div = document.createElement('div');
-			// 	div.innerHTML = `<div class="chatapp__box chatapp__box--system"><span>${message.text}</span></div>`;
-			// 	document.querySelector('.chatapp-content-js').appendChild(div);
-			// });			
+			socket.on('receivedMessageClient', (message) => {
+				const div = document.createElement('div');
+				div.innerHTML = `<div class="chatapp__box chatapp__box--system"><span>${message.text}</span></div>`;
+				document.querySelector('.chatapp-content-js').appendChild(div);
+			});			
 			document.querySelector('.chatapp-login-js').addEventListener('submit', function(e){
 				e.preventDefault();
 				document.querySelector('.chatapp__form__assign').classList.toggle('chatapp-hidden');
