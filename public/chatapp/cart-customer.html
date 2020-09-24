@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <div class="col-sm-btn mt-30 mb-4 ml-auto mr-auto">
-                        <button class="btn btn--checkout btn--checkout--chatapp chatapp-confirm-js">Confirm Cart</button>
+                        <button class="btn btn--checkout btn--checkout--chatapp btn-checkout-js">Confirm Cart</button>
                     </div>
                 </div>                                
             </section>
@@ -110,9 +110,9 @@
     <script src="../assets/js/cart-chatapp.js"></script>
     <script>
         /*Confirm cart*/
-        if(document.querySelector('.chatapp-confirm-js')) closeCart();
+        if(document.querySelector('.btn-checkout-js')) closeCart();
         function closeCart(){
-            document.querySelector('.chatapp-confirm-js').addEventListener('click', function(){
+            document.querySelector('.btn-checkout-js').addEventListener('click', function(){
                 if (window.opener != null && !window.opener.closed) {
                     viewCartCustomer();
                     let htmlBody = window.opener.document.querySelector('.shop-cart').innerHTML;

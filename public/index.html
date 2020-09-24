@@ -1201,7 +1201,7 @@
                     document.querySelector('.panel').classList.toggle('panel-active');
                 });
             }
-            const socket = io();
+            var socket = io();
             const randomRoom = document.querySelector('.random-room');
 			if(randomRoom) randomRoom.value = Math.floor((Math.random() * 1000000000) + 1);
 			document.querySelector('.chatapp-login-js').addEventListener('submit', function(e){
@@ -1234,8 +1234,9 @@
 					const { username, userInfo, room } = {username: emailChat.split('@')[0], userInfo: userChat, room: roomChat};
 					localStorage.setItem('email', this['email'].value);
 
-					//Join chat room
-					socket.emit('joinRoom', {username, userInfo, room});
+                    //Join chat room
+                    socket = io({'forceNew':true});
+                    socket.emit('joinRoom', {username, userInfo, room});                  
 
 					//Message from server
 					socket.on('message', (message) => {
@@ -1389,6 +1390,7 @@
 							socket.emit('chatMessage', content);
 						});
 					}
+                    //Save Cart
                     function saveCartChatApp(){
                         if(document.querySelector('.chatapp-save-js')) document.querySelector('.chatapp-save-js').addEventListener('click', function(e){
                             e.preventDefault();
@@ -1886,6 +1888,7 @@
             }
             //Close ChatApp
             document.querySelector('.chatapp-session-js').addEventListener('click', function(){   
+                localStorage.removeItem('email');
                 document.querySelector('.chatapp-logo').classList.remove('chatapp-hidden');
                 document.querySelector('.chatapp-form').parentElement.classList.add('panel__body--login');
                 document.querySelector('.chatapp-form').classList.remove('chatapp-hidden');    
@@ -1900,8 +1903,8 @@
                 document.querySelector('.chatapp__icon').classList.remove('chatapp-hidden');
                 document.querySelector('.panel__title').innerText = "";
                 document.querySelector('.panel__name').innerText = "";
-                window.location = '';
-                localStorage.removeItem('email');
+                randomRoom.value = Math.floor((Math.random() * 1000000000) + 1);                
+                socket.disconnect();
             });
         </script>
     </body>

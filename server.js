@@ -30,7 +30,7 @@ function stopTimer(){
 io.on('connection', socket => {
     //Join Room
     socket.on('joinRoom', ({ username, userInfo, room }) => {
-        
+
         const user = addUser({id: socket.id, username, userInfo, room});
       
         socket.join(user.room);
@@ -58,11 +58,11 @@ io.on('connection', socket => {
 
         const user = getUser(socket.id);
 
-        // if(user.userInfo.roles !== 'sales'){
+        // if(user.userInfo.roles === 'sales'){
         //     socket.broadcast.emit('receivedMessageClient', formatMessage(user.username, msg, user.userInfo));
         // }
 
-        io.to(user.room).emit('message', formatMessage(user.username, msg)); 
+        io.to(user.room).emit('message', formatMessage(user.username, msg, user)); 
     });
 
     //When a client disconnect
@@ -74,14 +74,6 @@ io.on('connection', socket => {
         }
     });
 
-    //Disconnect client close chatApp
-    socket.on('disconnectChatApp', (id) => {
-        const user = removeUser(id);
-        
-        if(user){
-            io.to(user.room).emit('message', formatMessage(user.username, `${user.username} has left.`));        
-        }
-    });
 });
 
 const PORT = process.env.PORT || 5000;

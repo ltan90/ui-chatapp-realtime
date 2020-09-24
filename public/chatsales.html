@@ -719,7 +719,14 @@
                         this.nextElementSibling.classList.toggle('products-active');
                     });
                 }
-            }
+			}
+			//Close ChatApp
+            document.querySelector('.chatapp-session-js').addEventListener('click', function(){   
+                document.querySelector('.chatapp__form__assign').classList.remove('chatapp-hidden');
+				document.querySelector('.panel').classList.remove('panel-active');
+				document.querySelector('.panel').classList.remove('panel--system');                            
+                socket.disconnect();
+            });
 		</script>
 	</body>
 </html>

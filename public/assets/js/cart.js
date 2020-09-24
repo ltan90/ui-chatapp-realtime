@@ -279,21 +279,21 @@ let bankVisa = [
         name: 'EMILY',
         security: 123,
         expiration: '10/2026',
-        status: '00'
+        status: '00' //payment success
     },
     {
         number: 1234987601234567,
         name: 'DAVID',
         security: 345,
         expiration: '09/2025',
-        status: '01'
+        status: '01' //payment pending
     },
     {
         number: 1234987656780123,
         name: 'DANIEL',
         security: 567,
         expiration: '08/2024',
-        status: '02'
+        status: '02'//payment unsuccess
     },
 ];
 //Demo User
