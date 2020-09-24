@@ -12,6 +12,20 @@ const io = socketio(server);
 app.use(express.static(path.join(__dirname, 'public')));
 
 const botName = 'ChatBot';
+//Loading find sales rep
+var t,t1;
+function startTimer(){
+    t = setTimeout(function(){
+        io.emit('message', formatMessage(botName, `<span class="waiting-customer">Please wait!<br/> We are finding a Customer Service agent to assist you</span>`));
+    }, 60000);
+    t1 = setTimeout(function(){
+        io.emit('message', formatMessage(botName, `<span class="please-oops">Oops...It seems to be taking more than usual.<br/>Please hold</span>`));
+    }, 120000);
+}
+function stopTimer(){
+    clearTimeout(t);
+    clearTimeout(t1);
+}
 //Run when client connects
 io.on('connection', socket => {
     //Join Room
@@ -22,32 +36,29 @@ io.on('connection', socket => {
         socket.join(user.room);
 
         //Welcome current user
-        var t,t1;
+        
         if(user.userInfo.roles !== 'sales'){
-            socket.broadcast.emit('userInfo', `A new Chat has just been started by ${user.userInfo.email}`);
+            socket.broadcast.emit('userInfo', {text: `A new Chat has just been started by ${user.userInfo.email}`, room: user.room});
 
             socket.emit('message', formatMessage(botName, `Thank you for messaging us. How can we help you?`));
-            //Loading find customer service
-            t = setTimeout(function(){
-                socket.emit('message', formatMessage(botName, `<span class="waiting-customer">Please wait!<br/> We are finding a Customer Service agent to assist you</span>`));
-            }, 5000);
-            t1 = setTimeout(function(){
-                socket.emit('message', formatMessage(botName, `<span class="please-oops">Oops...It seems to be taking more than usual.<br/>Please hold</span>`));
-            }, 10000);
-        }
-        if(user.userInfo.roles === 'sales'){
-            clearTimeout(t);
-            clearTimeout(t1);
+
+            startTimer();
+            
+        }else if(user.userInfo.roles === 'sales'){
+            stopTimer();
+
             //Broadcast when a use connects
             socket.broadcast.to(user.room).emit('message', formatMessage(botName, `<span class="chat-now">You are now chatting with ${user.userInfo.fullname} - ${user.userInfo.position}</span>`, user.userInfo));
         }
+        
     });
 
     //Listen chat message in client
     socket.on('chatMessage', msg => {
+
         const user = getUser(socket.id);
         
-        io.to(user.room).emit('message', formatMessage(user.username, msg));
+        io.to(user.room).emit('message', formatMessage(user.username, msg));    
     });
 
     //When a client disconnect

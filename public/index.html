@@ -1202,7 +1202,7 @@
                 });
             }
             const socket = io();
-			//if(document.querySelector('.random-room')) document.querySelector('.random-room').value = Math.floor((Math.random() * 1000000000) + 1);
+			if(document.querySelector('.random-room')) document.querySelector('.random-room').value = Math.floor((Math.random() * 1000000000) + 1);
 			document.querySelector('.chatapp-login-js').addEventListener('submit', function(e){
 				e.preventDefault();
 				if(validate(this)){
@@ -1835,7 +1835,7 @@
                 if('files' in attach){
                     file = attach.files[0].name;
                 }
-                let fileChat = '<a class="upload-file" href="'+file+'" download>'+file+'</a>';
+                let fileChat = '<a class="upload-file" href="'+file+'" download>'+file+'</a>'; 
                 socket.emit('chatMessage', fileChat);   
             }
             //Edit Cart Info

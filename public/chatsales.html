@@ -52,7 +52,7 @@
             </div>
 			<form action="" method="post" class="chatapp__form__assign chatapp-login-js">
 				<input type="hidden" value="jasminetran@gmail.com" name="email" />
-				<input type="hidden" name="room" class="random-room" value="sales">
+				<input type="hidden" name="room" class="random-room" value="">
 				<button class="chatapp__assign" disabled>
 					<p id="info-customer"></p>
 					<p>Assign to Me</p>
@@ -70,12 +70,17 @@
 				document.querySelector('.panel').classList.remove('panel-active');
 				document.querySelector('.panel').classList.remove('panel--system');
 			});
-			socket.on('userInfo', (message) => {
+			socket.on('userInfo', (message) => {				
+				document.querySelector('.random-room').value = message.room;
 				let infoCustomer = document.getElementById('info-customer');
-				infoCustomer.innerHTML = `<span class="customer-chat">${message}</span>`;
+				infoCustomer.innerHTML = `<span class="customer-chat">${message.text}</span>`;
 				infoCustomer.parentElement.removeAttribute('disabled');
 			});
-			//if(document.querySelector('.random-room')) document.querySelector('.random-room').value = Math.floor((Math.random() * 1000000000) + 1);
+			// socket.on('receivedMessageClient', (message) => {
+			// 	const div = document.createElement('div');
+			// 	div.innerHTML = `<div class="chatapp__box chatapp__box--system"><span>${message.text}</span></div>`;
+			// 	document.querySelector('.chatapp-content-js').appendChild(div);
+			// });			
 			document.querySelector('.chatapp-login-js').addEventListener('submit', function(e){
 				e.preventDefault();
 				document.querySelector('.chatapp__form__assign').classList.toggle('chatapp-hidden');
