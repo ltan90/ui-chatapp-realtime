@@ -19,14 +19,6 @@
     </header>
     <main class="wrapper">
         <div class="container container--fixed container--popup">
-            <div class="cart__notify cart-notify-js stop-body-js">
-                <svg class="cart__notify__icon" xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38"><defs><style>.a44{fill:#013253;}.b44{fill:none;}</style></defs><path class="a44" d="M10.463,27.235a3.154,3.154,0,1,0,3.154,3.154A3.15,3.15,0,0,0,10.463,27.235ZM1,2V5.154H4.154L9.832,17.125,7.7,20.989A3.049,3.049,0,0,0,7.309,22.5a3.164,3.164,0,0,0,3.154,3.154H29.389V22.5H11.125a.39.39,0,0,1-.394-.394l.047-.189L12.2,19.349h11.75a3.139,3.139,0,0,0,2.76-1.624L32.354,7.489a1.541,1.541,0,0,0,.189-.757,1.582,1.582,0,0,0-1.577-1.577H7.64L6.157,2H1ZM26.235,27.235a3.154,3.154,0,1,0,3.154,3.154A3.15,3.15,0,0,0,26.235,27.235Z" transform="translate(0.614 1.228)"></path><path class="b44" d="M0,0H38V38H0Z"></path></svg>
-                <p class="cart__notify__content">
-                    <span class="cart__notify__title"></span>
-                    <a class="cart__notify__view" href="#">View cart</a>
-                </p>
-                <svg class="cart__notify__close notify-close-js" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"><defs><style>.a11{fill:#fff;stroke:#000;opacity:0;}.b11{fill:none;stroke:#013253;stroke-linecap:round;stroke-width:2px;}</style></defs><g transform="translate(-3835 23564.5)"><rect class="a11" width="24" height="24" transform="translate(3859.5 -23540) rotate(180)"></rect><line class="b11" x2="11" transform="translate(3843.5 -23555.5) rotate(45)"></line><line class="b11" x2="11" transform="translate(3843.5 -23547.723) rotate(-45)"></line></g></svg>
-            </div>
             <h1 class="cart__title cart__title--chatapp">Shopping Cart</h1>
             <section class="cart">
                 <div class="cart__info bg-cart cart__info--chatapp">
@@ -129,8 +121,11 @@
         </div>
     </div>
     <script>
-        //Checkout link
         const btnCheckoutCart = document.querySelector('.btn-checkout-js');
+        // const notifyClose = document.querySelector('.notify-close-js');
+        // const openTooltip = document.querySelectorAll('.icon-hint');
+        // const closeTooltip = document.querySelectorAll('.tooltip__close');
+        //Checkout link
         btnCheckoutCart.addEventListener('click', function(){
             this.disabled = true;
             let link = this.getAttribute('data-src');
@@ -139,27 +134,26 @@
             }, 500);
         });
         // Close notify cart
-        document.querySelector('.notify-close-js').addEventListener('click', function(){    
-            this.parentElement.classList.remove('cart__notify--active');
-        });
+        // notifyClose.addEventListener('click', function(){    
+        //     this.parentElement.classList.remove('cart__notify--active');
+        // });
         //Close tooltip
-        let openTooltip = document.querySelectorAll('.icon-hint');
-        for(let i = 0; i < openTooltip.length; i++){
-            openTooltip[i].addEventListener('click', function(e){
-                e.stopPropagation();
-                let closeTooltip = document.querySelectorAll('.tooltip__price');
-                for(let i = 0; i < closeTooltip.length; i++){
-                    closeTooltip[i].style.display = 'none';
-                }
-                this.nextElementSibling.style.display = 'block';
-            });
-        }
-        let closeTooltip = document.querySelectorAll('.tooltip__close');
-        for(let i = 0; i < closeTooltip.length; i++){
-            closeTooltip[i].addEventListener('click', function(){
-                this.parentElement.style.display = 'none';
-            });
-        }
+        // for(let i = 0; i < openTooltip.length; i++){
+        //     openTooltip[i].addEventListener('click', function(e){
+        //         e.stopPropagation();
+        //         const closeTooptipPrice = document.querySelectorAll('.tooltip__price');
+        //         for(let i = 0; i < closeTooptipPrice.length; i++){
+        //             closeTooptipPrice[i].style.display = 'none';
+        //         }
+        //         this.nextElementSibling.style.display = 'block';
+        //     });
+        // }
+        
+        // for(let i = 0; i < closeTooltip.length; i++){
+        //     closeTooltip[i].addEventListener('click', function(){
+        //         this.parentElement.style.display = 'none';
+        //     });
+        // }
     </script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/cart.js"></script>

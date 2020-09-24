@@ -57,8 +57,12 @@ io.on('connection', socket => {
     socket.on('chatMessage', msg => {
 
         const user = getUser(socket.id);
-        
-        io.to(user.room).emit('message', formatMessage(user.username, msg));    
+
+        // if(user.userInfo.roles !== 'sales'){
+        //     socket.broadcast.emit('receivedMessageClient', formatMessage(user.username, msg, user.userInfo));
+        // }
+
+        io.to(user.room).emit('message', formatMessage(user.username, msg)); 
     });
 
     //When a client disconnect

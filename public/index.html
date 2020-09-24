@@ -1194,7 +1194,7 @@
         <script src="/socket.io/socket.io.js"></script>
         <script>
             //Toggle ChatApp icon
-            let toggleChatApp = document.querySelectorAll('.chatapp-close-js');
+            const toggleChatApp = document.querySelectorAll('.chatapp-close-js');
             for(let i = 0; i < toggleChatApp.length; i++){
                 toggleChatApp[i].addEventListener('click', function(){
                     document.querySelector('.chatapp__icon').classList.toggle('chatapp-hidden');
@@ -1202,7 +1202,8 @@
                 });
             }
             const socket = io();
-			if(document.querySelector('.random-room')) document.querySelector('.random-room').value = Math.floor((Math.random() * 1000000000) + 1);
+            const randomRoom = document.querySelector('.random-room');
+			if(randomRoom) randomRoom.value = Math.floor((Math.random() * 1000000000) + 1);
 			document.querySelector('.chatapp-login-js').addEventListener('submit', function(e){
 				e.preventDefault();
 				if(validate(this)){
@@ -1221,7 +1222,7 @@
 					let emailChat = this['email'].value;
 					let roomChat = this['room'].value;
 
-                    let userChat = users.find(user => user.email === emailChat);
+                    const userChat = users.find(user => user.email === emailChat);
 
                     if(userChat.roles !== 'sales'){
                         socket.emit('sendEmailSale', emailChat);
@@ -1287,18 +1288,20 @@
 					}	
 					//Confirm Your cart
 					function confirmCartChatApp(){
-						if(document.querySelector('.chatapp-confirm-js')) document.querySelector('.chatapp-confirm-js').addEventListener('click', function(e){
-							e.preventDefault();
-							let listProduct, content;
-							listProduct = this.parentElement.parentElement.previousElementSibling.innerHTML;
-							content = '<div class="chatapp__order__head">'
-											+ '<h4 class="order__heading order__heading--confirm">Confirmed Cart</h4>'
-										+ '</div>'
-										+ '<div class="confirm-cart">'
-											+ listProduct
-										+ '</div>';
-							socket.emit('chatMessage', content);          
-						});
+                        const chatappConfirm = document.querySelector('.chatapp-confirm-js');
+                        if(!chatappConfirm) return;
+                        chatappConfirm.addEventListener('click', function(e){
+                            e.preventDefault();
+                            let listProduct, content;
+                            listProduct = this.parentElement.parentElement.previousElementSibling.innerHTML;
+                            content = '<div class="chatapp__order__head">'
+                                            + '<h4 class="order__heading order__heading--confirm">Confirmed Cart</h4>'
+                                        + '</div>'
+                                        + '<div class="confirm-cart">'
+                                            + listProduct
+                                        + '</div>';
+                            socket.emit('chatMessage', content);          
+                        });
 					}
 					//Confirm Billing in ChatApp
 					function confirmInformation(){
