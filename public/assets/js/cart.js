@@ -158,7 +158,7 @@ const shoppingCart = (function() {
                 itemCopy[p] = item[p];
             }
             itemCopy.total = Number(item.product.price * item.count).toFixed(2);
-            cartCopy.push(itemCopy)
+            cartCopy.push(itemCopy);
         }
         return cartCopy;
     };

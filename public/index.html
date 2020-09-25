@@ -1446,7 +1446,8 @@
 														+ '</div>';
 								}else if(message.text.includes("confirm-cart")){   
 									div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__order chatapp__order--cart">${message.text}</div>`;
-									document.querySelector('.chatapp-cart-close-js').remove();
+                                    document.querySelector('.chatapp-cart-close-js').remove();
+                                    document.getElementById('list-cart').remove();
 								}else if(message.text.includes("confirm-billing-info")){
 									div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__order">${message.text}</div>`;
                                     document.querySelector('.chatapp-billing-close-js').remove();                                    
@@ -1623,7 +1624,8 @@
 							if(isHTML(message.text)){ 
 								if(message.text.includes("confirm-cart")){   
 									div.innerHTML = `<div class="chatapp__box chatapp__box--system chatapp__order chatapp__order--cart">${message.text}</div>`;		
-									document.querySelector('.chatapp-cart-close-js').remove();						
+                                    document.querySelector('.chatapp-cart-close-js').remove();	
+                                    document.getElementById('list-cart').remove();					
 								}else if(message.text.includes("shop-cart")){    
 									div.innerHTML = '<div class="chatapp__box chatapp__box--system chatapp__order chatapp__order--cart">'
 															+ '<div class="chatapp__order__head">'

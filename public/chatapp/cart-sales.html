@@ -160,12 +160,24 @@
     <script src="../assets/js/cart-chatapp.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        const socket = io();
+        const socket = io();        
+        let btnAct = sessionStorage.getItem('active');    
+        console.log(btnAct);    
+        if(btnAct != null) btnCheckoutCart.removeAttribute('disabled');
         socket.on('connect', () => {
             console.log(socket.connected); // true
             socket.on('message', (message) => {
+                const div = document.createElement('div');
+                div.style.display = 'none';
                 if(message.text.includes("confirm-cart")){
-                    btnCheckoutCart.removeAttribute('disabled');
+                    div.innerHTML = message.text;
+                    document.body.appendChild(div);
+                    const shoppingCart = document.getElementById('list-cart').innerText;
+                    var newJson = shoppingCart.replace(/'/g, '"');
+                    localStorage.setItem('shoppingCart', newJson);
+                    window.location = '';
+                    sessionStorage.setItem('active', true);
+                    document.body.removeChild(div);
                 }
             });
         });

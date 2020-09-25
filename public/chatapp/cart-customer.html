@@ -115,11 +115,13 @@
             document.querySelector('.btn-checkout-js').addEventListener('click', function(){
                 if (window.opener != null && !window.opener.closed) {
                     viewCartCustomer();
+                    cart = JSON.parse(localStorage.getItem('shoppingCart'));
                     let htmlBody = window.opener.document.querySelector('.shop-cart').innerHTML;
                     let content = '<div class="chatapp__order__head confirm-cart">'
-                                        + '<h4 class="order__heading order__heading--confirm">Confirmed Cart</h4>'
-                                    + '</div>'
-                                    + htmlBody;  
+                                    + '<h4 class="order__heading order__heading--confirm">Confirmed Cart</h4>'
+                                + '</div>'
+                                + htmlBody
+                                + "<div id='list-cart' style='display: none'>"+localStorage.getItem('shoppingCart')+"</div>";  
                     window.opener.receivedPopup(content);
                 }
                 window.close();
