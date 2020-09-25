@@ -1425,7 +1425,6 @@
 						}
 
                         const div = document.createElement('div');
-                        const chatappSales = document.querySelector('.chatapp-sales');
                         const chatappService = document.querySelector('.chatapp-service');
                         const chatappOOP = document.querySelector('.chatapp-oops');
                         const removeChatAppCart = document.querySelector('.chatapp-cart-close-js');   
@@ -1449,7 +1448,8 @@
                 					document.querySelector('.panel__name').innerText = message.userInfo.position;
 									div.innerHTML = `<p class="text-center chatapp__text chatapp__text--sales chatapp-sales">${message.text}</p>`;
 									setTimeout(function(){
-										if(chatappSales) chatappSales.parentElement.remove();
+                                        const chatappSalesCustomer = document.querySelector('.chatapp-sales');
+										if(chatappSalesCustomer) chatappSalesCustomer.parentElement.remove();
 									}, 2000)
                                 }else if(message.text.includes("add-product")){
 									div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__box--product chatapp-customer-product"><span>${message.text}</span></div>`;
@@ -1642,7 +1642,8 @@
                 					document.querySelector('.panel__name').innerText = message.userInfo.position;
 									div.innerHTML = `<p class="text-center chatapp__text chatapp__text--sales chatapp-sales">${message.text}</p>`;
 									setTimeout(function(){
-										if(chatappSales) chatappSales.parentElement.remove();
+                                        const chatappSales = document.querySelector('.chatapp-sales');
+										if(chatappSales) chatappSales.remove();
 									}, 2000)
 								}else if(message.text.includes("add-product")){
 									div.innerHTML = `<div class="chatapp__box chatapp__box--product chatapp__box--product-sales chatapp-customer-product"><span>${message.text}</span></div>`;
