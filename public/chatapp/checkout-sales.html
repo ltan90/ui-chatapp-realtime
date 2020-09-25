@@ -20,12 +20,12 @@
         <div class="row">
             <div class="col__xl__7">
                 <div class="accordion accordion--checkout">
-                    <div id="step2" class="card card--checkout active">
+                    <div id="step2" class="card card--checkout card--edit">
                         <div class="card__head">
                             <h2 class="card__title d-flex align-items-center">
                                 <span class="card__title__number">2</span> Shipping and billing information
                             </h2>
-                            <div class="card__edit card-copy-js" data-edit="step2" data-active="step3">
+                            <div class="card__edit card-active card-copy-js">
                                 <span class="tooltip copy-text copy-text--checkout copy-step" data-type="content-shipping-billing">
                                     <span class="tooltip-copy"></span>
                                     Copy
@@ -33,7 +33,9 @@
                             </div>
                         </div>
                         <div class="collapse card__body collapse--edit">
-                            <div class="card__body__info info-step-2" id="content-shipping-billing"></div>
+                            <div class="card__body__info info-step-2 shipping-billing-info-js">
+                                <h3 class="card__body__title">Ship to:</h3><h4 class="card__body__title card__body--title"></h4><p class="card__body__text">an&nbsp;le,&nbsp;phone,<br>address&nbsp;city,&nbsp;Alaska&nbsp;zip&nbsp;United States</p><h3 class="card__body__title">Bill to:</h3><h4 class="card__body__title card__body--title"></h4><p class="card__body__text">an&nbsp;le,&nbsp;phone,<br>address&nbsp;city,&nbsp;Alaska&nbsp;zip&nbsp;United States</p>
+                            </div>
                             <div class="card__body__frm">
                                 <h3 class="card__body__title">Ship to:</h3>
                                 <form action="" method="POST" class="frm frm--checkout submit-js" name="frm_step2" data-edit="step2" data-active="step3">
@@ -142,17 +144,20 @@
                                             If your shipping address is different then billing address, please call our office to place your order. 703-354-7336
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn--checkout btn-js">Save and Continue to shipping</button>                                    
+                                    <button type="submit" class="btn btn--checkout btn-js" disabled>Save and Continue to shipping</button>                                    
                                 </form>
+                            </div>
+                            <div id="content-shipping-billing" style="display: none;">                                
+                                <a href="chatapp/checkout-customer-shipping-billing.html" class="btn-billing-info btn btn--grey chatapp-edit-js">Enter Information</a>                                
                             </div>
                         </div>
                     </div>
-                    <div id="step3" class="card card--checkout">
+                    <div id="step3" class="card card--checkout active">
                         <div class="card__head">
                             <h2 class="card__title d-flex align-items-center">
                                 <span class="card__title__number">3</span> Shipping methods
                             </h2>
-                            <div class="card__edit card-active card-edit-js" data-edit="step3" data-active="step4">
+                            <div class="card__edit card-active card-edit-js">
                                 <span class="tooltip copy-text copy-text--checkout copy-step" data-type="content-shipping-method">
                                     <span class="tooltip-copy"></span>
                                     Copy
@@ -160,9 +165,7 @@
                             </div>
                         </div>
                         <div class="collapse card__body collapse--edit">
-                            <div class="card__body__info">
-                                <p class="card__body__text"><span class="text__price">$107.49</span>USPS - Priority Mail Express International</p>
-                            </div>
+                            <div class="card__body__info shipping-method-info-js"></div>
                             <div class="card__body__frm">
                                 <form action="" method="POST" class="frm frm--checkout submit-js" name="frm_step3" data-edit="step3" data-active="step4">
                                     <!--frm__shipping--active-->
@@ -225,7 +228,7 @@
                                             </p> -->
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn--checkout btn-js">Continue to payment</button>
+                                    <button type="submit" class="btn btn--checkout btn-js" disabled>Continue to payment</button>
                                 </form>
                                 <div id="modal-shipping" class="modal stop-body-js">
                                     <div class="modal__content">
@@ -985,8 +988,8 @@
                     activeShipping[i].classList.remove('frm__shipping--active');
                 }
                 this.classList.add("frm__shipping--active");
-                let hiddenSubTotal = document.getElementById('hidden-subtotal').value;
                 document.getElementById("type-shipping-js").nextElementSibling.classList.remove('frm__error--block');
+                let hiddenSubTotal = document.getElementById('hidden-subtotal').value;
                 let shippingMethod = this.getAttribute('data-shipping-method');
                 let strShippingMethod = shippingMethod.split(",");                         
                 document.getElementById('subtotal-cart-js').innerText = Number(parseFloat(hiddenSubTotal) + parseFloat(strShippingMethod[2])).toFixed(2);
@@ -1001,5 +1004,67 @@
     <script src="../assets/js/validate-checkout.js"></script>
     <script src="../assets/js/cart.js"></script>
     <script src="../assets/js/cart-checkout.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        socket.on('connect', () => {
+            console.log(socket.connected); // true
+            socket.on('message', (message) => {
+                const step2 = document.getElementById('step2');
+                const step3 = document.getElementById('step3');
+                const step4 = document.getElementById('step4');
+                const div = document.createElement('div');
+                div.style.display = 'none';
+                if(message.text.includes("confirm-billing-info")){
+                    stepChat(step2);
+                    div.innerHTML = message.text;
+                    document.body.appendChild(div);
+                    const contentShipping = document.getElementById('get-shipping').innerHTML;
+                    document.querySelector('.shipping-billing-info-js').innerHTML = contentShipping;
+                    document.body.removeChild(div);
+                }else if(message.text.includes('confirm-shipping')){
+                    stepChat(step3);
+                    div.innerHTML = message.text;
+                    document.body.appendChild(div);
+                    const activeShippingMethod = document.getElementById('sales-shipping-active');
+                    document.querySelector('.shipping-method-info-js').innerHTML = activeShippingMethod.innerHTML;  
+                    let shippingMethod = activeShippingMethod.getAttribute('data-shipping-method');
+                    let strShippingMethod = shippingMethod.split(",");          
+                    let hiddenSubTotal = document.getElementById('hidden-subtotal').value;
+                    document.getElementById('subtotal-cart-js').innerText = Number(parseFloat(hiddenSubTotal) + parseFloat(strShippingMethod[2])).toFixed(2);
+                    document.getElementById('total-place-js').innerText = Number(parseFloat(hiddenSubTotal) + parseFloat(strShippingMethod[2])).toFixed(2);
+                    document.querySelector('.shipping-name-js').innerHTML = strShippingMethod[1] +'-'+ strShippingMethod[0];
+                    document.querySelector('.shipping-order-js').innerHTML = '$' + strShippingMethod[2];
+                    document.getElementById("type-shipping-js").setAttribute('value', shippingMethod);
+                    localStorage.setItem('shipping-method', shippingMethod);
+                    document.body.removeChild(div);        
+                }else if(message.text.includes("apply-discount")){
+                    div.innerHTML = message.text;
+                    document.body.appendChild(div);
+                    document.getElementById('coupon-js').classList.remove('active');
+                    let coupon = document.querySelector('.apply-discount').getAttribute('data-coupon');
+                    discountOffer(coupon);
+                    displayCartOrder();
+                    document.body.removeChild(div);   
+                }else if(message.text.includes('payment-success')){
+                    step4.classList.remove('active');
+                    step4.classList.add('card--edit');   
+                    step4.classList.remove('card-status-unpayment');   
+                    step4.classList.remove('card-status-pending');                 
+                }else if(message.text.includes('payment-pending')){
+                    step4.classList.remove('active');
+                    step4.classList.add('card--edit','card-status-pending'); 
+                }else if(message.text.includes('payment-unsuccess')){
+                    step4.classList.remove('active');
+                    step4.classList.add('card--edit', 'card-status-unpayment'); 
+                }
+            });
+        });
+        function stepChat(step){
+            step.classList.remove('active');
+            step.classList.add('card--edit');
+            step.nextElementSibling.classList.add('active');
+        }
+    </script>
 </body>
 </html>

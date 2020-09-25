@@ -61,7 +61,8 @@ io.on('connection', socket => {
             socket.broadcast.emit('receivedMessageClient', formatMessage(user.username, msg));
         }
 
-        io.to(user.room).emit('message', formatMessage(user.username, msg));
+        //io.to(user.room).emit('message', formatMessage(user.username, msg));
+        io.emit('message', formatMessage(user.username, msg));
     });
 
     //When a client disconnect

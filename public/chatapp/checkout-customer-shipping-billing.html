@@ -347,29 +347,31 @@
                     let state = this['state'].value;
                     let region = this['regions'].getAttribute('data-name') == '' ? state : this['regions'].getAttribute('data-name');
                     let fullAddress = this['address'].value + '&nbsp;' + this['city'].value +',&nbsp;'+region+'&nbsp;'+ this['zip'].value + '&nbsp;' + this['countries'].getAttribute('data-name');
-                    let info = '<div class="chatapp__order__body chatapp__order__body--bill">'
-                                    + '<h2 class="order__secondary">Shipping and billing information</h2>'
-                                    + '<h3 class="card__body__title">Ship to:</h3>'
-                                    + '<h4 class="card__body__title card__body--title">'+office+'</h4>'
-                                    + '<p class="card__body__text">'+fullNamePhone+'<br/>'+fullAddress+'</p>'
-                                    + '<h3 class="card__body__title">Bill to:</h3>'
-                                    + '<h4 class="card__body__title card__body--title">'+office+'</h4>'
-                                    + '<p class="card__body__text">'+fullNamePhone+'<br/>'+fullAddress+'</p>'
-                                + '</div>'
-                                +  '<div class="chatapp__order__foot chatapp-billing-close-js"></div>';
-                    let content = '<div class="chatapp__order__head confirm-shipping-billing">'
+                    // let info = '<div class="chatapp__order__body chatapp__order__body--bill">'
+                    //                 + '<h2 class="order__secondary">Shipping and billing information</h2>'
+                    //                 + '<h3 class="card__body__title">Ship to:</h3>'
+                    //                 + '<h4 class="card__body__title card__body--title">'+office+'</h4>'
+                    //                 + '<p class="card__body__text">'+fullNamePhone+'<br/>'+fullAddress+'</p>'
+                    //                 + '<h3 class="card__body__title">Bill to:</h3>'
+                    //                 + '<h4 class="card__body__title card__body--title">'+office+'</h4>'
+                    //                 + '<p class="card__body__text">'+fullNamePhone+'<br/>'+fullAddress+'</p>'
+                    //             + '</div>'
+                    //             +  '<div class="chatapp__order__foot chatapp-billing-close-js"></div>';
+                    let content = '<div class="chatapp__order__head confirm-billing-info">'
                                         + '<h4 class="order__heading order__heading--confirm">Confirmed Information</h4>'
                                     + '</div>'
                                     + '<div class="chatapp__order__body chatapp__order__body--bill">'
                                         + '<h2 class="order__secondary">Shipping and billing information</h2>'
-                                        + '<h3 class="card__body__title">Ship to:</h3>'
-                                        + '<h4 class="card__body__title card__body--title">'+office+'</h4>'
-                                        + '<p class="card__body__text">'+fullNamePhone+'<br/>'+fullAddress+'</p>'
-                                        + '<h3 class="card__body__title">Bill to:</h3>'
-                                        + '<h4 class="card__body__title card__body--title">'+office+'</h4>'
-                                        + '<p class="card__body__text">'+fullNamePhone+'<br/>'+fullAddress+'</p>'
+                                        + '<div id="get-shipping">'
+                                            + '<h3 class="card__body__title">Ship to:</h3>'
+                                            + '<h4 class="card__body__title card__body--title">'+office+'</h4>'
+                                            + '<p class="card__body__text">'+fullNamePhone+'<br/>'+fullAddress+'</p>'
+                                            + '<h3 class="card__body__title">Bill to:</h3>'
+                                            + '<h4 class="card__body__title card__body--title">'+office+'</h4>'
+                                            + '<p class="card__body__text">'+fullNamePhone+'<br/>'+fullAddress+'</p>'
+                                        + '</div>'
                                     + '</div>';     
-                    window.opener.document.querySelector('.chatapp-change-info-js').innerHTML = info;                                        
+                    //window.opener.document.querySelector('.chatapp-change-info-js').innerHTML = info;                                        
                     window.opener.receivedPopup(content);
                 }
                 window.close();

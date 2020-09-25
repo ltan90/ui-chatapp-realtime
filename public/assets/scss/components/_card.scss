@@ -215,6 +215,9 @@
     color: $color-warning;
     display: block;
   }
+  .status-success{
+    display: none !important;
+  }
 }
 .card-status-unpayment{
   .card__title__number{
@@ -224,5 +227,8 @@
   .status-unpayment{
     color: $color-red-error-danger-payment;
     display: block;
+  }
+  .status-success{
+    display: none !important;
   }
 }

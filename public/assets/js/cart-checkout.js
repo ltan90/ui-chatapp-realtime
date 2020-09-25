@@ -1,18 +1,18 @@
 //Discount Offer
 if(document.querySelector('.offer-js')) document.querySelector('.offer-js').addEventListener('click', function(){    
-    if(document.querySelector('.offer-group-js').checked){
-        let coupon = document.querySelector('.offer-group-js').value;
-        discountOffer(coupon);
+    let coupon = document.querySelector('.offer-group-js'); 
+    if(coupon.checked){
+        discountOffer(coupon.value);
         displayCartOrder();
     }else{
         document.querySelector('.alert--error').style.display = 'block';
     }
 });
-document.querySelector('.discount-js').addEventListener('click', function(){    
-    if(document.querySelector('.discount-group-js').value != ""){
-        let coupon = document.querySelector('.discount-group-js').value;
+document.querySelector('.discount-js').addEventListener('click', function(){   
+    let coupon = document.querySelector('.discount-group-js'); 
+    if(coupon.value != ""){        
         this.previousElementSibling.lastElementChild.classList.remove('frm__error--block');
-        discountOffer(coupon);
+        discountOffer(coupon.value);
         displayCartOrder();
     }else{
         this.previousElementSibling.lastElementChild.classList.add('frm__error--block');

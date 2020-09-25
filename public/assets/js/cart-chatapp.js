@@ -144,15 +144,15 @@ function displayCartChatApp() {
     if(document.querySelector('.subtotal-cart-js')) document.querySelector('.subtotal-cart-js').innerText = shoppingCart.subTotalCart();
     if(document.querySelector('.subtotal-order-js')) document.querySelector('.subtotal-order-js').innerText = shoppingCart.subTotalCart();
     if(document.getElementById('subtotal-cart-js')) document.getElementById('subtotal-cart-js').innerText = shoppingCart.subTotalCart();
-    const btnCheckout = document.querySelector('.btn-checkout-js');
+    //const btnCheckout = document.querySelector('.btn-checkout-js');
     if (shoppingCart.totalCount() == 0) {
         let cartEmpty = document.createElement('div');
         cartEmpty.className = 'cart__empty--chatapp';
         cartEmpty.innerHTML = 'CART IS EMPTY';
         document.querySelector('.show-cart-js').appendChild(cartEmpty);
-        btnCheckout.setAttribute('disabled', 'disabled');
+        //btnCheckout.setAttribute('disabled', 'disabled');
     }else{
-        btnCheckout.removeAttribute('disabled');
+        //btnCheckout.removeAttribute('disabled');
     }
     if(document.getElementById('chatapp-product')) document.getElementById('chatapp-product').innerHTML = viewCartChatApp;
     if(document.querySelector('.chatapp-subtotal-js')) document.querySelector('.chatapp-subtotal-js').innerHTML = '<label class="info__label">Total: '+shoppingCart. totalCount()+' <span>product</span></label>'

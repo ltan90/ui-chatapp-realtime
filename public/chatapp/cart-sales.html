@@ -121,7 +121,7 @@
         </div>
     </div>
     <script>
-        const btnCheckoutCart = document.querySelector('.btn-checkout-js');
+        const btnCheckoutCart = document.querySelector('.btn-checkout-js');        
         // const notifyClose = document.querySelector('.notify-close-js');
         // const openTooltip = document.querySelectorAll('.icon-hint');
         // const closeTooltip = document.querySelectorAll('.tooltip__close');
@@ -158,5 +158,17 @@
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/cart.js"></script>
     <script src="../assets/js/cart-chatapp.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        socket.on('connect', () => {
+            console.log(socket.connected); // true
+            socket.on('message', (message) => {
+                if(message.text.includes("confirm-cart")){
+                    btnCheckoutCart.removeAttribute('disabled');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

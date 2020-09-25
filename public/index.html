@@ -1306,11 +1306,13 @@
 					}
 					//Confirm Billing in ChatApp
 					function confirmInformation(){
-						if(document.querySelector('.chatapp-confirm-billing-js')) document.querySelector('.chatapp-confirm-billing-js').addEventListener('click', function(e){
+                        const confirmBilling = document.querySelector('.chatapp-confirm-billing-js');
+                        if(!confirmBilling) return;
+                        confirmBilling.addEventListener('click', function(e){
 							e.preventDefault();
 							let informationBody, content;        
 							informationBody = this.parentElement.parentElement.previousElementSibling.innerHTML;
-							content = '<div class="chatapp__order__head confirm-shipping-billing">'
+							content = '<div class="chatapp__order__head confirm-billing-info">'
 											+ '<h4 class="order__heading order__heading--confirm">Confirmed Information</h4>'
 										+ '</div>'
 										+ '<div class="chatapp__order__body chatapp__order__body--bill">'
@@ -1321,15 +1323,21 @@
 					}
 					//Confirm Billing in ChatApp
 					function confirmShippingMethod(){
-						if(document.querySelector('.chatapp-confirm-shipping-js')) document.querySelector('.chatapp-confirm-shipping-js').addEventListener('click', function(e){
+                        const confirmShipping = document.querySelector('.chatapp-confirm-shipping-js');
+                        if(!confirmShipping) return;
+						confirmShipping.addEventListener('click', function(e){
 							e.preventDefault();     
 							let typeShippingMethod = document.getElementById("type-shipping-js");
 							if(typeShippingMethod.value == ''){
 								typeShippingMethod.nextElementSibling.classList.add('frm__error--block');
 							}else{
-								typeShippingMethod.nextElementSibling.classList.remove('frm__error--block');								
-								let htmlBody = document.querySelector('.frm__shipping--active').innerHTML;
-								let content = '<div class="chatapp__order__head confirm-shipping-method">'
+                                typeShippingMethod.nextElementSibling.classList.remove('frm__error--block');	
+                                const shipingActive = document.querySelector('.frm__shipping--active');		
+                                let shippingMethod = shipingActive.getAttribute('data-shipping-method');
+                                let strShippingMethod = shippingMethod.split(",");    
+                                localStorage.setItem('shipping-method', shippingMethod);					
+								let htmlBody = shipingActive.innerHTML;
+								let content = '<div class="chatapp__order__head confirm-shipping">'
 													+ '<h4 class="order__heading order__heading--confirm">Confirmed Shipping Method</h4>'
 												+ '</div>'
 												+ '<div class="chatapp__order__body chatapp__order__body--bill">'
@@ -1337,7 +1345,10 @@
 													+ '<div class="frm frm--checkout">'
 														+ '<div class="frm__shipping shipping-js frm__shipping--active">'
 															+ htmlBody
-														+ '</div>'
+                                                        + '</div>'
+                                                        + '<div id="sales-shipping-active" data-shipping-method="'+shippingMethod+'" style="display: none;">'
+                                                            + `<p class="card__body__text"><span class="text__price">$${strShippingMethod[2]}</span>${strShippingMethod[1]} - ${strShippingMethod[0]}</p>`
+                                                        + '</div>'
 													+ '</div>'
 												+ '</div>';
 								socket.emit('chatMessage', content);
@@ -1345,7 +1356,7 @@
 						});
 					}
 					//Apply Coupon Chat App
-					function applyCouponChatApp(){
+					function applyCouponChatApp(){                        
 						if(document.querySelector('.discount-group-js')) document.querySelector('.discount-group-js').addEventListener('keyup', function(){
 							if(this.value !== '') this.nextElementSibling.classList.remove('frm__error--block');
 						});
@@ -1363,12 +1374,12 @@
 									}, 1000);
 								}else{
 									shoppingCart.couponToCart(result);
-									let content = '<div class="chatapp__order__head apply-discount">'
+									let content = '<div class="chatapp__order__head apply-discount" data-coupon="'+coupon.value+'">'
 														+ '<h4 class="order__heading order__heading--confirm">Applied</h4>'
 													+ '</div>'
 													+ '<div class="chatapp__order__body chatapp__order__body--coupon">'
 														+ '<h2 class="order__secondary">Coupon Code</h2>'
-														+ '<div class="chatapp__order__coupon">'
+														+ '<div class="chatapp__order__coupon" >'
 															+ '<span>'+result.coupon+' - '+result.persent+'% OFF</span>'
 															+ '<span>- $'+shoppingCart.totalDiscount()+'</span>'
 														+ '</div>'
@@ -1400,8 +1411,7 @@
                                                     + '<div class="chatapp__order__body chatapp__order__body--coupon">'
                                                         + "<div class='chatapp__order__coupon text-center'>You don't have to start over. We'll save your cart and email you a link to it.</div>"
                                                     + '</div>';
-                            socket.emit('chatMessage', contentSaveCart);
-                            this.parentElement.parentElement.remove();
+                            socket.emit('chatMessage', contentSaveCart);                            
                         });
                     }
                     //Output message to DOM
@@ -1414,12 +1424,17 @@
 							isSentByCurrentUser = true;
 						}
 
-						const div = document.createElement('div');
+                        const div = document.createElement('div');
+                        const selectChat = document.querySelector('.chatapp-select-hidden-js');                        
+                        const reselectChat = document.querySelector('.chatapp-reselect-hidden-js');                        
 						if(isSentByCurrentUser){
 							if(isHTML(message.text)){ 
-								if(message.text.includes("confirm-cart")){   
-									div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__order chatapp__order--cart">${message.text}</div>`;
-									document.querySelector('.chatapp-cart-close-js').remove();
+                                if(message.text.includes('waiting-customer')){
+									div.innerHTML = `<p class="text-center chatapp__text chatapp-service">${message.text}</p>`;
+								}else if(message.text.includes('please-oops')){
+									div.innerHTML = `<p class="text-center chatapp__text chatapp-oops">${message.text}</p>`;
+								}else if(message.text.includes("add-product")){
+									div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__box--product chatapp-customer-product"><span>${message.text}</span></div>`;
 								}else if(message.text.includes("shop-cart")){   
 									div.innerHTML = '<div class="chatapp__box chatapp__box--customer chatapp__order chatapp__order--cart">'
 															+ '<div class="chatapp__order__head">'
@@ -1429,11 +1444,23 @@
 																+ message.text
 															+ '</div>'
 														+ '</div>';
-								}else if(message.text.includes("add-product")){
-									div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__box--product chatapp-customer-product"><span>${message.text}</span></div>`;
-								}else if(message.text.includes("confirm-shipping-billing")){
+								}else if(message.text.includes("confirm-cart")){   
+									div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__order chatapp__order--cart">${message.text}</div>`;
+									document.querySelector('.chatapp-cart-close-js').remove();
+								}else if(message.text.includes("confirm-billing-info")){
 									div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__order">${message.text}</div>`;
-									document.querySelector('.chatapp-billing-close-js').remove();
+                                    document.querySelector('.chatapp-billing-close-js').remove();                                    
+                                }else if(message.text.includes("btn-billing-info")){
+                                    div.innerHTML = '<div class="chatapp__box chatapp__box--customer chatapp__order chatapp-change-info-js">'
+														+ '<div class="chatapp__order__body chatapp__order__body--bill">'
+															+ '<h2 class="order__secondary">Shipping and billing information</h2>'
+														+ '</div>'
+														+  '<div class="chatapp__order__foot chatapp-billing-close-js">'
+															+ '<div class="order__button">'
+																+ message.text
+															+ '</div>'
+														+ '</div>'
+                                                    +'</div>';                                                    
 								}else if(message.text.includes("shipping-billing")){
 									div.innerHTML = '<div class="chatapp__box chatapp__box--customer chatapp__order chatapp-change-info-js">'
 														+ '<div class="chatapp__order__body chatapp__order__body--bill">'
@@ -1446,8 +1473,8 @@
 																+ '<a href="chatapp/checkout-customer-shipping-billing.html" class="btn btn--grey chatapp-edit-js">Edit Info</a>'
 															+ '</div>'
 														+ '</div>'
-													+'</div>';
-								}else if(message.text.includes("confirm-shipping-method")){
+                                                    +'</div>';
+								}else if(message.text.includes("confirm-shipping")){
 									div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__order">${message.text}</div>`;
 									document.querySelector('.chatapp-shipping-method-js').remove();
 								}else if(message.text.includes("shipping-method")){
@@ -1503,10 +1530,6 @@
 															+ '</div>'
 														+ '</div>'
 													+'</div>';
-								}else if(message.text.includes('waiting-customer')){
-									div.innerHTML = `<p class="text-center chatapp__text chatapp-service">${message.text}</p>`;
-								}else if(message.text.includes('please-oops')){
-									div.innerHTML = `<p class="text-center chatapp__text chatapp-oops">${message.text}</p>`;
 								}else if(message.text.includes('chat-now')){
 									if(document.querySelector('.chatapp-service')) document.querySelector('.chatapp-service').parentElement.remove();
                 					if(document.querySelector('.chatapp-oops')) document.querySelector('.chatapp-oops').parentElement.remove();
@@ -1520,10 +1543,21 @@
                                     div.innerHTML = `<div class="chatapp__box chatapp__box--customer"><span>${message.text}</span></div>`;
                                 }else if(message.text.includes('payment-success')){
                                     div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__order">${message.text}</div>`;
-                                    document.querySelector('.chatapp-select-hidden-js').remove();
+                                    if(selectChat) selectChat.remove();
+                                    if(reselectChat) reselectChat.remove();
                                 }else if(message.text.includes('payment-pending')){
                                     div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__order">${message.text}</div>`;
-                                    document.querySelector('.chatapp-select-hidden-js').remove();
+                                    if(selectChat) selectChat.remove();
+                                    if(reselectChat) reselectChat.remove();
+                                    setTimeout(function(){
+                                        let contentSuccess = '<div class="chatapp__order__head payment-success">'
+                                                + '<h4 class="order__heading order__heading--confirm">Purchased Successfully</h4>'
+                                            + '</div>'
+                                            + '<div class="chatapp__order__body chatapp__order__body--coupon">'
+                                                + "<div class='chatapp__order__coupon text-center'>Your order has been placed.<br/>We'll send you an email with your order details</div>"
+                                            + '</div>';
+                                        socket.emit('chatMessage', contentSuccess);
+                                    }, 5000);
                                 }else if(message.text.includes('payment-unsuccess')){
                                     div.innerHTML = '<div class="chatapp__box chatapp__box--customer chatapp__order">'
                                                     + message.text
@@ -1577,9 +1611,10 @@
                                                         + '</div>'
                                                     + '</div>'
                                                 +'</div>';
-                                    document.querySelector('.chatapp-select-hidden-js').remove();
+                                    selectChat.remove();                                    
                                 }else if(message.text.includes('save-cart')){
                                     div.innerHTML = `<div class="chatapp__box chatapp__box--customer chatapp__order">${message.text}</div>`;
+                                    reselectChat.remove();
                                 }
 							}else{
 								div.innerHTML = `<div class="chatapp__box chatapp__box--customer"><span>${message.text}</span></div>`;
@@ -1600,9 +1635,20 @@
 														+ '</div>';	
 								}else if(message.text.includes("add-product")){
 									div.innerHTML = `<div class="chatapp__box chatapp__box--product chatapp__box--product-sales chatapp-customer-product"><span>${message.text}</span></div>`;
-								}else if(message.text.includes("confirm-shipping-billing")){
+								}else if(message.text.includes("confirm-billing-info")){
 									div.innerHTML = `<div class="chatapp__box chatapp__box--system chatapp__order">${message.text}</div>`;
-									document.querySelector('.chatapp-billing-close-js').remove();
+                                    document.querySelector('.chatapp-billing-close-js').remove();
+                                }else if(message.text.includes("btn-billing-info")){
+                                    div.innerHTML = '<div class="chatapp__box chatapp__box--system chatapp__order chatapp-change-info-js">'
+														+ '<div class="chatapp__order__body chatapp__order__body--bill">'
+															+ '<h2 class="order__secondary">Shipping and billing information</h2>'
+														+ '</div>'
+														+  '<div class="chatapp__order__foot chatapp-billing-close-js">'
+															+ '<div class="order__button">'
+																+ message.text
+															+ '</div>'
+														+ '</div>'
+                                                    +'</div>';
 								}else if(message.text.includes("shipping-billing")){
 									div.innerHTML = '<div class="chatapp__box chatapp__box--system chatapp__order chatapp-change-info-js">'
 														+ '<div class="chatapp__order__body chatapp__order__body--bill">'
@@ -1615,8 +1661,8 @@
 																+ '<a href="chatapp/checkout-customer-shipping-billing.html" class="btn btn--grey chatapp-edit-js">Edit Info</a>'
 															+ '</div>'
 														+ '</div>'
-													+'</div>';
-								}else if(message.text.includes("confirm-shipping-method")){
+                                                    +'</div>';
+								}else if(message.text.includes("confirm-shipping")){
 									div.innerHTML = `<div class="chatapp__box chatapp__box--system chatapp__order">${message.text}</div>`;
 									document.querySelector('.chatapp-shipping-method-js').remove();
 								}else if(message.text.includes("shipping-method")){
@@ -1689,10 +1735,12 @@
                                     div.innerHTML = `<div class="chatapp__box chatapp__box--system"><span>${message.text}</span></div>`;
                                 }else if(message.text.includes('payment-success')){
                                     div.innerHTML = `<div class="chatapp__box chatapp__box--system chatapp__order">${message.text}</div>`;
-                                    document.querySelector('.chatapp-select-hidden-js').remove();
+                                    if(selectChat) selectChat.remove();
+                                    if(reselectChat) reselectChat.remove();
                                 }else if(message.text.includes('payment-pending')){
                                     div.innerHTML = `<div class="chatapp__box chatapp__box--system chatapp__order">${message.text}</div>`;
-                                    document.querySelector('.chatapp-select-hidden-js').remove();
+                                    if(selectChat) selectChat.remove();
+                                    if(reselectChat) reselectChat.remove();
                                 }else if(message.text.includes('payment-unsuccess')){
                                     div.innerHTML = '<div class="chatapp__box chatapp__box--system chatapp__order">'
                                                     + message.text
@@ -1746,9 +1794,10 @@
                                                         + '</div>'
                                                     + '</div>'
                                                 +'</div>';
-                                    document.querySelector('.chatapp-select-hidden-js').remove();
+                                    selectChat.remove();                                 
                                 }else if(message.text.includes('save-cart')){
-                                    div.innerHTML = `<div class="chatapp__box chatapp__box--system chatapp__order">${message.text}</div>`;
+									div.innerHTML = `<div class="chatapp__box chatapp__box--system chatapp__order">${message.text}</div>`;
+									reselectChat.remove();
                                 }
 							}else{
 								div.innerHTML = `<div class="chatapp__box chatapp__box--system chatapp-thank"><span>${message.text}</span></div>`;
