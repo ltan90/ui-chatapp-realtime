@@ -154,107 +154,6 @@
 							socket.emit('chatMessage', ele);                  
 						});
 					}	
-					//Confirm Your cart
-					function confirmCartChatApp(){
-						if(document.querySelector('.chatapp-confirm-js')) document.querySelector('.chatapp-confirm-js').addEventListener('click', function(e){
-							e.preventDefault();
-							let listProduct, content;
-							listProduct = this.parentElement.parentElement.previousElementSibling.innerHTML;
-							content = '<div class="chatapp__order__head">'
-											+ '<h4 class="order__heading order__heading--confirm">Confirmed Cart</h4>'
-										+ '</div>'
-										+ '<div class="confirm-cart">'
-											+ listProduct
-										+ '</div>';
-							socket.emit('chatMessage', content);          
-						});
-					}
-					//Confirm Billing in ChatApp
-					function confirmInformation(){
-						if(document.querySelector('.chatapp-confirm-billing-js')) document.querySelector('.chatapp-confirm-billing-js').addEventListener('click', function(e){
-							e.preventDefault();
-							let informationBody, content;        
-							informationBody = this.parentElement.parentElement.previousElementSibling.innerHTML;
-							content = '<div class="chatapp__order__head confirm-billing-info">'
-											+ '<h4 class="order__heading order__heading--confirm">Confirmed Information</h4>'
-										+ '</div>'
-										+ '<div class="chatapp__order__body chatapp__order__body--bill">'
-											+ informationBody
-										+ '</div>';
-							socket.emit('chatMessage', content);							
-						});
-					}
-					//Confirm Billing in ChatApp
-					function confirmInShippingMethod(){
-						if(document.querySelector('.chatapp-confirm-shipping-js')) document.querySelector('.chatapp-confirm-shipping-js').addEventListener('click', function(e){
-							e.preventDefault();     
-							let typeShippingMethod = document.getElementById("type-shipping-js");
-							if(typeShippingMethod.value == ''){
-								typeShippingMethod.nextElementSibling.classList.add('frm__error--block');
-							}else{
-								typeShippingMethod.nextElementSibling.classList.remove('frm__error--block');								
-								let htmlBody = document.querySelector('.frm__shipping--active').innerHTML;
-								let content = '<div class="chatapp__order__head confirm-shipping-method">'
-													+ '<h4 class="order__heading order__heading--confirm">Confirmed Shipping Method</h4>'
-												+ '</div>'
-												+ '<div class="chatapp__order__body chatapp__order__body--bill">'
-													+ '<h2 class="order__secondary">Shipping Method</h2>'
-													+ '<div class="frm frm--checkout">'
-														+ '<div class="frm__shipping shipping-js frm__shipping--active">'
-															+ htmlBody
-														+ '</div>'
-													+ '</div>'
-												+ '</div>';
-								socket.emit('chatMessage', content);
-							}   
-						});
-					}
-					//Apply Coupon Chat App
-					function applyCouponChatApp(){
-						if(document.querySelector('.discount-group-js')) document.querySelector('.discount-group-js').addEventListener('keyup', function(){
-							if(this.value !== '') this.nextElementSibling.classList.remove('frm__error--block');
-						});
-						if(document.querySelector('.chatapp-apply-coupon-js')) document.querySelector('.chatapp-apply-coupon-js').addEventListener('click', function(e){
-							e.preventDefault();
-							let coupon = document.querySelector('.discount-group-js');
-							if(coupon.value === ''){
-								coupon.nextElementSibling.classList.add('frm__error--block');
-							}else{
-								let result = discountCode.find(code => code.coupon === coupon.value);
-								if(result === undefined){
-									document.querySelector('.alert-checkout-js').style.display = 'block';
-									setTimeout(function(){
-										document.querySelector('.alert-checkout-js').style.display = 'none';
-									}, 1000);
-								}else{
-									shoppingCart.couponToCart(result);
-									let content = '<div class="chatapp__order__head apply-discount">'
-														+ '<h4 class="order__heading order__heading--confirm">Applied</h4>'
-													+ '</div>'
-													+ '<div class="chatapp__order__body chatapp__order__body--coupon">'
-														+ '<h2 class="order__secondary">Coupon Code</h2>'
-														+ '<div class="chatapp__order__coupon">'
-															+ '<span>'+result.coupon+' - '+result.persent+'% OFF</span>'
-															+ '<span>- $'+shoppingCart.totalDiscount()+'</span>'
-														+ '</div>'
-													+ '</div>';
-									socket.emit('chatMessage', content);
-								}
-							}
-						});
-					}
-					//Confirm Order Summary
-					function confirmOrderSummary(){
-						if(document.querySelector('.chatapp-confirm-order-js')) document.querySelector('.chatapp-confirm-order-js').addEventListener('click', function(e){
-							e.preventDefault();
-							let htmlBody = this.parentElement.parentElement.previousElementSibling.innerHTML;							
-							let content = '<div class="chatapp__order__head confirm-order-summary">'
-													+ '<h4 class="order__heading order__heading--confirm">Confirmed Order Summary</h4>'
-												+ '</div>'
-												+ '<div class="chatapp__order__body chatapp__order__body--coupon chatapp__order--products">' + htmlBody + '</div>';
-							socket.emit('chatMessage', content);
-						});
-					}
 					//Output message to DOM
 					function outputMessage(message, name){    
 						let isSentByCurrentUser = false;
@@ -630,13 +529,6 @@
 							}
 						}
 						document.querySelector('.chatapp-content-js').appendChild(div);    
-						openEditConfirm();
-						confirmCartChatApp();
-						confirmInformation();
-						activeShippingMethod();
-						confirmInShippingMethod();
-						applyCouponChatApp();
-                        confirmOrderSummary();
                         toggleCartDetail();
 					}
 				}
@@ -717,38 +609,8 @@
                 }
                 let fileChat = '<a class="upload-file" href="'+file+'" download>'+file+'</a>';
                 socket.emit('chatMessage', fileChat);   
-            }//Edit Cart Info
-			function openEditConfirm(){
-				let popup;
-				let openWebConfirm = document.querySelectorAll('.chatapp-edit-js');
-				for(let i = 0; i < openWebConfirm.length; i++){
-					openWebConfirm[i].addEventListener('click', function(e){
-						e.preventDefault();
-						popup = window.open(this.href, "Popup", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=250,width=1023,height=650");
-						return false;
-					});
-				}
-			}
-			/*Active shipping*/
-			function activeShippingMethod(){
-				let activeShipping = document.querySelectorAll('.shipping-js');
-				for (var i = 0; i < activeShipping.length; i++) {
-					activeShipping[i].onclick = function (event) {
-						event.preventDefault();
-						for (var i = 0; i < activeShipping.length; i++) {
-							activeShipping[i].classList.remove('frm__shipping--active');
-						}
-						this.classList.add("frm__shipping--active");
-						document.getElementById("type-shipping-js").nextElementSibling.classList.remove('frm__error--block');
-						let shippingMethod = this.getAttribute('data-shipping-method');                
-						document.getElementById("type-shipping-js").setAttribute('value', shippingMethod);
-						localStorage.setItem('shipping-method', shippingMethod);
-					}
-				}
-			}
-			function receivedPopup(data){
-				socket.emit('chatMessage', data);
             }
+			
             //Toggle Cart Detail
             function toggleCartDetail(){
                 let toggleEl = document.querySelectorAll('.toggle-chatapp-cart-js');
